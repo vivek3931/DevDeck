@@ -60,6 +60,15 @@
 
 /* Touch target for mobile */
 @media (max-width: 560px) {
+  .base {
+    font-size: 16px;
+  }
+  .primary, .promo {
+    padding: 8px 16px;
+  }
+  .secondary {
+    padding: 6px 14px 8px;
+  }
   .iconSize {
     width: 44px;
     height: 44px;

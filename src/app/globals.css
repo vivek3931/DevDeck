@@ -177,16 +177,31 @@ input, textarea, select {
 }
 
 @media (max-width: 560px) {
+  body {
+    font-size: 16px;
+  }
   .container {
     padding-left: var(--spacing-md);
     padding-right: var(--spacing-md);
   }
 
   .display-xl {
-    font-size: 48px;
-    letter-spacing: -0.96px;
+    font-size: 40px;
+    letter-spacing: -0.8px;
   }
   .display-lg {
-    font-size: 40px;
+    font-size: 32px;
+  }
+  .headline, .subhead {
+    font-size: 20px;
+  }
+  .card-title {
+    font-size: 20px;
+  }
+  .body-lg {
+    font-size: 18px;
+  }
+  .eyebrow {
+    font-size: 14px;
   }
 }
