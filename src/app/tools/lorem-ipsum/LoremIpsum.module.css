@@ -1,0 +1,83 @@
+/* src/app/tools/lorem-ipsum/LoremIpsum.module.css */
+
+.toolCard {
+  background-color: var(--color-canvas);
+  border-radius: var(--rounded-lg);
+  padding: var(--spacing-xxl);
+  margin-top: var(--spacing-xl);
+  border: 1px solid var(--color-hairline);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.controls {
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: flex-end;
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  width: 150px;
+}
+
+.inputGroup label {
+  color: var(--color-ink);
+}
+
+.select {
+  height: 48px;
+  border-radius: var(--rounded-md);
+  border: 1px solid var(--color-hairline);
+  background-color: var(--color-canvas);
+  padding: 0 14px;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 320;
+  color: var(--color-ink);
+  cursor: pointer;
+}
+
+.select:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -1px;
+  border-color: var(--color-primary);
+}
+
+.actionsBox {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-left: auto;
+}
+
+.outputBox {
+  color: var(--color-ink);
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: var(--spacing-sm);
+}
+
+@media (max-width: 768px) {
+  .controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .inputGroup {
+    width: 100%;
+  }
+  .actionsBox {
+    margin-left: 0;
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 560px) {
+  .toolCard {
+    padding: var(--spacing-lg);
+  }
+}

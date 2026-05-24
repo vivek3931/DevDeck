@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="35 35 320 65" width="100%" height="100%" fill="none">
+  <style>
+    .brand-text {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 52px;
+      user-select: none;
+    }
+    .text-bold {
+      font-weight: 800;
+      letter-spacing: -2px;
+    }
+    .text-light {
+      font-weight: 300;
+      letter-spacing: -1px;
+    }
+  </style>
+
+  <!-- DevDeck Minimalist Geometric Emblem -->
+  <g id="logo-mark">
+    <!-- Top Deck Layer -->
+    <path d="M 45 50 L 80 50 L 73 60 L 38 60 Z" fill="#000000" />
+    
+    <!-- Middle Deck Layer -->
+    <path d="M 51 65 L 86 65 L 79 75 L 44 75 Z" fill="#000000" opacity="0.90" />
+    
+    <!-- Bottom Deck Layer -->
+    <path d="M 57 80 L 92 80 L 85 90 L 50 90 Z" fill="#000000" opacity="0.80" />
+  </g>
+
+  <!-- Typography Execution -->
+  <text x="120" y="88" class="brand-text" fill="#000000">
+    <tspan class="text-bold">dev</tspan><tspan class="text-light">deck</tspan>
+  </text>
+</svg>

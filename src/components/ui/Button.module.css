@@ -1,0 +1,67 @@
+/* src/components/ui/Button.module.css */
+
+.base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-weight: 480; /* typography.button weight (480 approx to 500) */
+  font-size: 20px;
+  line-height: 1.40;
+  letter-spacing: -0.10px;
+  border-radius: var(--rounded-pill);
+  transition: transform 0.1s ease-in-out, opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.base:active {
+  transform: scale(0.97);
+}
+
+.primary {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  padding: 10px 20px;
+}
+
+.secondary {
+  background-color: var(--color-surface-soft);
+  color: var(--color-ink);
+  padding: 8px 18px 10px; /* Optically centered */
+  border: 1px solid var(--color-hairline);
+}
+
+.promo {
+  background-color: var(--color-accent-magenta);
+  color: var(--color-on-primary);
+  padding: 10px 18px;
+}
+
+.icon {
+  background-color: var(--color-surface-soft);
+  color: var(--color-ink);
+  border-radius: var(--rounded-full);
+}
+
+.icon-inverse {
+  background-color: var(--color-on-inverse-soft);
+  color: var(--color-inverse-ink);
+  border-radius: var(--rounded-full);
+}
+
+.iconSize {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Touch target for mobile */
+@media (max-width: 560px) {
+  .iconSize {
+    width: 44px;
+    height: 44px;
+  }
+}

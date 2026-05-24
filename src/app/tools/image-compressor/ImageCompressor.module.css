@@ -1,0 +1,104 @@
+/* src/app/tools/image-compressor/ImageCompressor.module.css */
+
+.toolCard {
+  background-color: var(--color-inverse-canvas);
+  border-radius: var(--rounded-lg);
+  padding: var(--spacing-xxl);
+  margin-top: var(--spacing-xl);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-inverse-ink);
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+.uploadBox {
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: var(--rounded-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xxl);
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  min-height: 250px;
+}
+
+.uploadBox:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: var(--color-canvas);
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  justify-content: center;
+}
+
+.settingGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.slider {
+  width: 100%;
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: var(--rounded-full);
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-canvas); /* White thumb */
+  border-radius: var(--rounded-full);
+  cursor: pointer;
+}
+
+.compressBtn {
+  margin-top: var(--spacing-md);
+  width: fit-content;
+}
+
+.comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.previewBox {
+  background-color: var(--color-on-inverse-soft);
+  padding: var(--spacing-lg);
+  border-radius: var(--rounded-md);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-xs);
+}
+
+@media (max-width: 960px) {
+  .controls {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .toolCard {
+    padding: var(--spacing-lg);
+  }
+  .comparison {
+    grid-template-columns: 1fr;
+  }
+}

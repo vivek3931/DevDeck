@@ -1,0 +1,96 @@
+/* src/app/tools/text-toolkit/TextToolkit.module.css */
+
+.toolContainer {
+  display: grid;
+  grid-template-columns: 1fr 200px 1fr;
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+  align-items: stretch;
+}
+
+.editorPane {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--rounded-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.paneHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background-color: var(--color-surface-soft);
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.paneHeader .eyebrow {
+  color: var(--color-ink);
+}
+
+.textarea {
+  flex-grow: 1;
+  min-height: 400px;
+  width: 100%;
+  border: none;
+  padding: var(--spacing-lg);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-ink);
+  background-color: transparent;
+  resize: none;
+}
+
+.textarea:focus {
+  outline: none;
+}
+
+.actionsPane {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.actionsPane .eyebrow {
+  margin-bottom: var(--spacing-md);
+  color: var(--color-ink);
+}
+
+.buttonGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  width: 100%;
+}
+
+.buttonGrid button {
+  width: 100%;
+  padding-left: var(--spacing-xs);
+  padding-right: var(--spacing-xs);
+}
+
+@media (max-width: 960px) {
+  .toolContainer {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: var(--spacing-lg);
+  }
+  
+  .buttonGrid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .buttonGrid button {
+    width: auto;
+  }
+  
+  .textarea {
+    min-height: 250px;
+  }
+}

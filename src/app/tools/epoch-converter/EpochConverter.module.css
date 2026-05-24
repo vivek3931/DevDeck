@@ -1,0 +1,35 @@
+/* src/app/tools/epoch-converter/EpochConverter.module.css */
+
+.toolCard {
+  background-color: var(--color-canvas);
+  border-radius: var(--rounded-lg);
+  padding: var(--spacing-xxl);
+  margin-top: var(--spacing-xl);
+  border: 1px solid var(--color-hairline);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  max-width: 400px;
+}
+
+.inputGroup label {
+  color: var(--color-ink);
+}
+
+.resultBox {
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background-color: var(--color-surface-soft);
+  border-radius: var(--rounded-md);
+  color: var(--color-ink);
+}
+
+@media (max-width: 560px) {
+  .toolCard {
+    padding: var(--spacing-lg);
+  }
+}

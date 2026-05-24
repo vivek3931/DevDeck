@@ -1,65 +1,158 @@
-import Image from "next/image";
+import React from 'react';
+import Link from 'next/link';
+import { Button } from '@/components/ui/Button';
+import { ColorBlock } from '@/components/ui/ColorBlock';
+import { 
+  Terminal, 
+  Key, 
+  Type, 
+  QrCode, 
+  Ruler, 
+  FileText, 
+  Code, 
+  StickyNote, 
+  Image as ImageIcon, 
+  Clock, 
+  Calculator 
+} from 'lucide-react';
+import styles from './page.module.css';
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      {/* Hero Section (White Canvas) */}
+      <section className="container">
+        <div className={styles.hero}>
+          <div className={styles.heroContent}>
+            <h1 className="display-xl">Build faster, without leaving local.</h1>
+            <p className="body-lg">
+              DevDeck is your private, all-in-one developer utility belt. 
+              Convert, generate, and format directly in your browser. 
+              No tracking. No server logs. Total focus.
+            </p>
+            <Link href="/tools/text-toolkit">
+              <Button variant="primary">Get Started</Button>
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Developer Micro-Tools (Lime Block) */}
+      <ColorBlock color="lime">
+        <h2 className="display-lg">Developer Micro-Tools</h2>
+        <p className="subhead" style={{ marginTop: 'var(--spacing-md)', maxWidth: '800px' }}>
+          Stop opening 5 tabs for everyday transformations. 
+          Everything you need is instantly accessible.
+        </p>
+
+        <div className={styles.grid}>
+          <ToolCard 
+            href="/tools/epoch-converter" 
+            icon={<Clock />} 
+            title="Epoch Converter" 
+            desc="Instantly convert UNIX timestamps to human-readable UTC dates."
+          />
+          <ToolCard 
+            href="/tools/password-generator" 
+            icon={<Key />} 
+            title="Password Generator" 
+            desc="Generate cryptographically secure passwords locally on your machine."
+          />
+          <ToolCard 
+            href="/tools/text-toolkit" 
+            icon={<Type />} 
+            title="Text Toolkit" 
+            desc="String manipulation, base64 encoding, JSON minification, and case conversions."
+          />
+          <ToolCard 
+            href="/tools/qr-generator" 
+            icon={<QrCode />} 
+            title="QR Code Generator" 
+            desc="Convert URLs or local text into downloadable vector QR codes."
+          />
+          <ToolCard 
+            href="/tools/unit-converter" 
+            icon={<Ruler />} 
+            title="Unit Converter" 
+            desc="Instantly switch between metric units, distances, and data sizes (KB, GB)."
+          />
+          <ToolCard 
+            href="/tools/lorem-ipsum" 
+            icon={<FileText />} 
+            title="Lorem Ipsum Generator" 
+            desc="Generate mock placeholder text for rapid UI testing."
+          />
         </div>
-      </main>
-    </div>
+      </ColorBlock>
+
+      {/* Sandbox & Media Tools (Navy Block) */}
+      <ColorBlock color="navy">
+        <h2 className="display-lg">Sandbox & Media</h2>
+        <p className="subhead" style={{ marginTop: 'var(--spacing-md)', maxWidth: '800px' }}>
+          Quickly dump payloads or compress assets locally.
+        </p>
+
+        <div className={styles.grid}>
+          <ToolCard 
+            href="/tools/quick-dump" 
+            icon={<Code />} 
+            title="Quick Dump" 
+            desc="Securely dump raw code or API payloads to format and hold momentarily."
+            dark
+          />
+          <ToolCard 
+            href="/tools/scratchpad" 
+            icon={<StickyNote />} 
+            title="Daily Scratchpad" 
+            desc="Persistent, color-coded sticky notes for your daily stand-up or quick commands."
+            dark
+          />
+          <ToolCard 
+            href="/tools/image-compressor" 
+            icon={<ImageIcon />} 
+            title="Image Compressor" 
+            desc="Client-side canvas tool to compress JPEGs and scale aspects entirely offline."
+            dark
+          />
+        </div>
+      </ColorBlock>
+
+      {/* Utilities (Coral Block) */}
+      <ColorBlock color="coral">
+        <h2 className="display-lg">Everyday Utilities</h2>
+        
+        <div className={styles.grid}>
+          <ToolCard 
+            href="/tools/pomodoro" 
+            icon={<Clock />} 
+            title="Focus Clock" 
+            desc="Built-in interval concentration timer to structure your coding cycles."
+          />
+          <ToolCard 
+            href="/tools/tip-calculator" 
+            icon={<Calculator />} 
+            title="Tip Calculator" 
+            desc="Quick math for splitting bills during your lunch break."
+          />
+        </div>
+      </ColorBlock>
+    </>
+  );
+}
+
+function ToolCard({ href, icon, title, desc, dark = false }: { href: string, icon: React.ReactNode, title: string, desc: string, dark?: boolean }) {
+  return (
+    <Link href={href} className={`${styles.card} ${dark ? styles.cardDark : ''}`}>
+      <div className={styles.cardIcon}>
+        {icon}
+      </div>
+      <h3 className="card-title" style={{ marginBottom: 'var(--spacing-xs)' }}>{title}</h3>
+      <p className="body-sm cardDesc">{desc}</p>
+      <div style={{ marginTop: 'auto' }}>
+        <Button variant="secondary" size="icon" className="body-sm" tabIndex={-1}>
+          →
+        </Button>
+      </div>
+    </Link>
   );
 }

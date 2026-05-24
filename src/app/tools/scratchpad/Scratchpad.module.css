@@ -1,0 +1,71 @@
+/* src/app/tools/scratchpad/Scratchpad.module.css */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-section);
+}
+
+.note {
+  border-radius: var(--rounded-md);
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  height: 300px;
+  transition: transform 0.2s ease;
+}
+
+.note:hover {
+  transform: translateY(-4px) rotate(-1deg);
+}
+
+.noteHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.deleteBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-ink);
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+
+.deleteBtn:hover {
+  opacity: 1;
+}
+
+.textarea {
+  flex-grow: 1;
+  background: transparent;
+  border: none;
+  resize: none;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-ink);
+}
+
+.textarea:focus {
+  outline: none;
+}
+
+/* Colors mapped to Figma blocks */
+.lime { background-color: var(--color-block-lime); }
+.lilac { background-color: var(--color-block-lilac); }
+.cream { background-color: var(--color-block-cream); }
+.mint { background-color: var(--color-block-mint); }
+.pink { background-color: var(--color-block-pink); }
+
+@media (max-width: 560px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+}

@@ -1,0 +1,56 @@
+/* src/app/tools/qr-generator/QrGenerator.module.css */
+
+.toolCard {
+  background-color: var(--color-canvas);
+  border-radius: var(--rounded-lg);
+  padding: var(--spacing-xxl);
+  margin-top: var(--spacing-xl);
+  border: 1px solid var(--color-hairline);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: var(--spacing-xl);
+}
+
+.inputSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.inputSection label {
+  color: var(--color-ink);
+}
+
+.previewSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.qrWrapper {
+  background-color: white;
+  padding: var(--spacing-md);
+  border-radius: var(--rounded-md);
+  border: 1px solid var(--color-hairline);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.downloadBtn {
+  width: 100%;
+}
+
+@media (max-width: 960px) {
+  .toolCard {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .toolCard {
+    padding: var(--spacing-lg);
+  }
+}

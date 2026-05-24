@@ -1,0 +1,207 @@
+/* src/app/tools/quick-dump/QuickDump.module.css */
+
+.toolCard {
+  background-color: var(--color-inverse-canvas);
+  border-radius: var(--rounded-lg);
+  padding: var(--spacing-xxl);
+  margin-top: var(--spacing-xl);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-inverse-ink);
+}
+
+.tabs {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: var(--spacing-md);
+}
+
+.tab {
+  background: none;
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--rounded-pill);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 480;
+  color: var(--color-inverse-ink);
+  opacity: 0.6;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.tab:hover {
+  opacity: 0.8;
+  background-color: var(--color-on-inverse-soft);
+}
+
+.tabActive {
+  background-color: var(--color-canvas); /* White button on dark surface */
+  color: var(--color-ink); /* Black text */
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--rounded-pill);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 480;
+  cursor: default;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.pane {
+  display: flex;
+  flex-direction: column;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 200px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--rounded-md);
+  padding: var(--spacing-md);
+  color: var(--color-inverse-ink);
+  font-family: var(--font-mono);
+  font-size: 16px;
+  resize: vertical;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--color-canvas);
+}
+
+.fileUploadArea {
+  margin-top: var(--spacing-md);
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: var(--rounded-md);
+  padding: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.fileUploadArea:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.successScreen {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--spacing-xl);
+  align-items: center;
+  background-color: var(--color-on-inverse-soft);
+  padding: var(--spacing-xl);
+  border-radius: var(--rounded-lg);
+}
+
+.codeDisplay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bigCode {
+  font-family: var(--font-mono);
+  font-size: 64px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin: var(--spacing-md) 0;
+  color: var(--color-block-lime); /* Pop color */
+}
+
+.qrDisplay {
+  background-color: var(--color-canvas);
+  padding: var(--spacing-md);
+  border-radius: var(--rounded-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color-ink);
+}
+
+.qrWrapper {
+  background-color: white;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.receiveForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.codeInput {
+  height: 48px;
+  border-radius: var(--rounded-md);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: transparent;
+  padding: 0 14px;
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-inverse-ink);
+  text-transform: uppercase;
+  width: 120px;
+}
+
+.codeInput:focus {
+  outline: none;
+  border-color: var(--color-canvas);
+}
+
+.resultBox {
+  background-color: var(--color-on-inverse-soft);
+  padding: var(--spacing-lg);
+  border-radius: var(--rounded-md);
+}
+
+.pre {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  white-space: pre-wrap;
+  word-break: break-all;
+  color: var(--color-inverse-ink);
+}
+
+.fileAttachment {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background-color: rgba(255,255,255,0.1);
+  padding: var(--spacing-md);
+  border-radius: var(--rounded-md);
+  margin-top: var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+  .successScreen {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .toolCard {
+    padding: var(--spacing-lg);
+  }
+}
+
+/* global spinner utility */
+:global(.spinner) {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
