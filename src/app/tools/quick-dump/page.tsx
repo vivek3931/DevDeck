@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Metadata } from 'next';
 import QuickDumpClient from './QuickDumpClient';
 
@@ -11,5 +12,9 @@ export const metadata: Metadata = {
 };
 
 export default function QuickDumpPage() {
-  return <QuickDumpClient />;
+  return (
+    <Suspense fallback={<div style={{ padding: 'var(--spacing-xxl)', textAlign: 'center' }}>Loading Secure Sandbox...</div>}>
+      <QuickDumpClient />
+    </Suspense>
+  );
 }
