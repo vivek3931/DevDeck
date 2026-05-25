@@ -71,17 +71,8 @@ export default function ImageCompressorClient() {
   };
 
   return (
-    <article>
-      <ColorBlock color="navy">
-        <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'inherit', textDecoration: 'none', marginBottom: 'var(--spacing-md)', fontWeight: 500, opacity: 0.8 }}>
-          <ArrowLeft size={16} /> Back to Tools
-        </Link>
-        <h1 className="display-lg">Image Compressor</h1>
-        <p className="subhead" style={{ marginTop: 'var(--spacing-sm)' }}>
-          Compress and scale images entirely client-side. Complete privacy.
-        </p>
-
-        <div className={styles.toolCard}>
+    <div className={styles.container}>
+      <div className={styles.pane}>
           <div className={styles.controls}>
             <div className={styles.uploadBox} onClick={() => fileInputRef.current?.click()}>
               <input 
@@ -147,7 +138,7 @@ export default function ImageCompressorClient() {
             </div>
           )}
         </div>
-      </ColorBlock>
-    </article>
+      </div>
+    </div>
   );
 }
