@@ -1,11 +1,12 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
+import Link from 'next/link';
 import { ColorBlock } from '@/components/ui/ColorBlock';
 import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';
 import { QRCodeSVG } from 'qrcode.react';
-import { Download } from 'lucide-react';
+import { Download, ArrowLeft } from 'lucide-react';
 import { toast } from 'sonner';
 import styles from './QrGenerator.module.css';
 
@@ -30,6 +31,9 @@ export default function QrGeneratorClient() {
   return (
     <article>
       <ColorBlock color="mint">
+        <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'inherit', textDecoration: 'none', marginBottom: 'var(--spacing-md)', fontWeight: 500, opacity: 0.8 }}>
+          <ArrowLeft size={16} /> Back to Tools
+        </Link>
         <h1 className="display-lg">QR Code Generator</h1>
         <p className="subhead" style={{ marginTop: 'var(--spacing-sm)' }}>
           Create vector (SVG) QR codes instantly.

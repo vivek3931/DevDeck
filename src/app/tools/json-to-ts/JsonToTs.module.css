@@ -1,6 +1,7 @@
 .container {
   display: flex;
   gap: var(--spacing-xl);
+  height: calc(100vh - 300px);
   min-height: 500px;
 }
 
@@ -30,10 +31,28 @@
   padding: var(--spacing-md);
   font-family: var(--font-mono);
   font-size: 14px;
-  background-color: rgba(255, 255, 255, 0.5); /* translucent white on mint */
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.05); /* dark/navy friendly */
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: var(--rounded-lg);
-  color: #000;
+  color: #fff;
   resize: none;
   outline: none;
+  white-space: pre;
+}
+
+.textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.05);
+}
+
+.errorAlert {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: #fee2e2;
+  color: #991b1b;
+  border-radius: var(--rounded-md);
+  font-size: 13px;
+  font-weight: 500;
 }

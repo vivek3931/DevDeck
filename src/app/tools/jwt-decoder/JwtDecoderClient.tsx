@@ -1,13 +1,12 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { ColorBlock } from '@/components/ui/ColorBlock';
 import { Button } from '@/components/ui/Button';
 import { Trash2 } from 'lucide-react';
 import Editor from 'react-simple-code-editor';
 import Prism from 'prismjs';
 import 'prismjs/components/prism-json';
-import 'prismjs/themes/prism-tomorrow.css';
+import 'prismjs/themes/prism.css'; // Light theme for mint background
 import styles from './JwtDecoder.module.css';
 
 export default function JwtDecoderClient() {
@@ -52,86 +51,79 @@ export default function JwtDecoderClient() {
   }, [token]);
 
   return (
-    <article>
-      <ColorBlock color="mint">
-        <h1 className="display-lg">JWT Decoder</h1>
-        <p className="subhead" style={{ marginTop: 'var(--spacing-sm)' }}>
-          Decode JSON Web Tokens instantly and completely locally. Your sensitive tokens are never sent to a server.
-        </p>
-
-        <div className={styles.toolCard}>
-          <div className={styles.paneHeader}>
-            <span className="eyebrow">Encoded JWT Token</span>
-            <Button variant="secondary" size="icon" onClick={() => setToken('')}>
-              <Trash2 size={16} />
-            </Button>
-          </div>
-          
-          <textarea
+    <div className={styles.container}>
+      <div className={styles.pane}>
+        <div className={styles.paneHeader}>
+          <span style={{ fontWeight: 600 }}>Encoded JWT Token</span>
+          <Button variant="secondary" size="sm" onClick={() => setToken('')}>
+            <Trash2 size={16} style={{ marginRight: '6px' }} /> Clear
+          </Button>
+        </div>
+        
+        <div className={styles.textarea} style={{ padding: 0, overflow: 'hidden', minHeight: '150px' }}>
+          <Editor
             value={token}
-            onChange={(e) => setToken(e.target.value)}
-            placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+            onValueChange={setToken}
+            highlight={code => Prism.highlight(code, Prism.languages.json, 'json')}
+            padding={16}
             style={{
-              width: '100%',
-              minHeight: '150px',
-              padding: '16px',
               fontFamily: 'var(--font-mono)',
-              fontSize: '16px',
-              borderRadius: '8px',
-              border: '1px solid var(--color-hairline)',
-              resize: 'vertical',
+              fontSize: 14,
+              minHeight: '150px',
+              backgroundColor: 'transparent',
+              outline: 'none',
               wordBreak: 'break-all'
             }}
+            textareaClassName="editor-textarea"
+            placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
           />
-          {error && <p className={styles.error}>{error}</p>}
-
-          {(header || payload) && (
-            <div className={styles.grid}>
-              <div>
-                <div className={styles.paneHeader}>
-                  <span className="eyebrow">Header (Algorithm)</span>
-                </div>
-                <div style={{ border: '1px solid var(--color-hairline)', borderRadius: '8px', backgroundColor: '#1d1f21', overflow: 'hidden' }}>
-                  <Editor
-                    value={header}
-                    onValueChange={() => {}}
-                    highlight={code => Prism.highlight(code, Prism.languages.json, 'json')}
-                    padding={16}
-                    style={{
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: 14,
-                      backgroundColor: 'transparent',
-                      outline: 'none',
-                    }}
-                    disabled
-                  />
-                </div>
-              </div>
-
-              <div>
-                <div className={styles.paneHeader}>
-                  <span className="eyebrow">Payload (Data)</span>
-                </div>
-                <div style={{ border: '1px solid var(--color-hairline)', borderRadius: '8px', backgroundColor: '#1d1f21', overflow: 'hidden' }}>
-                  <Editor
-                    value={payload}
-                    onValueChange={() => {}}
-                    highlight={code => Prism.highlight(code, Prism.languages.json, 'json')}
-                    padding={16}
-                    style={{
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: 14,
-                      backgroundColor: 'transparent',
-                      outline: 'none',
-                    }}
-                    disabled
-                  />
-                </div>
-              </div>
-            </div>
-          )}
         </div>
-      </ColorBlock>
-    </article>
+
+        {error && <p style={{ color: '#ef4444', marginTop: 'var(--spacing-sm)', fontSize: '14px' }}>{error}</p>}
+      </div>
+
+      {(header || payload) && (
+        <div className={styles.pane} style={{ flex: 1.5 }}>
+          <div className={styles.paneHeader}>
+            <span style={{ fontWeight: 600 }}>Header (Algorithm & Token Type)</span>
+          </div>
+          <div className={styles.textarea} style={{ padding: 0, overflow: 'hidden' }}>
+            <Editor
+              value={header}
+              onValueChange={() => {}}
+              highlight={code => Prism.highlight(code, Prism.languages.json, 'json')}
+              padding={16}
+              style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: 14,
+                backgroundColor: 'transparent',
+                outline: 'none',
+              }}
+              disabled
+            />
+          </div>
+
+          <div className={styles.paneHeader} style={{ marginTop: 'var(--spacing-md)' }}>
+            <span style={{ fontWeight: 600 }}>Payload (Data)</span>
+          </div>
+          <div className={styles.textarea} style={{ padding: 0, overflow: 'hidden', minHeight: '250px' }}>
+            <Editor
+              value={payload}
+              onValueChange={() => {}}
+              highlight={code => Prism.highlight(code, Prism.languages.json, 'json')}
+              padding={16}
+              style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: 14,
+                minHeight: '250px',
+                backgroundColor: 'transparent',
+                outline: 'none',
+              }}
+              disabled
+            />
+          </div>
+        </div>
+      )}
+    </div>
   );
 }

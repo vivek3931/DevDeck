@@ -4,18 +4,16 @@ const BASE_URL = 'https://devdeck.online';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const tools = [
-    'epoch-converter',
     'image-compressor',
     'jwt-decoder',
-    'lorem-ipsum',
-    'password-generator',
-    'pomodoro',
     'qr-generator',
     'quick-dump',
-    'scratchpad',
     'text-toolkit',
-    'tip-calculator',
-    'unit-converter',
+    'json-validator',
+    'hash-generator',
+    'json-to-ts',
+    'curl-converter',
+    'svg-to-react'
   ];
 
   const toolRoutes = tools.map((tool) => ({

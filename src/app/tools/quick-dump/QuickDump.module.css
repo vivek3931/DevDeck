@@ -1,12 +1,9 @@
 /* src/app/tools/quick-dump/QuickDump.module.css */
 
-.toolCard {
-  background-color: var(--color-inverse-canvas);
-  border-radius: var(--rounded-lg);
-  padding: var(--spacing-xxl);
-  margin-top: var(--spacing-xl);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--color-inverse-ink);
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
 }
 
 .tabs {
@@ -243,8 +240,7 @@
 }
 
 @media (max-width: 560px) {
-  .toolCard {
-    padding: var(--spacing-lg);
+  .container {
     min-width: 0;
   }
   

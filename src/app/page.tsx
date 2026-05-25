@@ -4,18 +4,16 @@ import { Button } from '@/components/ui/Button';
 import { ColorBlock } from '@/components/ui/ColorBlock';
 import { HeroOrb } from '@/components/ui/HeroOrb';
 import { 
-  Terminal, 
-  Key, 
   Type, 
   QrCode, 
-  Ruler, 
-  FileText, 
   Code, 
-  StickyNote, 
   Image as ImageIcon, 
-  Clock, 
-  Calculator,
-  Unlock
+  Unlock,
+  Braces,
+  Hash,
+  Terminal,
+  FileCode,
+  FileType
 } from 'lucide-react';
 import styles from './page.module.css';
 
@@ -52,16 +50,34 @@ export default function Home() {
 
         <div className={styles.grid}>
           <ToolCard 
-            href="/tools/epoch-converter" 
-            icon={<Clock />} 
-            title="Epoch Converter" 
-            desc="Instantly convert UNIX timestamps to human-readable UTC dates."
+            href="/tools/json-validator" 
+            icon={<Braces />} 
+            title="JSON Formatter & Validator" 
+            desc="Instantly format, minify, and validate JSON payloads with precise syntax error locating."
           />
           <ToolCard 
-            href="/tools/password-generator" 
-            icon={<Key />} 
-            title="Password Generator" 
-            desc="Generate cryptographically secure passwords locally on your machine."
+            href="/tools/hash-generator" 
+            icon={<Hash />} 
+            title="Hash & Checksum Generator" 
+            desc="Generate MD5, SHA-1, SHA-256, and SHA-512 hashes instantly for strings and files."
+          />
+          <ToolCard 
+            href="/tools/json-to-ts" 
+            icon={<FileType />} 
+            title="JSON to TypeScript" 
+            desc="Instantly convert JSON payloads into perfectly formatted TypeScript interfaces."
+          />
+          <ToolCard 
+            href="/tools/curl-converter" 
+            icon={<Terminal />} 
+            title="cURL to Fetch" 
+            desc="Paste a cURL command to generate JavaScript fetch() syntax."
+          />
+          <ToolCard 
+            href="/tools/svg-to-react" 
+            icon={<FileCode />} 
+            title="SVG to React JSX" 
+            desc="Convert raw SVG HTML into clean React functional components."
           />
           <ToolCard 
             href="/tools/text-toolkit" 
@@ -70,28 +86,16 @@ export default function Home() {
             desc="String manipulation, base64 encoding, JSON minification, and case conversions."
           />
           <ToolCard 
-            href="/tools/qr-generator" 
-            icon={<QrCode />} 
-            title="QR Code Generator" 
-            desc="Convert URLs or local text into downloadable vector QR codes."
-          />
-          <ToolCard 
-            href="/tools/unit-converter" 
-            icon={<Ruler />} 
-            title="Unit Converter" 
-            desc="Instantly switch between metric units, distances, and data sizes (KB, GB)."
-          />
-          <ToolCard 
-            href="/tools/lorem-ipsum" 
-            icon={<FileText />} 
-            title="Lorem Ipsum Generator" 
-            desc="Generate mock placeholder text for rapid UI testing."
-          />
-          <ToolCard 
             href="/tools/jwt-decoder" 
             icon={<Unlock />} 
             title="JWT Decoder" 
             desc="Decode JSON Web Tokens locally. Your tokens are never sent to a server."
+          />
+          <ToolCard 
+            href="/tools/qr-generator" 
+            icon={<QrCode />} 
+            title="QR Code Generator" 
+            desc="Convert URLs or local text into downloadable vector QR codes."
           />
         </div>
       </ColorBlock>
@@ -112,38 +116,11 @@ export default function Home() {
             dark
           />
           <ToolCard 
-            href="/tools/scratchpad" 
-            icon={<StickyNote />} 
-            title="Daily Scratchpad" 
-            desc="Persistent, color-coded sticky notes for your daily stand-up or quick commands."
-            dark
-          />
-          <ToolCard 
             href="/tools/image-compressor" 
             icon={<ImageIcon />} 
             title="Image Compressor" 
             desc="Client-side canvas tool to compress JPEGs and scale aspects entirely offline."
             dark
-          />
-        </div>
-      </ColorBlock>
-
-      {/* Utilities (Coral Block) */}
-      <ColorBlock color="coral">
-        <h2 className="display-lg">Everyday Utilities</h2>
-        
-        <div className={styles.grid}>
-          <ToolCard 
-            href="/tools/pomodoro" 
-            icon={<Clock />} 
-            title="Focus Clock" 
-            desc="Built-in interval concentration timer to structure your coding cycles."
-          />
-          <ToolCard 
-            href="/tools/tip-calculator" 
-            icon={<Calculator />} 
-            title="Tip Calculator" 
-            desc="Quick math for splitting bills during your lunch break."
           />
         </div>
       </ColorBlock>

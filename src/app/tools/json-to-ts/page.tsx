@@ -1,0 +1,37 @@
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
+import { Metadata } from 'next';
+import JsonToTsClient from './JsonToTsClient';
+import { ColorBlock } from '@/components/ui/ColorBlock';
+
+export const metadata: Metadata = {
+  title: 'Free Online JSON to TypeScript Converter | DevDeck',
+  description: 'Instantly convert JSON payloads to perfectly formatted TypeScript interfaces. Free, offline, and secure zero-tracking developer utility.',
+  openGraph: {
+    title: 'Free Online JSON to TypeScript Converter | DevDeck',
+    description: 'Instantly convert JSON payloads to perfectly formatted TypeScript interfaces.',
+  }
+};
+
+export default function JsonToTsPage() {
+  return (
+    <article>
+      <ColorBlock color="navy">
+        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+          <header style={{ marginBottom: 'var(--spacing-xl)' }}>
+            <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'inherit', textDecoration: 'none', marginBottom: 'var(--spacing-md)', fontWeight: 500, opacity: 0.8 }}>
+              <ArrowLeft size={16} /> Back to Tools
+            </Link>
+            <h1 className="display-xl" style={{ marginBottom: 'var(--spacing-sm)' }}>JSON to TypeScript</h1>
+            <p className="body-lg" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
+              Paste JSON on the left to instantly generate TypeScript interfaces on the right.
+            </p>
+          </header>
+          <main>
+            <JsonToTsClient />
+          </main>
+        </div>
+      </ColorBlock>
+    </article>
+  );
+}

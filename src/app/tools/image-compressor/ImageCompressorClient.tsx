@@ -1,9 +1,10 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
+import Link from 'next/link';
 import { ColorBlock } from '@/components/ui/ColorBlock';
 import { Button } from '@/components/ui/Button';
-import { Upload, Download, ImageIcon } from 'lucide-react';
+import { Upload, Download, ImageIcon, ArrowLeft } from 'lucide-react';
 import imageCompression from 'browser-image-compression';
 import { toast } from 'sonner';
 import styles from './ImageCompressor.module.css';
@@ -72,6 +73,9 @@ export default function ImageCompressorClient() {
   return (
     <article>
       <ColorBlock color="navy">
+        <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'inherit', textDecoration: 'none', marginBottom: 'var(--spacing-md)', fontWeight: 500, opacity: 0.8 }}>
+          <ArrowLeft size={16} /> Back to Tools
+        </Link>
         <h1 className="display-lg">Image Compressor</h1>
         <p className="subhead" style={{ marginTop: 'var(--spacing-sm)' }}>
           Compress and scale images entirely client-side. Complete privacy.

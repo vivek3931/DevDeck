@@ -241,3 +241,9 @@ input, textarea, select {
     font-size: 14px;
   }
 }
+
+/* Code Editor Global Overrides */
+.editor-textarea:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}

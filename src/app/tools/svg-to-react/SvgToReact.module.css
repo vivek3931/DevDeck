@@ -1,6 +1,7 @@
 .container {
   display: flex;
   gap: var(--spacing-xl);
+  height: calc(100vh - 300px);
   min-height: 500px;
 }
 
@@ -30,10 +31,16 @@
   padding: var(--spacing-md);
   font-family: var(--font-mono);
   font-size: 14px;
-  background-color: rgba(255, 255, 255, 0.5); /* translucent white on mint */
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: var(--rounded-lg);
-  color: #000;
+  color: #fff;
   resize: none;
   outline: none;
+  white-space: pre;
+}
+
+.textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.05);
 }

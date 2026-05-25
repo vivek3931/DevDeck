@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ColorBlock } from '@/components/ui/ColorBlock';
 import { Button } from '@/components/ui/Button';
 import { Copy, Trash2 } from 'lucide-react';
 import { useAppStore } from '@/store/useAppStore';
@@ -9,12 +8,13 @@ import { toast } from 'sonner';
 import Editor from 'react-simple-code-editor';
 import Prism from 'prismjs';
 import 'prismjs/components/prism-json';
-import 'prismjs/themes/prism-tomorrow.css';
+import 'prismjs/themes/prism.css'; // Light theme for pink background
 import styles from './TextToolkit.module.css';
 
 export default function TextToolkitClient() {
   const [inputText, setInputText] = useState('');
   const [outputText, setOutputText] = useState('');
+  const [selectedAction, setSelectedAction] = useState('uppercase');
   const { addAuditLog, addToClipboardHistory } = useAppStore();
 
   const handleAction = (action: string) => {
@@ -65,6 +65,10 @@ export default function TextToolkitClient() {
   };
 
   const copyToClipboard = async () => {
+    if (!outputText || !outputText.trim()) {
+      toast.error('Nothing to copy!');
+      return;
+    }
     try {
       await navigator.clipboard.writeText(outputText);
       addToClipboardHistory(outputText);
@@ -77,80 +81,83 @@ export default function TextToolkitClient() {
   };
 
   return (
-    <article>
-      <ColorBlock color="pink">
-        <h1 className="display-lg">Text Toolkit</h1>
-        <p className="subhead" style={{ marginTop: 'var(--spacing-sm)' }}>
-          String manipulation, encoding, and minification. Done locally.
-        </p>
-
-        <div className={styles.toolContainer}>
-          <div className={styles.editorPane}>
-            <div className={styles.paneHeader}>
-              <span className="eyebrow">Input</span>
-              <Button variant="secondary" size="icon" onClick={() => { setInputText(''); setOutputText(''); }} aria-label="Clear">
-                <Trash2 size={16} />
-              </Button>
-            </div>
-            <Editor 
-              className={styles.textarea}
-              value={inputText}
-              onValueChange={setInputText}
-              highlight={code => Prism.highlight(code, Prism.languages.json, 'json')}
-              padding={16}
-              style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: 16,
-                backgroundColor: 'transparent',
-                outline: 'none',
-              }}
-              textareaClassName="editor-textarea"
-              placeholder="Paste your text or JSON here..."
-            />
-          </div>
-
-          <div className={styles.actionsPane}>
-            <span className="eyebrow">Transform</span>
-            <div className={styles.buttonGrid}>
-              <Button variant="primary" className="body-sm" onClick={() => handleAction('uppercase')}>UPPERCASE</Button>
-              <Button variant="primary" className="body-sm" onClick={() => handleAction('lowercase')}>lowercase</Button>
-              <Button variant="primary" className="body-sm" onClick={() => handleAction('camelcase')}>camelCase</Button>
-              <Button variant="primary" className="body-sm" onClick={() => handleAction('snakecase')}>snake_case</Button>
-              <Button variant="primary" className="body-sm" onClick={() => handleAction('base64-encode')}>Base64 Encode</Button>
-              <Button variant="primary" className="body-sm" onClick={() => handleAction('base64-decode')}>Base64 Decode</Button>
-              <Button variant="primary" className="body-sm" onClick={() => handleAction('url-encode')}>URL Encode</Button>
-              <Button variant="primary" className="body-sm" onClick={() => handleAction('url-decode')}>URL Decode</Button>
-              <Button variant="primary" className="body-sm" onClick={() => handleAction('json-minify')}>Minify JSON</Button>
-              <Button variant="primary" className="body-sm" onClick={() => handleAction('json-format')}>Format JSON</Button>
-            </div>
-          </div>
-
-          <div className={styles.editorPane}>
-            <div className={styles.paneHeader}>
-              <span className="eyebrow">Output</span>
-              <Button variant="secondary" size="icon" onClick={copyToClipboard} aria-label="Copy output">
-                <Copy size={16} />
-              </Button>
-            </div>
-            <Editor 
-              className={styles.textarea}
-              value={outputText}
-              onValueChange={() => {}}
-              highlight={code => Prism.highlight(code, Prism.languages.json, 'json')}
-              padding={16}
-              style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: 16,
-                backgroundColor: 'transparent',
-                outline: 'none',
-              }}
-              textareaClassName="editor-textarea"
-              placeholder="Output will appear here..."
-              disabled
-            />
-          </div>
+    <div className={styles.container}>
+      <div className={styles.pane}>
+        <div className={styles.paneHeader}>
+          <span style={{ fontWeight: 600 }}>Input</span>
+          <Button variant="secondary" size="sm" onClick={() => { setInputText(''); setOutputText(''); }}>
+            <Trash2 size={16} style={{ marginRight: '6px' }} /> Clear
+          </Button>
         </div>
-      </ColorBlock>
-    </article>
+        
+        <div className={styles.textarea} style={{ padding: 0, overflow: 'hidden', minHeight: '300px' }}>
+          <Editor 
+            value={inputText}
+            onValueChange={setInputText}
+            highlight={code => Prism.highlight(code, Prism.languages.json, 'json')}
+            padding={16}
+            style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: 14,
+              minHeight: '300px',
+              backgroundColor: 'transparent',
+              outline: 'none',
+              wordBreak: 'break-word'
+            }}
+            textareaClassName="editor-textarea"
+            placeholder="Paste your text or JSON here..."
+          />
+        </div>
+      </div>
+
+      <div className={styles.toolbar}>
+        <select 
+          className={styles.select}
+          value={selectedAction}
+          onChange={(e) => setSelectedAction(e.target.value)}
+        >
+          <option value="uppercase">UPPERCASE</option>
+          <option value="lowercase">lowercase</option>
+          <option value="camelcase">camelCase</option>
+          <option value="snakecase">snake_case</option>
+          <option value="base64-encode">Base64 Encode</option>
+          <option value="base64-decode">Base64 Decode</option>
+          <option value="url-encode">URL Encode</option>
+          <option value="url-decode">URL Decode</option>
+          <option value="json-minify">Minify JSON</option>
+          <option value="json-format">Format JSON</option>
+        </select>
+        <Button variant="primary" onClick={() => handleAction(selectedAction)}>Transform</Button>
+      </div>
+
+      <div className={styles.pane}>
+        <div className={styles.paneHeader}>
+          <span style={{ fontWeight: 600 }}>Output</span>
+          <Button variant="secondary" size="sm" onClick={copyToClipboard}>
+            <Copy size={16} style={{ marginRight: '6px' }} /> Copy Output
+          </Button>
+        </div>
+        
+        <div className={styles.textarea} style={{ padding: 0, overflow: 'hidden', minHeight: '300px' }}>
+          <Editor 
+            value={outputText}
+            onValueChange={() => {}}
+            highlight={code => Prism.highlight(code, Prism.languages.json, 'json')}
+            padding={16}
+            style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: 14,
+              minHeight: '300px',
+              backgroundColor: 'transparent',
+              outline: 'none',
+              wordBreak: 'break-word'
+            }}
+            textareaClassName="editor-textarea"
+            placeholder="Output will appear here..."
+            disabled
+          />
+        </div>
+      </div>
+    </div>
   );
 }
