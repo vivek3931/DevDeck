@@ -9,6 +9,10 @@ import { QRCodeSVG } from 'qrcode.react';
 import { supabase } from '@/lib/supabase';
 import { useAppStore } from '@/store/useAppStore';
 import { toast } from 'sonner';
+import Editor from 'react-simple-code-editor';
+import Prism from 'prismjs';
+import 'prismjs/components/prism-json';
+import 'prismjs/themes/prism-tomorrow.css';
 import styles from './QuickDump.module.css';
 
 // --- Crypto Helpers ---
@@ -397,11 +401,20 @@ function QuickDumpLogic() {
 
           {mode === 'send' && !code && (
             <div className={styles.pane}>
-              <textarea 
+              <Editor 
                 className={styles.textarea}
-                placeholder="Paste code, API payload, or links here..."
                 value={text}
-                onChange={(e) => setText(e.target.value)}
+                onValueChange={setText}
+                highlight={code => Prism.highlight(code, Prism.languages.json, 'json')}
+                padding={16}
+                style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: 16,
+                  backgroundColor: 'transparent',
+                  outline: 'none',
+                }}
+                textareaClassName="editor-textarea"
+                placeholder="Paste code, API payload, or links here..."
               />
               
               <div className={styles.fileUploadArea} onClick={() => fileInputRef.current?.click()}>
@@ -541,7 +554,20 @@ function QuickDumpLogic() {
                           <Copy size={16} />
                         </Button>
                       </div>
-                      <pre className={styles.pre}>{receivedText}</pre>
+                      <Editor
+                        className={styles.pre}
+                        value={receivedText}
+                        onValueChange={() => {}}
+                        highlight={code => Prism.highlight(code, Prism.languages.json, 'json')}
+                        padding={16}
+                        style={{
+                          fontFamily: 'var(--font-mono)',
+                          fontSize: 14,
+                          backgroundColor: 'transparent',
+                          outline: 'none',
+                        }}
+                        disabled
+                      />
                     </>
                   )}
                   

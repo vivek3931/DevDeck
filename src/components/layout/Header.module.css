@@ -15,12 +15,26 @@
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-xs);
+  font-size: 16px !important;
+  padding: 6px 12px;
 }
 
 .quickDumpBtn {
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-xs);
+  font-size: 16px !important;
+  padding: 6px 12px;
+}
+
+.searchBtn {
+  background-color: var(--color-surface-soft) !important;
+  border-color: transparent !important;
+}
+
+.searchFaded {
+  opacity: 0.5;
+  font-weight: 400;
 }
 
 .container {

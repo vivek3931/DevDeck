@@ -13,7 +13,8 @@ import {
   StickyNote, 
   Image as ImageIcon, 
   Clock, 
-  Calculator 
+  Calculator,
+  Unlock
 } from 'lucide-react';
 import styles from './page.module.css';
 
@@ -21,18 +22,20 @@ export default function Home() {
   return (
     <>
       {/* Hero Section (White Canvas) */}
-      <section className="container">
-        <div className={styles.hero}>
-          <div className={styles.heroContent}>
-            <h1 className="display-xl">Build faster, without leaving local.</h1>
-            <p className="body-lg">
-              DevDeck is your private, all-in-one developer utility belt. 
-              Convert, generate, and format directly in your browser. 
-              No tracking. No server logs. Total focus.
-            </p>
-            <Link href="/tools/text-toolkit">
-              <Button variant="primary">Get Started</Button>
-            </Link>
+      <section className={styles.heroSection}>
+        <div className="container">
+          <div className={styles.hero}>
+            <div className={styles.heroContent}>
+              <h1 className="display-xl" style={{ color: '#ffffff' }}>Build faster, without leaving local.</h1>
+              <p className="body-lg" style={{ color: 'rgba(255, 255, 255, 0.85)' }}>
+                DevDeck is your private, all-in-one developer utility belt. 
+                Convert, generate, and format directly in your browser. 
+                No tracking. No server logs. Total focus.
+              </p>
+              <Link href="/tools/text-toolkit">
+                <Button variant="primary">Get Started</Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -81,6 +84,12 @@ export default function Home() {
             icon={<FileText />} 
             title="Lorem Ipsum Generator" 
             desc="Generate mock placeholder text for rapid UI testing."
+          />
+          <ToolCard 
+            href="/tools/jwt-decoder" 
+            icon={<Unlock />} 
+            title="JWT Decoder" 
+            desc="Decode JSON Web Tokens locally. Your tokens are never sent to a server."
           />
         </div>
       </ColorBlock>

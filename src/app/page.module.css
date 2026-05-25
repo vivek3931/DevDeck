@@ -1,7 +1,16 @@
 /* src/app/page.module.css */
 
+.heroSection {
+  background-color: var(--color-ink); /* Fallback */
+  background-image: url('/hero-bg.png'); /* The user will save the image here */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: -1px; /* Remove any hairline gap */
+}
+
 .hero {
-  padding: var(--spacing-section) 0;
+  padding: 120px 0;
   text-align: left;
 }
 
@@ -12,7 +21,6 @@
 .hero p {
   margin-top: var(--spacing-lg);
   margin-bottom: var(--spacing-xl);
-  color: var(--color-ink);
 }
 
 .grid {

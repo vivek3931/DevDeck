@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function PromisePage() {
   return (
-    <article style={{ marginTop: 'var(--spacing-section)' }}>
+    <article>
       <ColorBlock color="lilac">
         <h1 className="display-lg">The Local-First Promise</h1>
         <p className="subhead" style={{ marginTop: 'var(--spacing-sm)' }}>
@@ -36,8 +36,8 @@ export default function PromisePage() {
           <ul style={{ paddingLeft: 'var(--spacing-lg)' }}>
             <li style={{ marginBottom: 'var(--spacing-xs)' }}>Your passwords are generated locally using Cryptography APIs.</li>
             <li style={{ marginBottom: 'var(--spacing-xs)' }}>Your images are compressed using Web Workers, never uploaded.</li>
-            <li style={{ marginBottom: 'var(--spacing-xs)' }}>Your text manipulations never leave your RAM.</li>
-            <li style={{ marginBottom: 'var(--spacing-xs)' }}>Your QR codes are rendered as SVG elements via React.</li>
+            <li style={{ marginBottom: 'var(--spacing-xs)' }}>Your sensitive JSON Web Tokens (JWTs) are decoded purely in-RAM.</li>
+            <li style={{ marginBottom: 'var(--spacing-xs)' }}><strong>Offline Capable:</strong> Core utilities are cached via Service Worker, meaning you can cut your internet connection entirely and keep working.</li>
             <li style={{ marginBottom: 'var(--spacing-xs)' }}><strong>End-to-End Encrypted Cloud:</strong> Any tool that requires sharing (like Quick Dump) uses Client-Side Encryption. We only touch encrypted ciphertext.</li>
           </ul>
 

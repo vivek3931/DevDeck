@@ -6,6 +6,10 @@ import { Button } from '@/components/ui/Button';
 import { Copy, Trash2 } from 'lucide-react';
 import { useAppStore } from '@/store/useAppStore';
 import { toast } from 'sonner';
+import Editor from 'react-simple-code-editor';
+import Prism from 'prismjs';
+import 'prismjs/components/prism-json';
+import 'prismjs/themes/prism-tomorrow.css';
 import styles from './TextToolkit.module.css';
 
 export default function TextToolkitClient() {
@@ -88,10 +92,19 @@ export default function TextToolkitClient() {
                 <Trash2 size={16} />
               </Button>
             </div>
-            <textarea 
+            <Editor 
               className={styles.textarea}
               value={inputText}
-              onChange={(e) => setInputText(e.target.value)}
+              onValueChange={setInputText}
+              highlight={code => Prism.highlight(code, Prism.languages.json, 'json')}
+              padding={16}
+              style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: 16,
+                backgroundColor: 'transparent',
+                outline: 'none',
+              }}
+              textareaClassName="editor-textarea"
               placeholder="Paste your text or JSON here..."
             />
           </div>
@@ -119,11 +132,21 @@ export default function TextToolkitClient() {
                 <Copy size={16} />
               </Button>
             </div>
-            <textarea 
+            <Editor 
               className={styles.textarea}
               value={outputText}
-              readOnly
+              onValueChange={() => {}}
+              highlight={code => Prism.highlight(code, Prism.languages.json, 'json')}
+              padding={16}
+              style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: 16,
+                backgroundColor: 'transparent',
+                outline: 'none',
+              }}
+              textareaClassName="editor-textarea"
               placeholder="Output will appear here..."
+              disabled
             />
           </div>
         </div>

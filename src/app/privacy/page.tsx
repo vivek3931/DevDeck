@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <article style={{ marginTop: 'var(--spacing-section)' }}>
+    <article>
       <ColorBlock color="pink">
         <h1 className="display-lg">Privacy Policy</h1>
         <p className="subhead" style={{ marginTop: 'var(--spacing-sm)' }}>
@@ -36,6 +36,11 @@ export default function PrivacyPolicyPage() {
           <h2>3. Zero-Knowledge Quick Dump</h2>
           <p style={{ marginTop: 'var(--spacing-sm)', marginBottom: 'var(--spacing-lg)' }}>
             The Quick Dump feature allows you to sync data across devices. To protect your privacy, this feature uses <strong>Zero-Knowledge End-to-End Encryption</strong>. Your text and files are encrypted locally in your browser using AES-GCM before being uploaded. The encryption key is included in the URL fragment (<code>#hash</code>) which is never sent to our servers. We store only the ciphertext. Even if our servers are compromised, your data cannot be read without your specific share link. <strong>All ciphertext is permanently deleted when it expires or after its first read if Burn After Read is enabled.</strong>
+          </p>
+
+          <h2>4. Offline-First Capability (PWA)</h2>
+          <p style={{ marginTop: 'var(--spacing-sm)', marginBottom: 'var(--spacing-lg)' }}>
+            DevDeck is built as a Progressive Web App (PWA). Once loaded, the core application logic is cached on your device. Features like the Password Generator, Focus Clock, and the <strong>JWT Decoder</strong> work entirely offline. This ensures that your sensitive tokens and data physically cannot be transmitted when you disconnect from the internet.
           </p>
         </div>
       </ColorBlock>

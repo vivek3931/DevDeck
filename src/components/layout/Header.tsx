@@ -21,16 +21,16 @@ export function Header() {
           </div>
           <div className={styles.right}>
             <Button variant="secondary" className={`body-sm ${styles.headerBtn}`} onClick={() => setIsTrayOpen(true)} aria-label="Open Audit & Clipboard">
-              <Activity size={16} /> <span className={styles.hideMobile}>Activity</span>
+              <Activity size={14} /> <span className={styles.hideMobile}>Activity</span>
             </Button>
-            <Button variant="secondary" className={`body-sm ${styles.headerBtn}`} onClick={() => {
+            <Button variant="secondary" className={`body-sm ${styles.headerBtn} ${styles.searchBtn}`} onClick={() => {
               window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }));
             }}>
-              <Search size={16} /> <span className={styles.hideMobile}>Search (Ctrl+K)</span>
+              <Search size={14} className={styles.searchFaded} /> <span className={`${styles.hideMobile} ${styles.searchFaded}`}>Search (Ctrl+K)</span>
             </Button>
             <Link href="/tools/quick-dump" className={styles.headerBtn}>
               <Button variant="primary" className={`body-sm ${styles.quickDumpBtn}`}>
-                <Zap size={16} /> <span>Quick Dump</span>
+                <Zap size={14} /> <span>Quick Dump</span>
               </Button>
             </Link>
           </div>

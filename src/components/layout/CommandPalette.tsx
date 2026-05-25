@@ -12,6 +12,7 @@ const TOOLS = [
   { name: 'QR Code Generator', path: '/tools/qr-generator' },
   { name: 'Unit Converter', path: '/tools/unit-converter' },
   { name: 'Lorem Ipsum Generator', path: '/tools/lorem-ipsum' },
+  { name: 'JWT Decoder', path: '/tools/jwt-decoder' },
   { name: 'Quick Dump', path: '/tools/quick-dump' },
   { name: 'Daily Scratchpad', path: '/tools/scratchpad' },
   { name: 'Image Compressor', path: '/tools/image-compressor' },
