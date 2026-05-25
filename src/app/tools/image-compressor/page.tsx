@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 import ImageCompressorClient from './ImageCompressorClient';
 
 export const metadata: Metadata = {
-  title: 'Client-Side Image Compressor | DevDeck',
-  description: 'Compress JPEGs, scale aspect ratios, and crop files entirely client-side without uploading them anywhere. Complete privacy.',
+  title: 'Free Online Image Compressor | Compress JPEG & PNG Offline | DevDeck',
+  description: 'Compress images online for free without uploading them to a server. Secure, offline-first image compression in your browser.',
   openGraph: {
-    title: 'Client-Side Image Compressor | DevDeck',
-    description: 'Compress JPEGs, scale aspect ratios, and crop files entirely client-side without uploading them anywhere. Complete privacy.',
+    title: 'Free Online Image Compressor | Compress JPEG & PNG Offline | DevDeck',
+    description: 'Compress images online for free without uploading them to a server. Secure, offline-first image compression in your browser.',
   }
 };
 

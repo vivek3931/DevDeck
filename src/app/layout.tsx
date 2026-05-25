@@ -22,6 +22,9 @@ export const metadata: Metadata = {
     title: 'DevDeck | Privacy-Focused Local Developer Toolkit',
     description: 'An all-in-one, privacy-focused Developer Utilities Deck.',
   },
+  verification: {
+    google: 'nDBkpJuQu9pqGMgsrebRQ3_lf3AMG2HN0aTXF55q6rc',
+  },
 };
 
 export default function RootLayout({

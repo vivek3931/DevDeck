@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 import UnitConverterClient from './UnitConverterClient';
 
 export const metadata: Metadata = {
-  title: 'Metric & Data Unit Converter | DevDeck',
-  description: 'Instantly convert between metric dimensions, distances, and data sizes (Bytes, Kilobytes, Megabytes, etc.) directly in your browser.',
+  title: 'Free Online Unit Converter | Distance, Weight & Data Size | DevDeck',
+  description: 'Convert between metric units, distances, and data sizes (KB, MB, GB). Free online unit converter tool.',
   openGraph: {
-    title: 'Metric & Data Unit Converter | DevDeck',
-    description: 'Instantly convert between metric dimensions, distances, and data sizes (Bytes, Kilobytes, Megabytes, etc.) directly in your browser.',
+    title: 'Free Online Unit Converter | Distance, Weight & Data Size | DevDeck',
+    description: 'Convert between metric units, distances, and data sizes (KB, MB, GB). Free online unit converter tool.',
   }
 };
 

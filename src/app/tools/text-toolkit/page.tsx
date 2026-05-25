@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 import TextToolkitClient from './TextToolkitClient';
 
 export const metadata: Metadata = {
-  title: 'Text & String Manipulation Toolkit | DevDeck',
-  description: 'A suite of string manipulation options: convert case types (camelCase, snake_case), URL encode/decode, Base64, and minify JSON.',
+  title: 'Online Text Toolkit | Base64, JSON Formatter & String Converter | DevDeck',
+  description: 'Free online developer tools for string manipulation. Encode/decode Base64, minify JSON, and convert text cases instantly.',
   openGraph: {
-    title: 'Text & String Manipulation Toolkit | DevDeck',
-    description: 'A suite of string manipulation options: convert case types (camelCase, snake_case), URL encode/decode, Base64, and minify JSON.',
+    title: 'Online Text Toolkit | Base64, JSON Formatter & String Converter | DevDeck',
+    description: 'Free online developer tools for string manipulation. Encode/decode Base64, minify JSON, and convert text cases instantly.',
   }
 };
 

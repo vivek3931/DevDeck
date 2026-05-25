@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 import LoremIpsumClient from './LoremIpsumClient';
 
 export const metadata: Metadata = {
-  title: 'Lorem Ipsum Generator | DevDeck',
-  description: 'Generate mock placeholder paragraphs, sentences, or words for UI testing. Clean, fast, and local.',
+  title: 'Free Online Lorem Ipsum Generator | Dummy Text Maker | DevDeck',
+  description: 'Generate random Lorem Ipsum dummy text for your UI designs and websites instantly. Free online placeholder text generator.',
   openGraph: {
-    title: 'Lorem Ipsum Generator | DevDeck',
-    description: 'Generate mock placeholder paragraphs, sentences, or words for UI testing. Clean, fast, and local.',
+    title: 'Free Online Lorem Ipsum Generator | Dummy Text Maker | DevDeck',
+    description: 'Generate random Lorem Ipsum dummy text for your UI designs and websites instantly. Free online placeholder text generator.',
   }
 };
 

@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 import PomodoroClient from './PomodoroClient';
 
 export const metadata: Metadata = {
-  title: 'Pomodoro Focus Clock | DevDeck',
-  description: 'Built-in interval concentration timer to structure your coding or rest cycles without distractions.',
+  title: 'Free Online Pomodoro Timer | Focus & Productivity Clock | DevDeck',
+  description: 'Boost your productivity with our free online Pomodoro timer. A minimalist focus clock for developers and students.',
   openGraph: {
-    title: 'Pomodoro Focus Clock | DevDeck',
-    description: 'Built-in interval concentration timer to structure your coding or rest cycles without distractions.',
+    title: 'Free Online Pomodoro Timer | Focus & Productivity Clock | DevDeck',
+    description: 'Boost your productivity with our free online Pomodoro timer. A minimalist focus clock for developers and students.',
   }
 };
 

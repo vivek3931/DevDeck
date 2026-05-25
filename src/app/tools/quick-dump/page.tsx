@@ -3,11 +3,11 @@ import { Metadata } from 'next';
 import QuickDumpClient from './QuickDumpClient';
 
 export const metadata: Metadata = {
-  title: 'Quick Text Sync & Code Dump | DevDeck',
-  description: 'Paste text or links, get a secure 4-letter code, and fetch it on any device instantly. Data self-destructs in 5 minutes.',
+  title: 'Secure Online Text Sharing & Pastebin | Quick Dump | DevDeck',
+  description: 'Free online text sharing. Paste text, JSON, or links securely. Get a 4-letter code and fetch it on any device instantly.',
   openGraph: {
-    title: 'Quick Text Sync & Code Dump | DevDeck',
-    description: 'Paste text or links, get a secure 4-letter code, and fetch it on any device instantly. Data self-destructs in 5 minutes.',
+    title: 'Secure Online Text Sharing & Pastebin | Quick Dump | DevDeck',
+    description: 'Free online text sharing. Paste text, JSON, or links securely. Get a 4-letter code and fetch it on any device instantly.',
   }
 };
 

@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 import PasswordGeneratorClient from './PasswordGeneratorClient';
 
 export const metadata: Metadata = {
-  title: 'Secure Password Generator | DevDeck',
-  description: 'Generate cryptographically secure passwords locally on your machine. Customizable length and character sets. No data is sent to servers.',
+  title: 'Secure Online Password Generator | Random Password Maker | DevDeck',
+  description: 'Create strong, cryptographically secure passwords locally in your browser. Free online random password generator.',
   openGraph: {
-    title: 'Secure Password Generator | DevDeck',
-    description: 'Generate cryptographically secure passwords locally on your machine. Customizable length and character sets. No data is sent to servers.',
+    title: 'Secure Online Password Generator | Random Password Maker | DevDeck',
+    description: 'Create strong, cryptographically secure passwords locally in your browser. Free online random password generator.',
   }
 };
 

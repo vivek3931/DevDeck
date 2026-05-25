@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 import QrGeneratorClient from './QrGeneratorClient';
 
 export const metadata: Metadata = {
-  title: 'Vector QR Code Generator | DevDeck',
-  description: 'Convert URLs or localized text into downloadable vector QR codes directly in your browser. Fast, local, and privacy-focused.',
+  title: 'Free Online QR Code Generator | Download SVG & PNG | DevDeck',
+  description: 'Create and download QR codes for URLs, text, and Wi-Fi instantly. Free online QR code generator running locally in your browser.',
   openGraph: {
-    title: 'Vector QR Code Generator | DevDeck',
-    description: 'Convert URLs or localized text into downloadable vector QR codes directly in your browser. Fast, local, and privacy-focused.',
+    title: 'Free Online QR Code Generator | Download SVG & PNG | DevDeck',
+    description: 'Create and download QR codes for URLs, text, and Wi-Fi instantly. Free online QR code generator running locally in your browser.',
   }
 };
 
