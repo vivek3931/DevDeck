@@ -8,6 +8,20 @@ import { Toaster } from 'sonner';
 export const metadata: Metadata = {
   title: 'DevDeck | Privacy-Focused Local Developer Toolkit',
   description: 'An all-in-one, privacy-focused Developer Utilities Deck. Run secure, local micro-tools directly in your browser without exposing sensitive data.',
+  metadataBase: new URL('https://devdeck.online'),
+  openGraph: {
+    title: 'DevDeck | Local Developer Toolkit',
+    description: 'Zero-Knowledge Ephemeral Sharing, Secure Password Generation, Local File Compression and more.',
+    url: 'https://devdeck.online',
+    siteName: 'DevDeck',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'DevDeck | Privacy-Focused Local Developer Toolkit',
+    description: 'An all-in-one, privacy-focused Developer Utilities Deck.',
+  },
 };
 
 export default function RootLayout({
