@@ -1,20 +1,40 @@
 /* src/app/page.module.css */
 
 .heroSection {
-  /* Use a gradient to blend the dark left side and lighter right side */
-  background: url('/hero-bg.jpeg') center center / contain no-repeat,
-              linear-gradient(to right, #1d232c 0%, #1d232c 60%, #1d232c 100%);
+  position: relative;
+  overflow: hidden;
   margin-top: -1px;
-  /* Remove any hairline gap */
+  height: 700px;
+  display: flex;
+  align-items: center;
+}
+
+/* Ensure the flex child spans full width */
+.heroSection > .container {
+  width: 100%;
+  z-index: 10;
+}
+
+/* Fade out effect to blend the bottom of the SVG perfectly into the main background */
+.heroSection::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 250px; /* Much taller for a smoother, natural blend */
+  background: linear-gradient(to bottom, rgba(248, 249, 250, 0) 0%, #f8f9fa 100%);
+  pointer-events: none;
 }
 
 .hero {
-  padding: 120px 0;
-  text-align: left;
+  /* Removed padding because flexbox now centers it vertically inside the 700px box */
+  text-align: center;
 }
 
 .heroContent {
   max-width: 800px;
+  margin: 0 auto;
 }
 
 .hero p {

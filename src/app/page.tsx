@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 import { ColorBlock } from '@/components/ui/ColorBlock';
+import { HeroOrb } from '@/components/ui/HeroOrb';
 import { 
   Terminal, 
   Key, 
@@ -20,20 +21,21 @@ import styles from './page.module.css';
 
 export default function Home() {
   return (
-    <>
+    <main className={styles.main}>
       {/* Hero Section (White Canvas) */}
       <section className={styles.heroSection}>
+        <HeroOrb />
         <div className="container">
           <div className={styles.hero}>
             <div className={styles.heroContent}>
-              <h1 className="display-xl" style={{ color: '#ffffff' }}>Build faster, without leaving local.</h1>
-              <p className="body-lg" style={{ color: 'rgba(255, 255, 255, 0.85)' }}>
+              <h1 className="display-xl" style={{ color: '#000000' }}>Build faster, without leaving local.</h1>
+              <p className="body-lg" style={{ color: 'rgba(0, 0, 0, 0.75)' }}>
                 DevDeck is your private, all-in-one developer utility belt. 
                 Convert, generate, and format directly in your browser. 
                 No tracking. No server logs. Total focus.
               </p>
               <Link href="/tools/text-toolkit">
-                <Button variant="secondary">Get Started</Button>
+                <Button variant="primary">Get Started</Button>
               </Link>
             </div>
           </div>
@@ -145,7 +147,7 @@ export default function Home() {
           />
         </div>
       </ColorBlock>
-    </>
+    </main>
   );
 }
 
