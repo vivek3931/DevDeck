@@ -44,7 +44,7 @@ export default function PomodoroClient() {
   };
 
   return (
-    <article style={{ marginTop: 'var(--spacing-section)' }}>
+    <article>
       <ColorBlock color={mode === 'work' ? 'coral' : 'mint'}>
         <h1 className="display-lg">Focus Clock</h1>
         <p className="subhead" style={{ marginTop: 'var(--spacing-sm)' }}>

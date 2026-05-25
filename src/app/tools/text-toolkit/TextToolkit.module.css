@@ -83,14 +83,19 @@
     gap: var(--spacing-lg);
   }
   
+  .actionsPane {
+    width: 100%;
+  }
+  
   .buttonGrid {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: var(--spacing-sm);
+    width: 100%;
   }
   
   .buttonGrid button {
-    width: auto;
+    width: 100%;
   }
   
   .textarea {
@@ -106,7 +111,12 @@
     padding: var(--spacing-md);
     height: 200px;
   }
+  .buttonGrid {
+    grid-template-columns: 1fr 1fr;
+  }
   .buttonGrid button {
     font-size: 14px;
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }

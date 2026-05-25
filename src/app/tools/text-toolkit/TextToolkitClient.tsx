@@ -73,7 +73,7 @@ export default function TextToolkitClient() {
   };
 
   return (
-    <article style={{ marginTop: 'var(--spacing-section)' }}>
+    <article>
       <ColorBlock color="pink">
         <h1 className="display-lg">Text Toolkit</h1>
         <p className="subhead" style={{ marginTop: 'var(--spacing-sm)' }}>

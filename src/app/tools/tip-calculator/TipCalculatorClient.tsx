@@ -16,7 +16,7 @@ export default function TipCalculatorClient() {
   const perPerson = split > 0 ? total / split : 0;
 
   return (
-    <article style={{ marginTop: 'var(--spacing-section)' }}>
+    <article>
       <ColorBlock color="coral">
         <h1 className="display-lg">Tip Calculator</h1>
         <p className="subhead" style={{ marginTop: 'var(--spacing-sm)' }}>

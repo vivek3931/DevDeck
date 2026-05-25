@@ -69,7 +69,7 @@ export default function LoremIpsumClient() {
   };
 
   return (
-    <article style={{ marginTop: 'var(--spacing-section)' }}>
+    <article>
       <ColorBlock color="coral">
         <h1 className="display-lg">Lorem Ipsum Generator</h1>
         <p className="subhead" style={{ marginTop: 'var(--spacing-sm)' }}>

@@ -70,7 +70,7 @@ export default function ImageCompressorClient() {
   };
 
   return (
-    <article style={{ marginTop: 'var(--spacing-section)' }}>
+    <article>
       <ColorBlock color="navy">
         <h1 className="display-lg">Image Compressor</h1>
         <p className="subhead" style={{ marginTop: 'var(--spacing-sm)' }}>

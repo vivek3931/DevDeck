@@ -365,7 +365,7 @@ function QuickDumpLogic() {
   const seconds = (timeLeft % 60).toString().padStart(2, '0');
 
   return (
-    <article style={{ marginTop: 'var(--spacing-section)' }}>
+    <article>
       <ColorBlock color="navy">
         <h1 className="display-lg">Quick Dump</h1>
         <p className="subhead" style={{ marginTop: 'var(--spacing-sm)' }}>

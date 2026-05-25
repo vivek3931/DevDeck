@@ -51,7 +51,7 @@ export default function EpochConverterClient() {
   };
 
   return (
-    <article style={{ marginTop: 'var(--spacing-section)' }}>
+    <article>
       <ColorBlock color="lilac">
         <h1 className="display-lg">Epoch Converter</h1>
         <p className="subhead" style={{ marginTop: 'var(--spacing-sm)' }}>

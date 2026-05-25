@@ -58,7 +58,7 @@ export default function ScratchpadClient() {
   if (!loaded) return null;
 
   return (
-    <article style={{ marginTop: 'var(--spacing-section)' }}>
+    <article>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 'var(--spacing-xl)' }}>
         <div>
           <h1 className="display-lg">Daily Scratchpad</h1>

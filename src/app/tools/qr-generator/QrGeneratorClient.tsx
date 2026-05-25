@@ -28,7 +28,7 @@ export default function QrGeneratorClient() {
   };
 
   return (
-    <article style={{ marginTop: 'var(--spacing-section)' }}>
+    <article>
       <ColorBlock color="mint">
         <h1 className="display-lg">QR Code Generator</h1>
         <p className="subhead" style={{ marginTop: 'var(--spacing-sm)' }}>

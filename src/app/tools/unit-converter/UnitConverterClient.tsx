@@ -47,7 +47,7 @@ export default function UnitConverterClient() {
   };
 
   return (
-    <article style={{ marginTop: 'var(--spacing-section)' }}>
+    <article>
       <ColorBlock color="cream">
         <h1 className="display-lg">Unit Converter</h1>
         <p className="subhead" style={{ marginTop: 'var(--spacing-sm)' }}>

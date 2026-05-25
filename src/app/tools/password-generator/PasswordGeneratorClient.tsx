@@ -50,7 +50,7 @@ export default function PasswordGeneratorClient() {
   };
 
   return (
-    <article style={{ marginTop: 'var(--spacing-section)' }}>
+    <article>
       <ColorBlock color="cream">
         <h1 className="display-lg">Secure Password Generator</h1>
         <p className="subhead" style={{ marginTop: 'var(--spacing-sm)' }}>
