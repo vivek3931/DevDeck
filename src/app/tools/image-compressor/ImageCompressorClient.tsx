@@ -137,7 +137,6 @@ export default function ImageCompressorClient() {
               </div>
             </div>
           )}
-        </div>
       </div>
     </div>
   );
