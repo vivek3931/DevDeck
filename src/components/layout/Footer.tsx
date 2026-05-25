@@ -7,7 +7,18 @@ export function Footer() {
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.brand}>
-          <span className="display-lg">DevDeck</span>
+          <div style={{ height: '40px' }}>
+            <svg viewBox="35 35 320 65" height="100%" fill="none">
+              <g id="logo-mark">
+                <path d="M 45 50 L 80 50 L 73 60 L 38 60 Z" fill="currentColor" />
+                <path d="M 51 65 L 86 65 L 79 75 L 44 75 Z" fill="currentColor" opacity="0.90" />
+                <path d="M 57 80 L 92 80 L 85 90 L 50 90 Z" fill="currentColor" opacity="0.80" />
+              </g>
+              <text x="120" y="88" fill="currentColor" style={{ fontFamily: 'var(--font-sans)', fontSize: '52px', fontWeight: 800, letterSpacing: '-2px', userSelect: 'none' }}>
+                dev<tspan style={{ fontWeight: 300, letterSpacing: '-1px' }}>deck</tspan>
+              </text>
+            </svg>
+          </div>
           <p className="body-sm" style={{ marginTop: 'var(--spacing-md)' }}>
             Privacy-Focused Local Developer Toolkit
           </p>

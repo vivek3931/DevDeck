@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';
 import { Copy, RefreshCw } from 'lucide-react';
 import { useAppStore } from '@/store/useAppStore';
+import { toast } from 'sonner';
 import styles from './LoremIpsum.module.css';
 
 const LOREM_WORDS = [
@@ -60,8 +61,10 @@ export default function LoremIpsumClient() {
       await navigator.clipboard.writeText(output);
       addToClipboardHistory(output);
       addAuditLog('Copied Lorem Ipsum', 'Copied generated text to clipboard');
+      toast.success('Text copied to clipboard!');
     } catch (err) {
       console.error('Failed to copy', err);
+      toast.error('Failed to copy');
     }
   };
 

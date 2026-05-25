@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/Button';
 import { Copy } from 'lucide-react';
 import { format } from 'date-fns';
 import { useAppStore } from '@/store/useAppStore';
+import { toast } from 'sonner';
 import styles from './EpochConverter.module.css';
 
 export default function EpochConverterClient() {
@@ -42,8 +43,10 @@ export default function EpochConverterClient() {
       await navigator.clipboard.writeText(convertedDate);
       addToClipboardHistory(convertedDate);
       addAuditLog('Copied Epoch Date', 'Copied converted date to clipboard');
+      toast.success('Date copied to clipboard!');
     } catch (err) {
       console.error('Failed to copy', err);
+      toast.error('Failed to copy');
     }
   };
 

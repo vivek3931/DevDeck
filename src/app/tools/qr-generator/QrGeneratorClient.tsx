@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';
 import { QRCodeSVG } from 'qrcode.react';
 import { Download } from 'lucide-react';
+import { toast } from 'sonner';
 import styles from './QrGenerator.module.css';
 
 export default function QrGeneratorClient() {
@@ -23,6 +24,7 @@ export default function QrGeneratorClient() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    toast.success('SVG Downloaded!');
   };
 
   return (

@@ -5,6 +5,7 @@ import { ColorBlock } from '@/components/ui/ColorBlock';
 import { Button } from '@/components/ui/Button';
 import { Upload, Download, ImageIcon } from 'lucide-react';
 import imageCompression from 'browser-image-compression';
+import { toast } from 'sonner';
 import styles from './ImageCompressor.module.css';
 
 export default function ImageCompressorClient() {
@@ -28,6 +29,7 @@ export default function ImageCompressorClient() {
     if (!originalFile) return;
 
     setIsCompressing(true);
+    const toastId = toast.loading('Compressing image...');
     try {
       const options = {
         maxSizeMB: maxSizeMB,
@@ -41,11 +43,13 @@ export default function ImageCompressorClient() {
         lastModified: Date.now(),
       });
       setCompressedFile(compressed);
+      toast.success('Image compressed successfully!');
     } catch (error) {
       console.error(error);
-      alert('Error compressing image');
+      toast.error('Error compressing image');
     } finally {
       setIsCompressing(false);
+      toast.dismiss(toastId);
     }
   };
 
@@ -58,6 +62,7 @@ export default function ImageCompressorClient() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    toast.success('Download started');
   };
 
   const formatSize = (bytes: number) => {

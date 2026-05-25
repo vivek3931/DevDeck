@@ -5,6 +5,7 @@ import { ColorBlock } from '@/components/ui/ColorBlock';
 import { Button } from '@/components/ui/Button';
 import { Copy, Trash2 } from 'lucide-react';
 import { useAppStore } from '@/store/useAppStore';
+import { toast } from 'sonner';
 import styles from './TextToolkit.module.css';
 
 export default function TextToolkitClient() {
@@ -64,8 +65,10 @@ export default function TextToolkitClient() {
       await navigator.clipboard.writeText(outputText);
       addToClipboardHistory(outputText);
       addAuditLog('Copied Transformed Text', 'Copied text toolkit output to clipboard');
+      toast.success('Copied to clipboard!');
     } catch (err) {
       console.error('Failed to copy', err);
+      toast.error('Failed to copy');
     }
   };
 

@@ -38,11 +38,14 @@
   border: none;
   padding: var(--spacing-lg);
   font-family: var(--font-mono);
-  font-size: 14px;
+  font-size: 16px; /* 16px prevents iOS Safari auto-zoom */
   line-height: 1.5;
   color: var(--color-ink);
   background-color: transparent;
   resize: none;
+  /* Safari flex child fix */
+  min-height: 0; 
+  height: 400px; 
 }
 
 .textarea:focus {
@@ -91,6 +94,6 @@
   }
   
   .textarea {
-    min-height: 250px;
+    height: 250px;
   }
 }

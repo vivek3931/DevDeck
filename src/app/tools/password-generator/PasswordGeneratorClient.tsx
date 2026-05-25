@@ -5,6 +5,7 @@ import { ColorBlock } from '@/components/ui/ColorBlock';
 import { Button } from '@/components/ui/Button';
 import { Copy, RefreshCw } from 'lucide-react';
 import { useAppStore } from '@/store/useAppStore';
+import { toast } from 'sonner';
 import styles from './PasswordGenerator.module.css';
 
 export default function PasswordGeneratorClient() {
@@ -41,9 +42,10 @@ export default function PasswordGeneratorClient() {
       await navigator.clipboard.writeText(password);
       addToClipboardHistory(password);
       addAuditLog('Copied Password', 'Copied generated password to clipboard');
-      // In a real app we'd trigger a toast here
+      toast.success('Password copied!');
     } catch (err) {
       console.error('Failed to copy', err);
+      toast.error('Failed to copy');
     }
   };
 

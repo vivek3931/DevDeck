@@ -3,6 +3,7 @@ import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { CommandPalette } from '@/components/layout/CommandPalette';
+import { Toaster } from 'sonner';
 
 export const metadata: Metadata = {
   title: 'DevDeck | Privacy-Focused Local Developer Toolkit',
@@ -21,6 +22,18 @@ export default function RootLayout({
         <CommandPalette />
         <main>{children}</main>
         <Footer />
+        <Toaster 
+          position="bottom-center" 
+          toastOptions={{
+            style: {
+              background: 'var(--color-surface-soft)',
+              color: 'var(--color-ink)',
+              border: '1px solid var(--color-hairline)',
+              boxShadow: '0 4px 16px rgba(0, 0, 0, 0.2)',
+              fontFamily: 'var(--font-sans)',
+            },
+          }} 
+        />
       </body>
     </html>
   );

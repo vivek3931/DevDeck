@@ -38,6 +38,7 @@ export default function PromisePage() {
             <li style={{ marginBottom: 'var(--spacing-xs)' }}>Your images are compressed using Web Workers, never uploaded.</li>
             <li style={{ marginBottom: 'var(--spacing-xs)' }}>Your text manipulations never leave your RAM.</li>
             <li style={{ marginBottom: 'var(--spacing-xs)' }}>Your QR codes are rendered as SVG elements via React.</li>
+            <li style={{ marginBottom: 'var(--spacing-xs)' }}><strong>End-to-End Encrypted Cloud:</strong> Any tool that requires sharing (like Quick Dump) uses Client-Side Encryption. We only touch encrypted ciphertext.</li>
           </ul>
 
           <p style={{ marginTop: 'var(--spacing-lg)' }}>

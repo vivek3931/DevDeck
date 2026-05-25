@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useAppStore } from '@/store/useAppStore';
 import { Button } from '../ui/Button';
 import { X, ClipboardList, Activity, Trash2, Copy } from 'lucide-react';
+import { toast } from 'sonner';
 import styles from './GlobalTray.module.css';
 
 export function GlobalTray({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
@@ -24,8 +25,10 @@ export function GlobalTray({ isOpen, onClose }: { isOpen: boolean; onClose: () =
   const copyToClipboard = async (text: string) => {
     try {
       await navigator.clipboard.writeText(text);
+      toast.success('Copied from history!');
     } catch (e) {
       console.error(e);
+      toast.error('Failed to copy');
     }
   };
 
