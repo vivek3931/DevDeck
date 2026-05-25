@@ -4,7 +4,7 @@ import styles from './Button.module.css';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'promo' | 'icon' | 'icon-inverse';
-  size?: 'default' | 'icon';
+  size?: 'default' | 'icon' | 'sm';
   children: React.ReactNode;
 }
 
@@ -15,6 +15,7 @@ export function Button({ variant = 'primary', size = 'default', className, child
         styles.base,
         styles[variant],
         size === 'icon' && styles.iconSize,
+        size === 'sm' && styles.smSize,
         className
       )}
       {...props}

@@ -58,6 +58,11 @@
   justify-content: center;
 }
 
+.smSize {
+  padding: 6px 14px;
+  font-size: 15px;
+}
+
 /* Touch target for mobile */
 @media (max-width: 560px) {
   .base {
