@@ -97,3 +97,16 @@
     height: 250px;
   }
 }
+
+@media (max-width: 560px) {
+  .paneHeader {
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+  .textarea {
+    padding: var(--spacing-md);
+    height: 200px;
+  }
+  .buttonGrid button {
+    font-size: 14px;
+  }
+}

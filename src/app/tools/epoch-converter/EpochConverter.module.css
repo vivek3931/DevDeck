@@ -32,4 +32,7 @@
   .toolCard {
     padding: var(--spacing-lg);
   }
+  .resultBox {
+    padding: var(--spacing-md);
+  }
 }

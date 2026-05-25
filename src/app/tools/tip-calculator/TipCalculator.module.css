@@ -77,4 +77,8 @@
   .toolCard {
     padding: var(--spacing-lg);
   }
+  .slider::-webkit-slider-thumb {
+    width: 20px;
+    height: 20px;
+  }
 }

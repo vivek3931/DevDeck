@@ -29,3 +29,11 @@
   cursor: not-allowed;
   opacity: 0.5;
 }
+
+@media (max-width: 560px) {
+  .input {
+    height: 40px;
+    padding: 8px 12px;
+    font-size: 16px; /* strictly 16px to prevent iOS Safari auto-zoom */
+  }
+}

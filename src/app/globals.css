@@ -59,6 +59,12 @@
 }
 
 /* Global Reset */
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -176,6 +182,18 @@ input, textarea, select {
   }
 }
 
+@media (max-width: 768px) {
+  .display-xl {
+    font-size: 64px;
+  }
+  .display-lg {
+    font-size: 48px;
+  }
+  .headline, .subhead {
+    font-size: 24px;
+  }
+}
+
 @media (max-width: 560px) {
   body {
     font-size: 16px;
@@ -196,10 +214,13 @@ input, textarea, select {
     font-size: 20px;
   }
   .card-title {
-    font-size: 20px;
+    font-size: 18px;
   }
   .body-lg {
     font-size: 18px;
+  }
+  .body-sm {
+    font-size: 14px;
   }
   .eyebrow {
     font-size: 14px;

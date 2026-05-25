@@ -68,4 +68,8 @@
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
   }
+  .note {
+    padding: var(--spacing-md);
+    height: 250px;
+  }
 }

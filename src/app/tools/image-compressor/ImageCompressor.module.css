@@ -98,6 +98,17 @@
   .toolCard {
     padding: var(--spacing-lg);
   }
+  .uploadBox {
+    padding: var(--spacing-xl);
+    min-height: 180px;
+  }
+  .slider::-webkit-slider-thumb {
+    width: 20px;
+    height: 20px;
+  }
+  .previewBox {
+    padding: var(--spacing-md);
+  }
   .comparison {
     grid-template-columns: 1fr;
   }
