@@ -453,34 +453,26 @@ function QuickDumpLogic() {
                          type="text" 
                          readOnly 
                          value={shareUrl} 
-                         style={{ 
-                           flexGrow: 1, 
-                           padding: '12px', 
-                           borderRadius: 'var(--rounded-md)', 
-                           border: '1px solid rgba(255,255,255,0.2)', 
-                           background: 'transparent',
-                           color: 'white',
-                           fontFamily: 'var(--font-mono)'
-                         }} 
+                         className={styles.shareUrlInput}
                        />
-                       <Button variant="primary" onClick={() => copyToClipboard(shareUrl)}>Copy</Button>
+                       <Button variant="primary" onClick={() => copyToClipboard(shareUrl)} className={styles.copyShareBtn}>Copy</Button>
                     </div>
-                    <p className="body-sm" style={{ opacity: 0.8, marginTop: 'var(--spacing-sm)' }}>
+                    <p className={styles.helpText}>
                       This link contains the <strong>secret decryption key</strong> in the URL hash. Do not lose it!
                     </p>
                     
                     {createdAt && (
                       <div style={{ marginTop: 'var(--spacing-lg)', background: 'rgba(0,0,0,0.2)', padding: 'var(--spacing-md)', borderRadius: 'var(--rounded-md)'}}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px', flexWrap: 'wrap', gap: '8px' }}>
                           <span className="eyebrow" style={{ color: 'var(--color-block-orange)' }}>Self Destruct Timer</span>
-                          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '20px', fontWeight: 'bold' }}>{minutes}:{seconds}</span>
+                          <span className={styles.timerText}>{minutes}:{seconds}</span>
                         </div>
                         {burnAfterRead ? (
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-block-red)', fontSize: '14px' }}>
+                          <div className={styles.burnText}>
                             <Flame size={16} /> Burn After Read Enabled (1 view only)
                           </div>
                         ) : (
-                          <div style={{ fontSize: '14px', opacity: 0.7 }}>
+                          <div className={styles.helpText} style={{ marginTop: 0 }}>
                             Link expires and deletes permanently in 5 minutes.
                           </div>
                         )}
