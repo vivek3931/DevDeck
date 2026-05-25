@@ -5,12 +5,12 @@
 :root {
   /* Brand & Accent */
   --color-primary: #000000;
-  --color-canvas: #ffffff;
+  --color-canvas: #f8f9fa;
   --color-accent-magenta: #e51d9d; /* Approximate Magenta Promo */
 
   /* Surface */
   --color-inverse-canvas: #1e1e1e;
-  --color-surface-soft: #f5f5f5;
+  --color-surface-soft: #ffffff;
   --color-hairline: #e5e5e5;
   --color-hairline-soft: #f0f0f0;
   

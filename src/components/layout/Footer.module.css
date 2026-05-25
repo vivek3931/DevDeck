@@ -1,7 +1,7 @@
 /* src/components/layout/Footer.module.css */
 
 .footer {
-  background-color: var(--color-canvas);
+  background-color: white;
   border-top: 1px solid var(--color-hairline-soft);
   padding: var(--spacing-section) 0;
   margin-top: auto;

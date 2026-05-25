@@ -33,7 +33,7 @@ export default function Home() {
                 No tracking. No server logs. Total focus.
               </p>
               <Link href="/tools/text-toolkit">
-                <Button variant="primary">Get Started</Button>
+                <Button variant="secondary">Get Started</Button>
               </Link>
             </div>
           </div>

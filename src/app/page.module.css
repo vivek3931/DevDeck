@@ -1,12 +1,11 @@
 /* src/app/page.module.css */
 
 .heroSection {
-  background-color: var(--color-ink); /* Fallback */
-  background-image: url('/hero-bg.png'); /* The user will save the image here */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin-top: -1px; /* Remove any hairline gap */
+  /* Use a gradient to blend the dark left side and lighter right side */
+  background: url('/hero-bg.jpeg') center center / contain no-repeat,
+              linear-gradient(to right, #1d232c 0%, #1d232c 60%, #1d232c 100%);
+  margin-top: -1px;
+  /* Remove any hairline gap */
 }
 
 .hero {
@@ -64,7 +63,8 @@
 
 .cardDesc {
   flex-grow: 1;
-  color: var(--color-ink); /* It's ink but body-sm makes it feel lighter in hierarchy */
+  color: var(--color-ink);
+  /* It's ink but body-sm makes it feel lighter in hierarchy */
   margin-bottom: var(--spacing-lg);
 }
 
