@@ -25,17 +25,20 @@ export function Footer() {
         </div>
         <div className={styles.links}>
           <div className={styles.column}>
-            <span className="caption">Tools</span>
-            <Link href="/tools/text-toolkit" className="body-sm">Text Toolkit</Link>
-            <Link href="/tools/epoch-converter" className="body-sm">Epoch Converter</Link>
-            <Link href="/tools/password-generator" className="body-sm">Password Generator</Link>
-            <Link href="/tools/qr-generator" className="body-sm">QR Code Generator</Link>
+            <span className="caption">Dev Tools</span>
+            <Link href="/tools/json-to-ts" className="body-sm">JSON to TS</Link>
+            <Link href="/tools/json-validator" className="body-sm">JSON Validator</Link>
+            <Link href="/tools/jwt-decoder" className="body-sm">JWT Decoder</Link>
+            <Link href="/tools/hash-generator" className="body-sm">Hash Generator</Link>
+            <Link href="/tools/curl-converter" className="body-sm">cURL to Fetch</Link>
+            <Link href="/tools/svg-to-react" className="body-sm">SVG to React</Link>
           </div>
           <div className={styles.column}>
-            <span className="caption">Sandbox</span>
-            <Link href="/tools/quick-dump" className="body-sm">Quick Dump</Link>
-            <Link href="/tools/scratchpad" className="body-sm">Scratchpad</Link>
+            <span className="caption">Utilities</span>
+            <Link href="/tools/text-toolkit" className="body-sm">Text Toolkit</Link>
+            <Link href="/tools/qr-generator" className="body-sm">QR Code Generator</Link>
             <Link href="/tools/image-compressor" className="body-sm">Image Compressor</Link>
+            <Link href="/tools/quick-dump" className="body-sm">Quick Dump</Link>
           </div>
           <div className={styles.column}>
             <span className="caption">Legal</span>

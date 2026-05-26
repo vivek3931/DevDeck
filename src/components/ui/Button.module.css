@@ -5,7 +5,8 @@
   align-items: center;
   justify-content: center;
   font-family: var(--font-sans);
-  font-weight: 480; /* typography.button weight (480 approx to 500) */
+  font-weight: 480;
+  /* typography.button weight (480 approx to 500) */
   font-size: 20px;
   line-height: 1.40;
   letter-spacing: -0.10px;
@@ -27,7 +28,8 @@
 .secondary {
   background-color: var(--color-surface-soft);
   color: var(--color-ink);
-  padding: 8px 18px 10px; /* Optically centered */
+  padding: 8px 18px 10px;
+  /* Optically centered */
   border: 1px solid var(--color-hairline);
 }
 
@@ -68,12 +70,16 @@
   .base {
     font-size: 14px;
   }
-  .primary, .promo {
+
+  .primary,
+  .promo {
     padding: 6px 12px;
   }
+
   .secondary {
     padding: 4px 10px 6px;
   }
+
   .iconSize {
     width: 36px;
     height: 36px;

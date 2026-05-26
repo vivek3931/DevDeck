@@ -38,9 +38,14 @@ export default function PrivacyPolicyPage() {
             The Quick Dump feature allows you to sync data across devices. To protect your privacy, this feature uses <strong>Zero-Knowledge End-to-End Encryption</strong>. Your text and files are encrypted locally in your browser using AES-GCM before being uploaded. The encryption key is included in the URL fragment (<code>#hash</code>) which is never sent to our servers. We store only the ciphertext. Even if our servers are compromised, your data cannot be read without your specific share link. <strong>All ciphertext is permanently deleted when it expires or after its first read if Burn After Read is enabled.</strong>
           </p>
 
-          <h2>4. Offline-First Capability (PWA)</h2>
+          <h2>4. Client-Side Processing</h2>
           <p style={{ marginTop: 'var(--spacing-sm)', marginBottom: 'var(--spacing-lg)' }}>
-            DevDeck is built as a Progressive Web App (PWA). Once loaded, the core application logic is cached on your device. Features like the Password Generator, Focus Clock, and the <strong>JWT Decoder</strong> work entirely offline. This ensures that your sensitive tokens and data physically cannot be transmitted when you disconnect from the internet.
+            Tools such as the <strong>Image Compressor</strong>, <strong>QR Code Generator</strong>, and <strong>SVG to React Converter</strong> perform all processing entirely on your local CPU. Your image files and SVG code are never uploaded to any external server.
+          </p>
+
+          <h2>5. Offline-First Capability (PWA)</h2>
+          <p style={{ marginTop: 'var(--spacing-sm)', marginBottom: 'var(--spacing-lg)' }}>
+            DevDeck is built as a Progressive Web App (PWA). Once loaded, the core application logic is cached on your device. This ensures that your sensitive data (like in the JWT Decoder) physically cannot be transmitted when you disconnect from the internet.
           </p>
         </div>
       </ColorBlock>
