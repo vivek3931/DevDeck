@@ -33,6 +33,12 @@
   border: 1px solid var(--color-hairline);
 }
 
+.inverse {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  padding: 10px 20px;
+}
+
 .promo {
   background-color: var(--color-accent-magenta);
   color: var(--color-on-primary);

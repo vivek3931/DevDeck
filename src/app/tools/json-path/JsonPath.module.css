@@ -1,0 +1,123 @@
+/* src/app/tools/json-path/JsonPath.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.pane {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--rounded-lg);
+  padding: var(--spacing-xxl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  color: var(--color-inverse-ink);
+}
+
+.queryBox {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--rounded-md);
+  padding: 0 var(--spacing-md);
+  height: 56px;
+  transition: border-color 0.2s ease;
+}
+
+.queryBox:focus-within {
+  border-color: var(--color-canvas);
+}
+
+.queryIcon {
+  color: rgba(255, 255, 255, 0.5);
+  margin-right: var(--spacing-sm);
+}
+
+.queryInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--color-inverse-ink);
+  font-family: var(--font-mono);
+  font-size: 16px;
+  height: 100%;
+}
+
+.queryInput:focus {
+  outline: none;
+}
+
+.splitView {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  min-height: 400px;
+}
+
+.editorPanel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  background-color: var(--color-on-inverse-soft);
+  border-radius: var(--rounded-md);
+  padding: var(--spacing-md);
+}
+
+.editorHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.editorWrapper {
+  flex: 1;
+  position: relative;
+  overflow: auto;
+  border-radius: var(--rounded-sm);
+}
+
+/* Custom styling for react-simple-code-editor to match dark theme */
+.codeEditor {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  min-height: 100%;
+}
+
+.errorBox {
+  padding: var(--spacing-md);
+  background-color: rgba(255, 60, 60, 0.1);
+  border: 1px solid rgba(255, 60, 60, 0.3);
+  border-radius: var(--rounded-md);
+  color: #ff6b6b;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.resultsCount {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2px 8px;
+  border-radius: var(--rounded-pill);
+  font-size: 12px;
+  color: var(--color-inverse-ink);
+}
+
+@media (max-width: 960px) {
+  .splitView {
+    grid-template-columns: 1fr;
+  }
+}

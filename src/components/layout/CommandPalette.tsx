@@ -7,17 +7,18 @@ import styles from './CommandPalette.module.css';
 
 const TOOLS = [
   { name: 'Text Toolkit', path: '/tools/text-toolkit' },
-  { name: 'Epoch Converter', path: '/tools/epoch-converter' },
-  { name: 'Password Generator', path: '/tools/password-generator' },
   { name: 'QR Code Generator', path: '/tools/qr-generator' },
-  { name: 'Unit Converter', path: '/tools/unit-converter' },
-  { name: 'Lorem Ipsum Generator', path: '/tools/lorem-ipsum' },
   { name: 'JWT Decoder', path: '/tools/jwt-decoder' },
   { name: 'Quick Dump', path: '/tools/quick-dump' },
-  { name: 'Daily Scratchpad', path: '/tools/scratchpad' },
   { name: 'Image Compressor', path: '/tools/image-compressor' },
-  { name: 'Focus Clock', path: '/tools/pomodoro' },
-  { name: 'Tip Calculator', path: '/tools/tip-calculator' },
+  { name: 'JSON Formatter & Validator', path: '/tools/json-validator' },
+  { name: 'Hash Generator', path: '/tools/hash-generator' },
+  { name: 'JSON to TS Converter', path: '/tools/json-to-ts' },
+  { name: 'cURL to Fetch Converter', path: '/tools/curl-converter' },
+  { name: 'SVG to React Converter', path: '/tools/svg-to-react' },
+  { name: 'Local SQLite Explorer', path: '/tools/sqlite-explorer' },
+  { name: 'JSONPath Playground', path: '/tools/json-path' },
+  { name: 'Regex Visualizer', path: '/tools/regex-tester' },
 ];
 
 export function CommandPalette() {

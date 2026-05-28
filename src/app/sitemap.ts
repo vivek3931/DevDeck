@@ -13,7 +13,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'hash-generator',
     'json-to-ts',
     'curl-converter',
-    'svg-to-react'
+    'svg-to-react',
+    'sqlite-explorer',
+    'json-path',
+    'regex-tester'
   ];
 
   const toolRoutes = tools.map((tool) => ({

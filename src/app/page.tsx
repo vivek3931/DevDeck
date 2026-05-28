@@ -13,7 +13,8 @@ import {
   Hash,
   Terminal,
   FileCode,
-  FileType
+  FileType,
+  Database
 } from 'lucide-react';
 import styles from './page.module.css';
 
@@ -49,6 +50,18 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
+          <ToolCard 
+            href="/tools/json-path" 
+            icon={<Braces />} 
+            title="JSONPath Playground" 
+            desc="Instantly evaluate JSONPath queries against massive API payloads. Pure client-side processing."
+          />
+          <ToolCard 
+            href="/tools/regex-tester" 
+            icon={<Braces />} 
+            title="Regex Visualizer" 
+            desc="Test Regular Expressions in real-time. Highlights matches and explains capture groups."
+          />
           <ToolCard 
             href="/tools/json-validator" 
             icon={<Braces />} 
@@ -120,6 +133,13 @@ export default function Home() {
             icon={<ImageIcon />} 
             title="Image Compressor" 
             desc="Client-side canvas tool to compress JPEGs and scale aspects entirely offline."
+            dark
+          />
+          <ToolCard 
+            href="/tools/sqlite-explorer" 
+            icon={<Database />} 
+            title="Local SQLite Explorer" 
+            desc="Run SQL queries on your SQLite databases entirely in the browser using WebAssembly. No server uploads."
             dark
           />
         </div>

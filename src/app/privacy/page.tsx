@@ -40,7 +40,7 @@ export default function PrivacyPolicyPage() {
 
           <h2>4. Client-Side Processing</h2>
           <p style={{ marginTop: 'var(--spacing-sm)', marginBottom: 'var(--spacing-lg)' }}>
-            Tools such as the <strong>Image Compressor</strong>, <strong>QR Code Generator</strong>, and <strong>SVG to React Converter</strong> perform all processing entirely on your local CPU. Your image files and SVG code are never uploaded to any external server.
+            Tools such as the <strong>JSONPath Playground</strong>, <strong>Local SQLite Explorer</strong>, <strong>Image Compressor</strong>, <strong>QR Code Generator</strong>, and <strong>SVG to React Converter</strong> perform all processing entirely on your local CPU. Your databases, image files, JSON payloads, and SVG code are never uploaded to any external server.
           </p>
 
           <h2>5. Offline-First Capability (PWA)</h2>

@@ -26,12 +26,15 @@ export function Footer() {
         <div className={styles.links}>
           <div className={styles.column}>
             <span className="caption">Dev Tools</span>
+            <Link href="/tools/regex-tester" className="body-sm">Regex Visualizer</Link>
+            <Link href="/tools/json-path" className="body-sm">JSONPath Playground</Link>
             <Link href="/tools/json-to-ts" className="body-sm">JSON to TS</Link>
             <Link href="/tools/json-validator" className="body-sm">JSON Validator</Link>
             <Link href="/tools/jwt-decoder" className="body-sm">JWT Decoder</Link>
             <Link href="/tools/hash-generator" className="body-sm">Hash Generator</Link>
             <Link href="/tools/curl-converter" className="body-sm">cURL to Fetch</Link>
             <Link href="/tools/svg-to-react" className="body-sm">SVG to React</Link>
+            <Link href="/tools/sqlite-explorer" className="body-sm">SQLite Explorer</Link>
           </div>
           <div className={styles.column}>
             <span className="caption">Utilities</span>

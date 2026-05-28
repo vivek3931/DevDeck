@@ -442,7 +442,7 @@ function QuickDumpLogic() {
           {error && <p className="body-sm" style={{ color: '#ff6b6b', marginTop: 'var(--spacing-sm)' }}>{error}</p>}
 
           <Button
-            variant="primary"
+            variant="inverse"
             onClick={handleSend}
             disabled={isLoading || (!text.trim() && !file)}
             style={{ alignSelf: 'flex-start', marginTop: 'var(--spacing-md)' }}
@@ -465,7 +465,7 @@ function QuickDumpLogic() {
                     value={shareUrl}
                     className={styles.shareUrlInput}
                   />
-                  <Button variant="primary" onClick={() => copyToClipboard(shareUrl)} className={styles.copyShareBtn}>Copy</Button>
+                  <Button variant="inverse" onClick={() => copyToClipboard(shareUrl)} className={styles.copyShareBtn}>Copy</Button>
                 </div>
                 <p className={styles.helpText}>
                   This link contains the <strong>secret decryption key</strong> in the URL hash. Do not lose it!
@@ -525,7 +525,7 @@ function QuickDumpLogic() {
               )}
 
               <Button
-                variant="primary"
+                variant="inverse"
                 onClick={() => handleReceive(code, secretKey)}
                 disabled={isLoading}
                 style={{ marginTop: 'var(--spacing-md)', alignSelf: 'flex-start' }}
@@ -547,7 +547,7 @@ function QuickDumpLogic() {
                 <>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--spacing-sm)' }}>
                     <span className="eyebrow">Dump Content</span>
-                    <Button variant="secondary" size="icon" onClick={() => copyToClipboard(receivedText)}>
+                    <Button variant="icon-inverse" size="icon" onClick={() => copyToClipboard(receivedText)}>
                       <Copy size={16} />
                     </Button>
                   </div>
@@ -573,7 +573,7 @@ function QuickDumpLogic() {
                   <FileIcon size={24} />
                   <span className="body-sm" style={{ flexGrow: 1 }}>{receivedFileName}</span>
                   <a href={receivedFileUrl} download={receivedFileName} onClick={() => toast.success('Download started')}>
-                    <Button variant="secondary" size="icon"><Download size={16} /></Button>
+                    <Button variant="icon-inverse" size="icon"><Download size={16} /></Button>
                   </a>
                 </div>
               )}

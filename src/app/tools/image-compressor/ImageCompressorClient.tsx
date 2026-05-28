@@ -109,7 +109,7 @@ export default function ImageCompressorClient() {
                 />
                 <span>{maxWidthOrHeight} px</span>
               </div>
-              <Button variant="primary" onClick={compressImage} disabled={!originalFile || isCompressing} className={styles.compressBtn}>
+              <Button variant="inverse" onClick={compressImage} disabled={!originalFile || isCompressing} className={styles.compressBtn}>
                 {isCompressing ? 'Compressing...' : 'Compress Image'}
               </Button>
             </div>
@@ -130,7 +130,7 @@ export default function ImageCompressorClient() {
                   </p>
                 )}
                 {compressedFile && (
-                  <Button variant="secondary" size="icon" onClick={downloadCompressed} style={{ marginTop: 'var(--spacing-sm)' }}>
+                  <Button variant="icon-inverse" size="icon" onClick={downloadCompressed} style={{ marginTop: 'var(--spacing-sm)' }}>
                     <Download size={16} />
                   </Button>
                 )}

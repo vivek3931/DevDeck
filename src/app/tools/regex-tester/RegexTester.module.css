@@ -1,0 +1,244 @@
+/* src/app/tools/regex-tester/RegexTester.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.pane {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--rounded-lg);
+  padding: var(--spacing-xxl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  color: var(--color-inverse-ink);
+}
+
+.headerRow {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.inputGroup {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--rounded-md);
+  padding: 0 var(--spacing-md);
+  height: 48px;
+  transition: border-color 0.2s ease;
+  flex: 1;
+  min-width: 250px;
+}
+
+.inputGroup:focus-within {
+  border-color: var(--color-canvas);
+}
+
+.prefix {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: bold;
+  user-select: none;
+}
+
+.regexInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--color-block-lime); /* Vibrant highlight color for regex */
+  font-family: var(--font-mono);
+  font-size: 16px;
+  height: 100%;
+  padding: 0 4px;
+}
+
+.regexInput:focus {
+  outline: none;
+}
+
+.flagsInput {
+  background: transparent;
+  border: none;
+  color: var(--color-block-coral);
+  font-family: var(--font-mono);
+  font-size: 16px;
+  height: 100%;
+  width: 60px;
+}
+
+.flagsInput:focus {
+  outline: none;
+}
+
+.mainArea {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: var(--spacing-xl);
+  min-height: 400px;
+}
+
+.editorPanel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  background-color: var(--color-on-inverse-soft);
+  border-radius: var(--rounded-md);
+  padding: var(--spacing-md);
+}
+
+.editorHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.editorWrapper {
+  flex: 1;
+  position: relative;
+  border-radius: var(--rounded-sm);
+  overflow: hidden;
+}
+
+/* Custom styling for react-simple-code-editor to support our regex highlights */
+.codeEditor {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  min-height: 100%;
+  line-height: 1.5;
+}
+
+:global(.regex-match) {
+  background-color: rgba(65, 255, 175, 0.3); /* Mint-ish highlight */
+  border-radius: 3px;
+  border: 1px solid rgba(65, 255, 175, 0.5);
+  color: #ffffff;
+}
+
+:global(.regex-group) {
+  background-color: rgba(255, 107, 107, 0.2);
+  border-bottom: 1px dashed rgba(255, 107, 107, 0.8);
+}
+
+.errorBox {
+  padding: var(--spacing-md);
+  background-color: rgba(255, 60, 60, 0.1);
+  border: 1px solid rgba(255, 60, 60, 0.3);
+  border-radius: var(--rounded-md);
+  color: #ff6b6b;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.matchList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.matchCard {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--rounded-md);
+  padding: var(--spacing-sm);
+}
+
+.matchHeader {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.matchValue {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--color-block-lime);
+  word-break: break-all;
+}
+
+.groupRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-top: 4px;
+  padding-top: 4px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.groupLabel {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.groupValue {
+  font-family: var(--font-mono);
+  color: var(--color-inverse-ink);
+}
+
+.cheatSheet {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.cheatCard {
+  background-color: var(--color-on-inverse-soft);
+  border-radius: var(--rounded-md);
+  padding: var(--spacing-md);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.cheatCard:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.cheatTitle {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cheatRegex {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-block-lime);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: block;
+  word-break: break-all;
+}
+
+@media (max-width: 960px) {
+  .mainArea {
+    grid-template-columns: 1fr;
+  }
+}
