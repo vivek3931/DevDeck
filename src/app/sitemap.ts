@@ -16,7 +16,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'svg-to-react',
     'sqlite-explorer',
     'json-path',
-    'regex-tester'
+    'regex-tester',
+    'log-analyzer'
   ];
 
   const toolRoutes = tools.map((tool) => ({

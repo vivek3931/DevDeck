@@ -1,0 +1,185 @@
+/* src/app/tools/log-analyzer/LogAnalyzer.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.pane {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--rounded-lg);
+  padding: var(--spacing-xxl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  color: var(--color-inverse-ink);
+}
+
+/* Upload Area */
+.uploadArea {
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: var(--rounded-md);
+  padding: var(--spacing-xxl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 200px;
+  text-align: center;
+}
+
+.uploadArea:hover, .uploadArea.dragging {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: var(--color-on-inverse-soft);
+  padding: var(--spacing-md);
+  border-radius: var(--rounded-md);
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--rounded-md);
+  padding: 0 var(--spacing-sm);
+  height: 40px;
+  flex: 1;
+  min-width: 200px;
+  transition: border-color 0.2s ease;
+}
+
+.searchBox:focus-within {
+  border-color: var(--color-canvas);
+}
+
+.searchInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--color-inverse-ink);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  height: 100%;
+  padding-left: var(--spacing-sm);
+}
+
+.searchInput:focus {
+  outline: none;
+}
+
+.filterGroup {
+  display: flex;
+  gap: var(--spacing-xs);
+  align-items: center;
+}
+
+.filterBtn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.6);
+  padding: 6px 12px;
+  border-radius: var(--rounded-pill);
+  font-size: 12px;
+  font-family: var(--font-mono);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filterBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.filterBtn.active {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  border-color: var(--color-canvas);
+}
+
+.statsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Log Viewer Area */
+.logViewer {
+  background-color: #1e1e1e; /* Standard dark editor background */
+  border-radius: var(--rounded-md);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  height: 600px;
+  overflow: auto;
+  position: relative;
+}
+
+.logLines {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.5;
+  color: #cccccc;
+  min-width: max-content; /* allows horiz scroll */
+}
+
+.logLine {
+  display: flex;
+  padding: 0 var(--spacing-sm);
+}
+
+.logLine:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.lineNumber {
+  color: #858585;
+  width: 50px;
+  flex-shrink: 0;
+  text-align: right;
+  padding-right: var(--spacing-md);
+  user-select: none;
+}
+
+.logContent {
+  white-space: pre;
+}
+
+/* Severity Colors */
+.severity-ERROR { color: #f14c4c; }
+.severity-WARN { color: #cca700; }
+.severity-INFO { color: #3794ff; }
+.severity-DEBUG { color: #858585; }
+
+.loadMoreBtn {
+  display: block;
+  width: 100%;
+  padding: var(--spacing-md);
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  color: var(--color-inverse-ink);
+  cursor: pointer;
+  text-align: center;
+  font-family: var(--font-sans);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.2s ease;
+}
+
+.loadMoreBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}

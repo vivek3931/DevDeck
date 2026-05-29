@@ -19,6 +19,7 @@ const TOOLS = [
   { name: 'Local SQLite Explorer', path: '/tools/sqlite-explorer' },
   { name: 'JSONPath Playground', path: '/tools/json-path' },
   { name: 'Regex Visualizer', path: '/tools/regex-tester' },
+  { name: 'Massive Log Analyzer', path: '/tools/log-analyzer' },
 ];
 
 export function CommandPalette() {

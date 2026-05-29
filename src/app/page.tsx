@@ -63,6 +63,12 @@ export default function Home() {
             desc="Test Regular Expressions in real-time. Highlights matches and explains capture groups."
           />
           <ToolCard 
+            href="/tools/log-analyzer" 
+            icon={<Braces />} 
+            title="Massive Log Analyzer" 
+            desc="Stream, search, and filter massive .log files securely in your browser without freezing the tab."
+          />
+          <ToolCard 
             href="/tools/json-validator" 
             icon={<Braces />} 
             title="JSON Formatter & Validator" 

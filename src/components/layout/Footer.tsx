@@ -26,6 +26,7 @@ export function Footer() {
         <div className={styles.links}>
           <div className={styles.column}>
             <span className="caption">Dev Tools</span>
+            <Link href="/tools/log-analyzer" className="body-sm">Massive Log Analyzer</Link>
             <Link href="/tools/regex-tester" className="body-sm">Regex Visualizer</Link>
             <Link href="/tools/json-path" className="body-sm">JSONPath Playground</Link>
             <Link href="/tools/json-to-ts" className="body-sm">JSON to TS</Link>
