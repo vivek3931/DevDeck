@@ -162,7 +162,7 @@ function ToolCard({ href, icon, title, desc, dark = false }: { href: string, ico
       </div>
       <h3 className="card-title" style={{ marginBottom: 'var(--spacing-xs)' }}>{title}</h3>
       <p className="body-sm cardDesc">{desc}</p>
-      <div style={{ marginTop: 'auto' }}>
+      <div style={{ marginTop: 'auto', paddingTop: 'var(--spacing-md)' }}>
         <Button variant="secondary" size="icon" className="body-sm" tabIndex={-1}>
           →
         </Button>

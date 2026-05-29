@@ -105,7 +105,22 @@
 }
 
 @media (max-width: 560px) {
+  .heroSection {
+    height: 600px;
+  }
   .grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+  .card {
+    padding: var(--spacing-sm);
+  }
+  .cardIcon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: var(--spacing-sm);
+  }
+  .cardDesc {
+    margin-bottom: var(--spacing-sm);
   }
 }

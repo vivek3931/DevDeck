@@ -210,6 +210,11 @@ input, textarea, select {
 }
 
 @media (max-width: 560px) {
+  :root {
+    --spacing-xxl: 24px;
+    --spacing-xl: 16px;
+  }
+  
   body {
     font-size: 16px;
   }
@@ -221,9 +226,11 @@ input, textarea, select {
   .display-xl {
     font-size: 40px;
     letter-spacing: -0.8px;
+    font-weight: 400;
   }
   .display-lg {
     font-size: 32px;
+    font-weight: 400;
   }
   .headline, .subhead {
     font-size: 20px;

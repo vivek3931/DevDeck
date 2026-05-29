@@ -3,12 +3,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  min-height: 500px;
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(12px);
-  border-radius: var(--rounded-lg);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: var(--spacing-xl);
+  gap: var(--spacing-xl);
 }
 
 .tabs {
@@ -58,8 +53,16 @@
 }
 
 .pane {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--rounded-lg);
+  padding: var(--spacing-xxl);
   display: flex;
   flex-direction: column;
+  gap: var(--spacing-md);
+  color: var(--color-inverse-ink);
 }
 
 .textarea {
@@ -295,4 +298,10 @@
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+@media (max-width: 560px) {
+  .pane {
+    padding: var(--spacing-md);
+  }
 }

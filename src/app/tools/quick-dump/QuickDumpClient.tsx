@@ -374,87 +374,88 @@ function QuickDumpLogic() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.tabs}>
-        <button
-          className={mode === 'send' ? styles.tabActive : styles.tab}
-          onClick={() => {
-            setMode('send');
-            setCode('');
-            setSecretKey('');
-            setReceivedText('');
-            setReceivedFileUrl('');
-            sessionStorage.removeItem('qd-sender-state');
-          }}
-        >
-          <Upload size={16} /> Send Data
-        </button>
-        <button
-          className={mode === 'receive' ? styles.tabActive : styles.tab}
-          onClick={() => { setMode('receive'); setText(''); setFile(null); }}
-        >
-          <Download size={16} /> Receive Data
-        </button>
-      </div>
-
-      {mode === 'send' && !code && (
-        <div className={styles.pane}>
-          <Editor
-            className={styles.textarea}
-            value={text}
-            onValueChange={setText}
-            highlight={code => Prism.highlight(code, Prism.languages.json, 'json')}
-            padding={16}
-            style={{
-              fontFamily: 'var(--font-mono)',
-              fontSize: 16,
-              backgroundColor: 'transparent',
-              outline: 'none',
+      <div className={styles.pane}>
+        <div className={styles.tabs}>
+          <button
+            className={mode === 'send' ? styles.tabActive : styles.tab}
+            onClick={() => {
+              setMode('send');
+              setCode('');
+              setSecretKey('');
+              setReceivedText('');
+              setReceivedFileUrl('');
+              sessionStorage.removeItem('qd-sender-state');
             }}
-            textareaClassName="editor-textarea"
-            placeholder="Paste code, API payload, or links here..."
-          />
-
-          <div className={styles.fileUploadArea} onClick={() => fileInputRef.current?.click()}>
-            <input
-              type="file"
-              ref={fileInputRef}
-              style={{ display: 'none' }}
-              onChange={(e) => setFile(e.target.files?.[0] || null)}
-            />
-            <FileIcon size={24} style={{ opacity: 0.7 }} />
-            <span className="body-sm">{file ? file.name : 'Optional: Attach a file (Max 2MB for Local Encryption)'}</span>
-          </div>
-
-          <div style={{ marginTop: 'var(--spacing-md)', display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <input
-              type="checkbox"
-              id="burn"
-              checked={burnAfterRead}
-              onChange={(e) => setBurnAfterRead(e.target.checked)}
-              style={{ accentColor: 'var(--color-block-red)', width: '16px', height: '16px' }}
-            />
-            <label htmlFor="burn" className="body-sm" style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px' }}>
-              <Flame size={16} color="var(--color-block-red)" />
-              Burn after read (destroy instantly upon viewing)
-            </label>
-          </div>
-
-          {error && <p className="body-sm" style={{ color: '#ff6b6b', marginTop: 'var(--spacing-sm)' }}>{error}</p>}
-
-          <Button
-            variant="inverse"
-            onClick={handleSend}
-            disabled={isLoading || (!text.trim() && !file)}
-            style={{ alignSelf: 'flex-start', marginTop: 'var(--spacing-md)' }}
           >
-            {isLoading ? <Loader2 size={20} className="spinner" /> : 'Encrypt & Generate Link'}
-          </Button>
+            <Upload size={16} /> Send Data
+          </button>
+          <button
+            className={mode === 'receive' ? styles.tabActive : styles.tab}
+            onClick={() => { setMode('receive'); setText(''); setFile(null); }}
+          >
+            <Download size={16} /> Receive Data
+          </button>
         </div>
-      )}
 
-      {(mode === 'receive' || code) && (
-        <div className={styles.pane}>
-          {code && secretKey && !receivedText && !receivedFileUrl ? (
+        {mode === 'send' && !code && (
+          <>
+            <Editor
+              className={styles.textarea}
+              value={text}
+              onValueChange={setText}
+              highlight={code => Prism.highlight(code, Prism.languages.json, 'json')}
+              padding={16}
+              style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: 16,
+                backgroundColor: 'transparent',
+                outline: 'none',
+              }}
+              textareaClassName="editor-textarea"
+              placeholder="Paste code, API payload, or links here..."
+            />
+
+            <div className={styles.fileUploadArea} onClick={() => fileInputRef.current?.click()}>
+              <input
+                type="file"
+                ref={fileInputRef}
+                style={{ display: 'none' }}
+                onChange={(e) => setFile(e.target.files?.[0] || null)}
+              />
+              <FileIcon size={24} style={{ opacity: 0.7 }} />
+              <span className="body-sm">{file ? file.name : 'Optional: Attach a file (Max 2MB for Local Encryption)'}</span>
+            </div>
+
+            <div style={{ marginTop: 'var(--spacing-md)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <input
+                type="checkbox"
+                id="burn"
+                checked={burnAfterRead}
+                onChange={(e) => setBurnAfterRead(e.target.checked)}
+                style={{ accentColor: 'var(--color-block-red)', width: '16px', height: '16px' }}
+              />
+              <label htmlFor="burn" className="body-sm" style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                <Flame size={16} color="var(--color-block-red)" />
+                Burn after read (destroy instantly upon viewing)
+              </label>
+            </div>
+
+            {error && <p className="body-sm" style={{ color: '#ff6b6b', marginTop: 'var(--spacing-sm)' }}>{error}</p>}
+
+            <Button
+              variant="inverse"
+              onClick={handleSend}
+              disabled={isLoading || (!text.trim() && !file)}
+              style={{ alignSelf: 'flex-start', marginTop: 'var(--spacing-md)' }}
+            >
+              {isLoading ? <Loader2 size={20} className="spinner" /> : 'Encrypt & Generate Link'}
+            </Button>
+          </>
+        )}
+
+        {(mode === 'receive' || code) && (
+          <>
+            {code && secretKey && !receivedText && !receivedFileUrl ? (
             <div className={styles.successScreen}>
               <div className={styles.codeDisplay}>
                 <span className="eyebrow" style={{ color: 'var(--color-block-lime)' }}><ShieldCheck size={14} style={{ display: 'inline', verticalAlign: 'text-bottom' }} /> Encrypted Success</span>
@@ -579,8 +580,9 @@ function QuickDumpLogic() {
               )}
             </div>
           )}
-        </div>
-      )}
+          </>
+        )}
+      </div>
     </div>
   );
 }

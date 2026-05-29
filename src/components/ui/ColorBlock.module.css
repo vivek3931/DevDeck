@@ -70,6 +70,6 @@
 
 @media (max-width: 560px) {
   .block {
-    padding: var(--spacing-xl) var(--spacing-lg);
+    padding: var(--spacing-lg) var(--spacing-md);
   }
 }

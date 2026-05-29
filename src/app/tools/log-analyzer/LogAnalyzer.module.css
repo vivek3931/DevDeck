@@ -183,3 +183,9 @@
 .loadMoreBtn:hover {
   background: rgba(255, 255, 255, 0.1);
 }
+
+@media (max-width: 560px) {
+  .pane {
+    padding: var(--spacing-md);
+  }
+}
