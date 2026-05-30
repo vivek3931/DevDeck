@@ -53,8 +53,8 @@ export function GlobalTray({ isOpen, onClose }: { isOpen: boolean; onClose: () =
               <Activity size={16} /> Audit Log
             </button>
           </div>
-          <Button variant="secondary" size="icon" onClick={onClose}>
-            <X size={20} />
+          <Button variant="icon" size="icon" onClick={onClose}>
+            <X size={20} color="var(--color-ink)" />
           </Button>
         </div>
 

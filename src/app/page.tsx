@@ -14,7 +14,8 @@ import {
   Terminal,
   FileCode,
   FileType,
-  Database
+  Database,
+  Camera
 } from 'lucide-react';
 import styles from './page.module.css';
 
@@ -146,6 +147,13 @@ export default function Home() {
             icon={<ImageIcon />} 
             title="Image Compressor" 
             desc="Client-side canvas tool to compress JPEGs and scale aspects entirely offline."
+            dark
+          />
+          <ToolCard 
+            href="/tools/code-snap" 
+            icon={<Camera />} 
+            title="Code Snippet Exporter" 
+            desc="Generate beautiful, high-res PNG images of your code snippets for Twitter and presentations."
             dark
           />
           <ToolCard 

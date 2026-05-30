@@ -1,15 +1,15 @@
 import { Metadata } from 'next';
 import { ColorBlock } from '@/components/ui/ColorBlock';
-import ApiTesterClient from './ApiTesterClient';
+import CodeSnapClient from './CodeSnapClient';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'API Request Tester | DevDeck',
-  description: 'Test REST API endpoints with a lightweight, private client-side UI.',
+  title: 'Code Snippet Exporter | DevDeck',
+  description: 'Generate beautiful, high-resolution PNG images of your code snippets for Twitter and presentations.',
 };
 
-export default function ApiTesterPage() {
+export default function CodeSnapPage() {
   return (
     <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
       <ColorBlock color="navy" style={{ flexGrow: 1 }}>
@@ -17,14 +17,13 @@ export default function ApiTesterPage() {
           <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'rgba(255, 255, 255, 0.6)', textDecoration: 'none', marginBottom: 'var(--spacing-md)' }}>
             <ArrowLeft size={16} /> Back to Tools
           </Link>
-          <h1 className="display-lg" style={{ color: 'var(--color-inverse-ink)' }}>API Request Tester</h1>
+          <h1 className="display-lg" style={{ color: 'var(--color-inverse-ink)' }}>Code Snippet Exporter</h1>
           <p className="body-lg" style={{ color: 'rgba(255, 255, 255, 0.7)', marginTop: 'var(--spacing-sm)', maxWidth: '800px' }}>
-            A lightweight Postman alternative. Test REST APIs with custom headers and JSON payloads directly from your browser. 
-            Powered by a local proxy to seamlessly bypass CORS restrictions.
+            A lightning-fast Carbon alternative. Paste your code, choose a beautiful background, and instantly export a high-res PNG for Twitter, LinkedIn, or presentations. Everything stays entirely local.
           </p>
         </div>
         
-        <ApiTesterClient />
+        <CodeSnapClient />
       </ColorBlock>
     </div>
   );

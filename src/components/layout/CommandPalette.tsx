@@ -21,6 +21,7 @@ const TOOLS = [
   { name: 'JSONPath Playground', path: '/tools/json-path' },
   { name: 'Regex Visualizer', path: '/tools/regex-tester' },
   { name: 'Massive Log Analyzer', path: '/tools/log-analyzer' },
+  { name: 'Code Snippet Exporter', path: '/tools/code-snap' },
 ];
 
 export function CommandPalette() {

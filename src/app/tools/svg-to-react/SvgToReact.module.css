@@ -1,7 +1,7 @@
 .container {
   display: flex;
   gap: var(--spacing-xl);
-  height: calc(100vh - 300px);
+  min-height: calc(100dvh - 300px);
   min-height: 500px;
 }
 

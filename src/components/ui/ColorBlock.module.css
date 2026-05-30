@@ -56,7 +56,7 @@
 @media (max-width: 768px) {
   .container {
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: var(--spacing-xxl); /* Give it breathing room from the footer */
     flex-grow: 1;
     display: flex;
     flex-direction: column;

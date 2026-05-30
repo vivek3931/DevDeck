@@ -42,6 +42,7 @@ export function Footer() {
             <Link href="/tools/api-tester" className="body-sm">API Request Tester</Link>
             <Link href="/tools/quick-dump" className="body-sm">Quick Dump</Link>
             <Link href="/tools/image-compressor" className="body-sm">Image Compressor</Link>
+            <Link href="/tools/code-snap" className="body-sm">Code Snippet Exporter</Link>
           </div>
           <div className={styles.column}>
             <span className="caption">Utilities</span>

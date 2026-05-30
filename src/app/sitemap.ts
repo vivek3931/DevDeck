@@ -18,7 +18,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'json-path',
     'regex-tester',
     'log-analyzer',
-    'api-tester'
+    'api-tester',
+    'code-snap'
   ];
 
   const toolRoutes = tools.map((tool) => ({

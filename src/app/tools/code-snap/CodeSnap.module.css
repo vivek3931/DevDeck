@@ -1,0 +1,166 @@
+/* src/app/tools/code-snap/CodeSnap.module.css */
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-xl);
+  min-height: calc(100dvh - 300px);
+  min-height: 500px;
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column-reverse;
+  }
+}
+
+.editorPane {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-inverse-canvas);
+  border-radius: var(--rounded-lg);
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-width: 0;
+}
+
+.controlsPane {
+  width: 320px;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--rounded-lg);
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  color: var(--color-inverse-ink);
+  flex-shrink: 0;
+  align-self: flex-start;
+  position: sticky;
+  top: calc(56px + var(--spacing-xl));
+}
+
+@media (max-width: 900px) {
+  .controlsPane {
+    width: 100%;
+  }
+}
+
+/* 
+  The capture area is the part that will be rendered to PNG.
+  It includes the background padding and the window itself.
+*/
+.captureArea {
+  padding: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.macWindow {
+  background-color: rgba(13, 17, 23, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+}
+
+.macWindowGlass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 12px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+}
+
+.titleBar {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dotRed { background-color: #ff5f56; }
+.dotYellow { background-color: #ffbd2e; }
+.dotGreen { background-color: #27c93f; }
+
+.codeArea {
+  padding: 0 24px 24px 24px;
+  color: #c9d1d9;
+}
+
+/* Control Elements */
+.controlGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.controlLabel {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.colorGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-sm);
+}
+
+.colorSwatch {
+  height: 36px;
+  border-radius: var(--rounded-sm);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.1s ease, border-color 0.2s ease;
+}
+
+.colorSwatch:hover {
+  transform: scale(1.05);
+}
+
+.colorSwatchActive {
+  border-color: white;
+  transform: scale(1.05);
+}
+
+.select {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 10px 12px;
+  border-radius: var(--rounded-md);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.select option {
+  background-color: var(--color-inverse-canvas);
+  color: white;
+}
+
+.select:focus {
+  outline: none;
+  border-color: white;
+}
