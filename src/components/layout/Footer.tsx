@@ -38,11 +38,15 @@ export function Footer() {
             <Link href="/tools/sqlite-explorer" className="body-sm">SQLite Explorer</Link>
           </div>
           <div className={styles.column}>
+            <span className="caption">Media & Sandbox</span>
+            <Link href="/tools/api-tester" className="body-sm">API Request Tester</Link>
+            <Link href="/tools/quick-dump" className="body-sm">Quick Dump</Link>
+            <Link href="/tools/image-compressor" className="body-sm">Image Compressor</Link>
+          </div>
+          <div className={styles.column}>
             <span className="caption">Utilities</span>
             <Link href="/tools/text-toolkit" className="body-sm">Text Toolkit</Link>
             <Link href="/tools/qr-generator" className="body-sm">QR Code Generator</Link>
-            <Link href="/tools/image-compressor" className="body-sm">Image Compressor</Link>
-            <Link href="/tools/quick-dump" className="body-sm">Quick Dump</Link>
           </div>
           <div className={styles.column}>
             <span className="caption">Legal</span>

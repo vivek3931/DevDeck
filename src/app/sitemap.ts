@@ -17,7 +17,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'sqlite-explorer',
     'json-path',
     'regex-tester',
-    'log-analyzer'
+    'log-analyzer',
+    'api-tester'
   ];
 
   const toolRoutes = tools.map((tool) => ({

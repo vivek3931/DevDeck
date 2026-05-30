@@ -135,6 +135,13 @@ export default function Home() {
             dark
           />
           <ToolCard 
+            href="/tools/api-tester" 
+            icon={<Code />} 
+            title="API Request Tester" 
+            desc="Lightweight Postman alternative. Test REST APIs with custom headers and JSON payloads locally."
+            dark
+          />
+          <ToolCard 
             href="/tools/image-compressor" 
             icon={<ImageIcon />} 
             title="Image Compressor" 
@@ -163,7 +170,7 @@ function ToolCard({ href, icon, title, desc, dark = false }: { href: string, ico
       <h3 className="card-title" style={{ marginBottom: 'var(--spacing-xs)' }}>{title}</h3>
       <p className="body-sm cardDesc">{desc}</p>
       <div style={{ marginTop: 'auto', paddingTop: 'var(--spacing-md)' }}>
-        <Button variant="secondary" size="icon" className="body-sm" tabIndex={-1}>
+        <Button variant={dark ? "icon" : "icon-primary"} size="icon" className="body-sm" tabIndex={-1}>
           →
         </Button>
       </div>

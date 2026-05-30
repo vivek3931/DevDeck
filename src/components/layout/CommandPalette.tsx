@@ -16,6 +16,7 @@ const TOOLS = [
   { name: 'JSON to TS Converter', path: '/tools/json-to-ts' },
   { name: 'cURL to Fetch Converter', path: '/tools/curl-converter' },
   { name: 'SVG to React Converter', path: '/tools/svg-to-react' },
+  { name: 'API Request Tester', path: '/tools/api-tester' },
   { name: 'Local SQLite Explorer', path: '/tools/sqlite-explorer' },
   { name: 'JSONPath Playground', path: '/tools/json-path' },
   { name: 'Regex Visualizer', path: '/tools/regex-tester' },

@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import styles from './Button.module.css';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'promo' | 'icon' | 'icon-inverse' | 'inverse';
+  variant?: 'primary' | 'secondary' | 'promo' | 'icon' | 'icon-inverse' | 'icon-primary' | 'inverse';
   size?: 'default' | 'icon' | 'sm';
   children: React.ReactNode;
 }

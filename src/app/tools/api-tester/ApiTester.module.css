@@ -1,0 +1,189 @@
+/* src/app/tools/api-tester/ApiTester.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.pane {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--rounded-lg);
+  padding: var(--spacing-xxl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  color: var(--color-inverse-ink);
+}
+
+.requestBar {
+  display: flex;
+  gap: var(--spacing-sm);
+  background-color: var(--color-on-inverse-soft);
+  padding: var(--spacing-sm);
+  border-radius: var(--rounded-md);
+  flex-wrap: wrap;
+}
+
+.methodSelect {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--color-inverse-ink);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0 12px;
+  border-radius: var(--rounded-sm);
+  height: 48px;
+  cursor: pointer;
+}
+
+.methodSelect:focus {
+  outline: none;
+  border-color: var(--color-block-lime);
+}
+
+.methodSelect option {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+}
+
+.urlInput {
+  flex-grow: 1;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--color-inverse-ink);
+  font-family: var(--font-mono);
+  font-size: 16px;
+  padding: 0 16px;
+  border-radius: var(--rounded-sm);
+  height: 48px;
+  min-width: 200px;
+}
+
+.urlInput:focus {
+  outline: none;
+  border-color: var(--color-block-lime);
+}
+
+.tabs {
+  display: flex;
+  gap: var(--spacing-md);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
+}
+
+.tab {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--rounded-sm);
+  transition: all 0.2s ease;
+}
+
+.tab:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.tabActive {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: default;
+  padding: 4px 8px;
+  border-radius: var(--rounded-sm);
+}
+
+.editorContainer {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: var(--rounded-md);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-height: 200px;
+}
+
+.kvRow {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.kvInput {
+  flex: 1;
+  min-width: 0;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--color-inverse-ink);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: var(--rounded-sm);
+}
+
+.kvInput:focus {
+  outline: none;
+  border-color: var(--color-block-lime);
+}
+
+.responsePanel {
+  margin-top: var(--spacing-xl);
+  background-color: #1e1e1e;
+  border-radius: var(--rounded-md);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.responseMeta {
+  display: flex;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+
+.statusGreen { color: #87d96c; }
+.statusRed { color: #f14c4c; }
+
+.responseBody {
+  max-height: 500px;
+  overflow: auto;
+  padding: var(--spacing-md);
+}
+
+.pre {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  white-space: pre-wrap;
+  word-break: break-all;
+  color: #cccccc;
+  margin: 0;
+}
+
+@media (max-width: 560px) {
+  .pane {
+    padding: var(--spacing-md);
+  }
+  .requestBar {
+    flex-direction: column;
+  }
+  .methodSelect {
+    width: 100%;
+  }
+  .urlInput {
+    width: 100%;
+  }
+}
