@@ -88,39 +88,6 @@ console.log(calculateFibonacci(10));`);
 
   return (
     <div className={styles.container}>
-      {/* Editor & Preview Pane */}
-      <div className={styles.editorPane}>
-        {/* The Capture Area */}
-        <div 
-          ref={exportRef}
-          className={styles.captureArea}
-          style={{ background }}
-        >
-          <div className={glassEffect ? styles.macWindowGlass : styles.macWindow}>
-            <div className={styles.titleBar}>
-              <div className={`${styles.dot} ${styles.dotRed}`} />
-              <div className={`${styles.dot} ${styles.dotYellow}`} />
-              <div className={`${styles.dot} ${styles.dotGreen}`} />
-            </div>
-            <div className={styles.codeArea}>
-              <Editor
-                value={code}
-                onValueChange={setCode}
-                highlight={code => Prism.highlight(code, Prism.languages[language] || Prism.languages.javascript, language)}
-                padding={0}
-                style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: 16,
-                  backgroundColor: 'transparent',
-                  outline: 'none',
-                }}
-                textareaClassName="editor-textarea"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Controls Pane */}
       <div className={styles.controlsPane}>
         <h3 className="body-lg" style={{ fontWeight: 600, borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '16px' }}>
@@ -175,6 +142,39 @@ console.log(calculateFibonacci(10));`);
           >
             {isExporting ? <><Loader2 size={18} className="spinner" style={{ marginRight: '8px' }}/> Generating...</> : <><Download size={16} style={{ marginRight: '8px' }} /> Export High-Res PNG</>}
           </Button>
+        </div>
+      </div>
+
+      {/* Editor & Preview Pane */}
+      <div className={styles.editorPane}>
+        {/* The Capture Area */}
+        <div 
+          ref={exportRef}
+          className={styles.captureArea}
+          style={{ background }}
+        >
+          <div className={glassEffect ? styles.macWindowGlass : styles.macWindow}>
+            <div className={styles.titleBar}>
+              <div className={`${styles.dot} ${styles.dotRed}`} />
+              <div className={`${styles.dot} ${styles.dotYellow}`} />
+              <div className={`${styles.dot} ${styles.dotGreen}`} />
+            </div>
+            <div className={styles.codeArea}>
+              <Editor
+                value={code}
+                onValueChange={setCode}
+                highlight={code => Prism.highlight(code, Prism.languages[language] || Prism.languages.javascript, language)}
+                padding={0}
+                style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: 16,
+                  backgroundColor: 'transparent',
+                  outline: 'none',
+                }}
+                textareaClassName="editor-textarea"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
