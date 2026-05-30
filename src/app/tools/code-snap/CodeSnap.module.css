@@ -164,3 +164,76 @@
   outline: none;
   border-color: white;
 }
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.tabBtn {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  border: none;
+  padding: 8px 12px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: var(--rounded-md);
+  transition: all 0.2s ease;
+}
+
+.tabBtn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.tabBtnActive {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.tabContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.controlGroupRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Windows Style Title bar */
+.titleBarWin {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  font-family: var(--font-sans);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.winTitle {
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.winControls {
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.windowFrame {
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
