@@ -22,7 +22,7 @@ export default function CurlConverterPage() {
             <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'inherit', textDecoration: 'none', marginBottom: 'var(--spacing-md)', fontWeight: 500, opacity: 0.8 }}>
               <ArrowLeft size={16} /> Back to Tools
             </Link>
-            <h1 className="display-xl" style={{ marginBottom: 'var(--spacing-sm)' }}>cURL to Fetch Converter</h1>
+            <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>cURL to Fetch Converter</h1>
             <p className="body-lg" style={{ color: 'var(--color-ink-muted)' }}>
               Paste a cURL command from your terminal or Chrome DevTools to generate JavaScript `fetch()` syntax.
             </p>

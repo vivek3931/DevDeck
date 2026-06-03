@@ -202,7 +202,7 @@ export default function ImageToPdfClient() {
                 >
                   <ArrowDown size={16} />
                 </button>
-                <div style={{ width: '1px', height: '16px', background: 'rgba(255,255,255,0.1)', margin: '0 4px' }} />
+                <div style={{ width: '1px', height: '16px', background: 'rgba(0,0,0,0.1)', margin: '0 4px' }} />
                 <button 
                   className={styles.controlBtn} 
                   onClick={() => removeFile(index)}

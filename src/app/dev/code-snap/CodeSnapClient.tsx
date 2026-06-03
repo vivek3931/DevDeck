@@ -279,9 +279,9 @@ console.log(calculateFibonacci(10));`);
           <div 
             className={styles.windowFrame}
             style={{
-              backgroundColor: windowStyle === 'mac-glass' ? 'rgba(255,255,255,0.05)' : (windowStyle === 'none' ? 'transparent' : 'rgba(13,17,23,0.95)'),
+              backgroundColor: windowStyle === 'mac-glass' ? 'rgba(0,0,0,0.05)' : (windowStyle === 'none' ? 'transparent' : 'rgba(13,17,23,0.95)'),
               backdropFilter: windowStyle === 'mac-glass' ? 'blur(20px)' : 'none',
-              boxShadow: dropShadow ? (windowStyle === 'none' ? 'none' : '0 24px 64px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.1) inset') : 'none',
+              boxShadow: dropShadow ? (windowStyle === 'none' ? 'none' : '0 24px 64px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0,0,0,0.1) inset') : 'none',
               borderRadius: windowStyle === 'none' ? '0' : '12px',
               width: '100%'
             }}

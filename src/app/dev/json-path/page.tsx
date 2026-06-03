@@ -18,7 +18,7 @@ export default function JsonPathPage() {
             <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'inherit', textDecoration: 'none', marginBottom: 'var(--spacing-md)', fontWeight: 500, opacity: 0.8 }}>
               <ArrowLeft size={16} /> Back to Tools
             </Link>
-            <h1 className="display-xl" style={{ marginBottom: 'var(--spacing-sm)' }}>JSONPath Playground</h1>
+            <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>JSONPath Playground</h1>
             <p className="body-lg" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
               Evaluate JSONPath expressions instantly. Your data never leaves your browser.
             </p>

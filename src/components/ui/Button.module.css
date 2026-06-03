@@ -6,7 +6,7 @@
   justify-content: center;
   font-family: var(--font-sans);
   font-weight: 500;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.40;
   letter-spacing: -0.10px;
   border-radius: var(--rounded-pill);
@@ -78,7 +78,7 @@
 /* Tablet / Desktop scaling */
 @media (min-width: 768px) {
   .base {
-    font-size: 18px; /* Slightly larger on desktop */
+    font-size: 15px;
   }
   .primary, .inverse, .promo {
     padding: 14px 28px;
@@ -91,7 +91,7 @@
 /* Touch target for mobile - Ensure min 44px height for accessibility */
 @media (max-width: 560px) {
   .base {
-    font-size: 16px;
+    font-size: 14px;
   }
   .primary, .inverse, .promo {
     padding: 12px 24px;

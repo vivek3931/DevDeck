@@ -130,6 +130,13 @@ input, textarea, select {
   letter-spacing: -0.96px;
 }
 
+.display-md {
+  font-size: 48px;
+  font-weight: 340;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+}
+
 .headline {
   font-size: 26px;
   font-weight: 540;
@@ -205,6 +212,9 @@ input, textarea, select {
   .display-lg {
     font-size: 48px;
   }
+  .display-md {
+    font-size: 36px;
+  }
   .headline, .subhead {
     font-size: 24px;
   }
@@ -231,6 +241,10 @@ input, textarea, select {
   }
   .display-lg {
     font-size: 32px;
+    font-weight: 400;
+  }
+  .display-md {
+    font-size: 28px;
     font-weight: 400;
   }
   .headline, .subhead {

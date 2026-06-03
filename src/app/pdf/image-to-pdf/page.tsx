@@ -16,13 +16,13 @@ export const metadata: Metadata = {
 export default function ImageToPdfPage() {
   return (
     <article>
-      <ColorBlock color="navy">
+      <ColorBlock color="cream">
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <header style={{ marginBottom: 'var(--spacing-xl)' }}>
             <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'inherit', textDecoration: 'none', marginBottom: 'var(--spacing-md)', fontWeight: 500, opacity: 0.8 }}>
               <ArrowLeft size={16} /> Back to Tools
             </Link>
-            <h1 className="display-xl" style={{ marginBottom: 'var(--spacing-sm)' }}>Image to PDF Converter</h1>
+            <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>Image to PDF Converter</h1>
             <p className="body-lg" style={{ color: 'var(--color-ink-muted)' }}>
               Combine multiple images into a single PDF document. Fast, secure, and completely offline.
             </p>

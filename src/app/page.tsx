@@ -17,7 +17,14 @@ import {
   Database,
   Camera,
   Layers,
-  FileText
+  FileText,
+  Combine,
+  Scissors,
+  Lock,
+  Maximize,
+  Binary,
+  ArrowRight,
+  ImagePlus,
 } from 'lucide-react';
 import styles from './page.module.css';
 
@@ -36,12 +43,15 @@ export default function Home() {
                 Developer tools, image processors, and formatters directly in your browser. 
                 Built for speed. Optimized for you.
               </p>
-              <div style={{ display: 'flex', gap: '16px', marginTop: '16px' }}>
-                <Link href="#dev-tools">
+              <div style={{ display: 'flex', gap: '16px', marginTop: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <Link href="/dev">
                   <Button variant="primary">Explore Dev Tools</Button>
                 </Link>
-                <Link href="#image-tools">
+                <Link href="/image">
                   <Button variant="secondary">Image Tools</Button>
+                </Link>
+                <Link href="/pdf">
+                  <Button variant="secondary">PDF Tools</Button>
                 </Link>
               </div>
             </div>
@@ -52,7 +62,12 @@ export default function Home() {
       {/* Developer Tools */}
       <div id="dev-tools">
         <ColorBlock color="lime">
-          <h2 className="display-lg">Developer Tools</h2>
+          <div className={styles.sectionHeader}>
+            <h2 className="display-lg">Developer Tools</h2>
+            <Link href="/dev" className={styles.viewAllLink}>
+              View All <ArrowRight size={16} />
+            </Link>
+          </div>
           <p className="subhead" style={{ marginTop: 'var(--spacing-md)', maxWidth: '800px' }}>
             Stop opening 5 tabs for everyday transformations. 
             Everything you need is instantly accessible.
@@ -78,18 +93,6 @@ export default function Home() {
               desc="Decode JSON Web Tokens securely. Your tokens are never sent to a server."
             />
             <ToolCard 
-              href="/dev/curl-converter" 
-              icon={<Terminal />} 
-              title="cURL to Fetch" 
-              desc="Paste a cURL command to instantly generate JavaScript fetch() syntax."
-            />
-            <ToolCard 
-              href="/dev/json-path" 
-              icon={<Braces />} 
-              title="JSONPath Playground" 
-              desc="Evaluate JSONPath queries against massive API payloads. Pure client-side processing."
-            />
-            <ToolCard 
               href="/dev/regex-tester" 
               icon={<Braces />} 
               title="Regex Visualizer" 
@@ -107,30 +110,12 @@ export default function Home() {
               title="JSON to TypeScript" 
               desc="Instantly convert JSON payloads into perfectly formatted TypeScript interfaces."
             />
-            <ToolCard 
-              href="/dev/code-snap" 
-              icon={<Camera />} 
-              title="Code Snippet Exporter" 
-              desc="Generate beautiful, high-res PNG images of your code snippets for Twitter and presentations."
-            />
-            <ToolCard 
-              href="/dev/sqlite-explorer" 
-              icon={<Database />} 
-              title="Local SQLite Explorer" 
-              desc="Run SQL queries on your SQLite databases entirely in the browser using WebAssembly."
-            />
-            <ToolCard 
-              href="/dev/quick-dump" 
-              icon={<Code />} 
-              title="Quick Dump" 
-              desc="Securely dump raw code or API payloads to format and hold momentarily."
-            />
-            <ToolCard 
-              href="/dev/log-analyzer" 
-              icon={<FileText />} 
-              title="Massive Log Analyzer" 
-              desc="Stream, search, and filter massive .log files securely in your browser."
-            />
+          </div>
+
+          <div className={styles.viewAllBottom}>
+            <Link href="/dev">
+              <Button variant="primary">View All 12 Dev Tools →</Button>
+            </Link>
           </div>
         </ColorBlock>
       </div>
@@ -138,7 +123,12 @@ export default function Home() {
       {/* Image & SVG Tools */}
       <div id="image-tools">
         <ColorBlock color="navy">
-          <h2 className="display-lg">Image & Vector Tools</h2>
+          <div className={styles.sectionHeader}>
+            <h2 className="display-lg">Image & Vector Tools</h2>
+            <Link href="/image" className={styles.viewAllLink} style={{ color: '#fff' }}>
+              View All <ArrowRight size={16} />
+            </Link>
+          </div>
           <p className="subhead" style={{ marginTop: 'var(--spacing-md)', maxWidth: '800px' }}>
             Process images and SVGs blazingly fast in your browser.
           </p>
@@ -153,16 +143,9 @@ export default function Home() {
             />
             <ToolCard 
               href="/image/resizer" 
-              icon={<ImageIcon />} 
+              icon={<Maximize />} 
               title="Image Resizer" 
               desc="Resize any image by dimensions or percentage offline."
-              dark
-            />
-            <ToolCard 
-              href="/image/base64" 
-              icon={<ImageIcon />} 
-              title="Image to Base64" 
-              desc="Encode images into Base64 strings for direct CSS/HTML embedding."
               dark
             />
             <ToolCard 
@@ -170,6 +153,13 @@ export default function Home() {
               icon={<ImageIcon />} 
               title="Image Compressor" 
               desc="Client-side canvas tool to compress JPEGs, scale aspects, and reduce file sizes."
+              dark
+            />
+            <ToolCard 
+              href="/image/base64" 
+              icon={<Binary />} 
+              title="Image to Base64" 
+              desc="Encode images into Base64 strings for direct CSS/HTML embedding."
               dark
             />
             <ToolCard 
@@ -187,12 +177,66 @@ export default function Home() {
               dark
             />
           </div>
+
+          <div className={styles.viewAllBottom}>
+            <Link href="/image">
+              <Button variant="inverse">View All 6 Image Tools →</Button>
+            </Link>
+          </div>
         </ColorBlock>
       </div>
 
-      {/* Text & PDF Tools */}
+      {/* PDF Tools */}
+      <div id="pdf-tools">
+        <ColorBlock color="cream">
+          <div className={styles.sectionHeader}>
+            <h2 className="display-lg">PDF Tools</h2>
+            <Link href="/pdf" className={styles.viewAllLink}>
+              View All <ArrowRight size={16} />
+            </Link>
+          </div>
+          <p className="subhead" style={{ marginTop: 'var(--spacing-md)', maxWidth: '800px' }}>
+            Merge, split, and manipulate PDF documents 100% offline.
+          </p>
+
+          <div className={styles.grid}>
+            <ToolCard 
+              href="/pdf/merge" 
+              icon={<Combine />} 
+              title="Merge PDFs" 
+              desc="Combine multiple PDF files into one instantly. Drag and drop to reorder."
+            />
+            <ToolCard 
+              href="/pdf/split" 
+              icon={<Scissors />} 
+              title="Split PDF" 
+              desc="Extract specific pages or page ranges from a PDF document."
+            />
+            <ToolCard 
+              href="/pdf/image-to-pdf" 
+              icon={<ImagePlus />} 
+              title="Image to PDF" 
+              desc="Convert JPG, PNG, and WebP images into a single PDF document."
+            />
+            <ToolCard 
+              href="/pdf/protect" 
+              icon={<Lock />} 
+              title="Protect PDF" 
+              desc="Encrypt and secure your PDF document with a password."
+            />
+          </div>
+
+          <div className={styles.viewAllBottom}>
+            <Link href="/pdf">
+              <Button variant="primary">View All PDF Tools →</Button>
+            </Link>
+          </div>
+        </ColorBlock>
+      </div>
+
+      {/* Text & Document Tools */}
       <div id="text-tools">
-        <ColorBlock color="lime">
+        <ColorBlock color="mint">
           <h2 className="display-lg">Text & Document Tools</h2>
           <p className="subhead" style={{ marginTop: 'var(--spacing-md)', maxWidth: '800px' }}>
             Transform text and manage documents effortlessly.
@@ -204,12 +248,6 @@ export default function Home() {
               icon={<Type />} 
               title="Text Toolkit" 
               desc="String manipulation, base64 encoding, JSON minification, and case conversions."
-            />
-            <ToolCard 
-              href="/pdf" 
-              icon={<Layers />} 
-              title="PDF Toolkit (Coming Soon)" 
-              desc="Merge, split, and manipulate PDF documents entirely offline."
             />
           </div>
         </ColorBlock>
@@ -225,11 +263,11 @@ function ToolCard({ href, icon, title, desc, dark = false }: { href: string, ico
       <div className={styles.cardIcon}>
         {icon}
       </div>
-      <h3 className="card-title" style={{ marginBottom: 'var(--spacing-xs)' }}>{title}</h3>
-      <p className="body-sm cardDesc">{desc}</p>
-      <div style={{ marginTop: 'auto', paddingTop: 'var(--spacing-md)' }}>
+      <h3 className={styles.cardTitle}>{title}</h3>
+      <p className={styles.cardDesc}>{desc}</p>
+      <div className={styles.cardArrow}>
         <Button variant={dark ? "icon" : "icon-primary"} size="icon" className="body-sm" tabIndex={-1}>
-          →
+          <ArrowRight size={16} />
         </Button>
       </div>
     </Link>

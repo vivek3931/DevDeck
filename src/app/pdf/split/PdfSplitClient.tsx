@@ -161,7 +161,7 @@ export default function PdfSplitClient() {
         </div>
       ) : (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-          <div className={styles.fileItem} style={{ padding: '24px', background: 'rgba(255,255,255,0.02)' }}>
+          <div className={styles.fileItem} style={{ padding: '24px', background: 'rgba(0,0,0,0.02)' }}>
             <div className={styles.fileInfo}>
               <FileIcon size={32} color="var(--color-primary)" />
               <div>
@@ -181,9 +181,9 @@ export default function PdfSplitClient() {
               style={{
                 padding: '16px',
                 borderRadius: '8px',
-                border: '1px solid rgba(255,255,255,0.1)',
-                background: 'rgba(0,0,0,0.2)',
-                color: '#fff',
+                border: '1px solid rgba(0,0,0,0.1)',
+                background: 'var(--color-surface-soft)',
+                color: 'var(--color-ink)',
                 fontSize: '16px',
                 fontFamily: 'var(--font-mono)'
               }}

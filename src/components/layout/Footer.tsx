@@ -19,41 +19,47 @@ export function Footer() {
               </text>
             </svg>
           </div>
-          <p className="body-sm" style={{ marginTop: 'var(--spacing-md)' }}>
+          <p className="body-sm" style={{ marginTop: 'var(--spacing-md)', opacity: 0.6 }}>
             Privacy-Focused Local Developer Toolkit
           </p>
         </div>
         <div className={styles.links}>
           <div className={styles.column}>
             <span className="caption">Dev Tools</span>
-            <Link href="/dev/log-analyzer" className="body-sm">Massive Log Analyzer</Link>
-            <Link href="/dev/regex-tester" className="body-sm">Regex Visualizer</Link>
-            <Link href="/dev/json-path" className="body-sm">JSONPath Playground</Link>
-            <Link href="/dev/json-to-ts" className="body-sm">JSON to TS</Link>
-            <Link href="/dev/json-validator" className="body-sm">JSON Validator</Link>
-            <Link href="/dev/jwt-decoder" className="body-sm">JWT Decoder</Link>
-            <Link href="/dev/hash-generator" className="body-sm">Hash Generator</Link>
-            <Link href="/dev/curl-converter" className="body-sm">cURL to Fetch</Link>
-            <Link href="/image/svg-to-react" className="body-sm">SVG to React</Link>
-            <Link href="/dev/sqlite-explorer" className="body-sm">SQLite Explorer</Link>
+            <Link href="/dev/json-validator">JSON Validator</Link>
+            <Link href="/dev/api-tester">API Tester</Link>
+            <Link href="/dev/jwt-decoder">JWT Decoder</Link>
+            <Link href="/dev/regex-tester">Regex Tester</Link>
+            <Link href="/dev/hash-generator">Hash Generator</Link>
+            <Link href="/dev/json-to-ts">JSON to TS</Link>
+            <Link href="/dev/curl-converter">cURL to Fetch</Link>
+            <Link href="/dev/code-snap">Code Snap</Link>
+            <Link href="/dev/sqlite-explorer">SQLite Explorer</Link>
           </div>
           <div className={styles.column}>
-            <span className="caption">Media & Sandbox</span>
-            <Link href="/dev/api-tester" className="body-sm">API Request Tester</Link>
-            <Link href="/dev/quick-dump" className="body-sm">Quick Dump</Link>
-            <Link href="/image/image-compressor" className="body-sm">Image Compressor</Link>
-            <Link href="/dev/code-snap" className="body-sm">Code Snippet Exporter</Link>
+            <span className="caption">Image Tools</span>
+            <Link href="/image/converter">Format Converter</Link>
+            <Link href="/image/resizer">Image Resizer</Link>
+            <Link href="/image/image-compressor">Image Compressor</Link>
+            <Link href="/image/base64">Image to Base64</Link>
+            <Link href="/image/svg-to-react">SVG to React</Link>
+            <Link href="/image/qr-generator">QR Generator</Link>
           </div>
           <div className={styles.column}>
-            <span className="caption">Utilities</span>
-            <Link href="/text/text-toolkit" className="body-sm">Text Toolkit</Link>
-            <Link href="/image/qr-generator" className="body-sm">QR Code Generator</Link>
+            <span className="caption">PDF Tools</span>
+            <Link href="/pdf/merge">Merge PDFs</Link>
+            <Link href="/pdf/split">Split PDF</Link>
+            <Link href="/pdf/image-to-pdf">Image to PDF</Link>
+            <Link href="/pdf/protect">Protect PDF</Link>
           </div>
           <div className={styles.column}>
-            <span className="caption">Legal</span>
-            <Link href="/privacy" className="body-sm">Privacy Policy</Link>
-            <Link href="/terms" className="body-sm">Terms of Service</Link>
-            <Link href="/promise" className="body-sm">Local First Promise</Link>
+            <span className="caption">Other</span>
+            <Link href="/text/text-toolkit">Text Toolkit</Link>
+            <Link href="/dev/quick-dump">Quick Dump</Link>
+            <Link href="/dev/log-analyzer">Log Analyzer</Link>
+            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/terms">Terms of Service</Link>
+            <Link href="/promise">Local First Promise</Link>
           </div>
         </div>
       </div>

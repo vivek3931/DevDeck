@@ -22,13 +22,12 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 250px; /* Much taller for a smoother, natural blend */
+  height: 250px;
   background: linear-gradient(to bottom, rgba(248, 249, 250, 0) 0%, #f8f9fa 100%);
   pointer-events: none;
 }
 
 .hero {
-  /* Removed padding because flexbox now centers it vertically inside the 700px box */
   text-align: center;
 }
 
@@ -42,6 +41,39 @@
   margin-bottom: var(--spacing-xl);
 }
 
+/* --- Section Header with View All --- */
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.viewAllLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  color: inherit;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+  margin-top: 8px;
+}
+
+.viewAllLink:hover {
+  opacity: 1;
+}
+
+.viewAllBottom {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-xl);
+}
+
+/* --- Grid --- */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -49,6 +81,7 @@
   margin-top: var(--spacing-xl);
 }
 
+/* --- Cards --- */
 .card {
   background-color: var(--color-canvas);
   border: 1px solid var(--color-hairline);
@@ -59,6 +92,7 @@
   align-items: flex-start;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   color: var(--color-ink);
+  text-decoration: none;
 }
 
 .card:hover {
@@ -78,14 +112,30 @@
 }
 
 .cardTitle {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.35;
   margin-bottom: var(--spacing-xs);
 }
 
 .cardDesc {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
   flex-grow: 1;
   color: var(--color-ink);
-  /* It's ink but body-sm makes it feel lighter in hierarchy */
-  margin-bottom: var(--spacing-lg);
+  opacity: 0.65;
+}
+
+.cardArrow {
+  margin-top: auto;
+  padding-top: var(--spacing-md);
+  opacity: 0.25;
+  transition: opacity 0.2s ease;
+}
+
+.card:hover .cardArrow {
+  opacity: 0.7;
 }
 
 /* For cards inside dark blocks like Navy */
@@ -95,8 +145,12 @@
   color: var(--color-inverse-ink);
 }
 
+.cardDark:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
 .cardDark .cardDesc {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .cardDark .cardIcon {
@@ -104,23 +158,65 @@
   color: var(--color-inverse-ink);
 }
 
+/* --- Tablet --- */
+@media (max-width: 768px) {
+  .heroSection {
+    height: auto;
+    padding: 120px 0 60px;
+  }
+
+  .sectionHeader {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .viewAllLink {
+    margin-top: 0;
+  }
+}
+
+/* --- Mobile --- */
 @media (max-width: 560px) {
   .heroSection {
-    height: 600px;
+    padding: 80px 0 40px;
   }
+
   .grid {
     grid-template-columns: 1fr;
     gap: var(--spacing-sm);
   }
+
   .card {
-    padding: var(--spacing-sm);
+    padding: var(--spacing-md);
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
   }
+
   .cardIcon {
-    width: 36px;
-    height: 36px;
-    margin-bottom: var(--spacing-sm);
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0;
+    flex-shrink: 0;
   }
+
+  .cardTitle {
+    font-size: 15px;
+    margin-bottom: 0;
+  }
+
   .cardDesc {
-    margin-bottom: var(--spacing-sm);
+    display: none;
+  }
+
+  .cardArrow {
+    margin-top: 0;
+    padding-top: 0;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .viewAllBottom {
+    margin-top: var(--spacing-lg);
   }
 }

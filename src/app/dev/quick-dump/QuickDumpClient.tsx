@@ -473,7 +473,7 @@ function QuickDumpLogic() {
                 </p>
 
                 {createdAt && (
-                  <div style={{ marginTop: 'var(--spacing-lg)', background: 'rgba(0,0,0,0.2)', padding: 'var(--spacing-md)', borderRadius: 'var(--rounded-md)' }}>
+                  <div style={{ marginTop: 'var(--spacing-lg)', background: 'var(--color-surface-soft)', padding: 'var(--spacing-md)', borderRadius: 'var(--rounded-md)' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px', flexWrap: 'wrap', gap: '8px' }}>
                       <span className="eyebrow" style={{ color: 'var(--color-block-orange)' }}>Self Destruct Timer</span>
                       <span className={styles.timerText}>{minutes}:{seconds}</span>

@@ -154,7 +154,7 @@ export default function ImageBase64Client() {
                   borderRadius: '8px',
                   border: '1px solid rgba(255,255,255,0.1)',
                   background: 'rgba(0,0,0,0.3)',
-                  color: 'var(--color-primary)',
+                  color: '#fff',
                   fontSize: '13px',
                   fontFamily: 'var(--font-mono)',
                   resize: 'none',

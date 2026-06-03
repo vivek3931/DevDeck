@@ -36,6 +36,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  const categoryRoutes = [
+    '/dev',
+    '/image',
+    '/pdf',
+  ].map((route) => ({
+    url: `${BASE_URL}${route}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.9,
+  }));
+
   const standardRoutes = [
     '',
     '/privacy',
@@ -48,5 +59,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === '' ? 1.0 : 0.5,
   }));
 
-  return [...standardRoutes, ...toolRoutes];
+  return [...standardRoutes, ...categoryRoutes, ...toolRoutes];
 }

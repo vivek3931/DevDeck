@@ -30,7 +30,7 @@ export default function QrGeneratorClient() {
     <div className={styles.container}>
       <div className={styles.pane}>
         <div className={styles.inputSection}>
-          <label htmlFor="qr-input" className="eyebrow" style={{ color: 'var(--color-ink)' }}>Data to encode</label>
+          <label htmlFor="qr-input" className="eyebrow" style={{ color: '#fff' }}>Data to encode</label>
           <Input 
             id="qr-input"
             value={value}
