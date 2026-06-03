@@ -24,7 +24,7 @@ export default function QuickDumpPage() {
               <ArrowLeft size={16} /> Back to Tools
             </Link>
             <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>Quick Dump</h1>
-            <p className="body-lg" style={{ color: 'var(--color-ink-muted)' }}>
+            <p className="body-sm" style={{ color: 'var(--color-ink-muted)' }}>
               Ephemeral text sharing. Paste anything here, grab the 4-letter code, and pull it on any other device instantly.
             </p>
           </header>

@@ -19,7 +19,7 @@ export default function JwtDecoderPage() {
               <ArrowLeft size={16} /> Back to Tools
             </Link>
             <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>JWT Decoder</h1>
-            <p className="body-lg" style={{ color: 'var(--color-ink-muted)' }}>
+            <p className="body-sm" style={{ color: 'var(--color-ink-muted)' }}>
               Decode JSON Web Tokens instantly and completely locally. Your sensitive tokens are never sent to a server.
             </p>
           </header>

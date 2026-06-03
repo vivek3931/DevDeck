@@ -40,9 +40,9 @@ export function Header() {
             }}>
               <Search size={14} className={styles.searchFaded} /> <span className={`${styles.hideMobile} ${styles.searchFaded}`}>Ctrl+K</span>
             </Button>
-            <Link href="/dev/quick-dump" className={styles.hideMobile}>
+            <Link href="/dev/quick-dump">
               <Button variant="primary" className={styles.headerBtn}>
-                <Zap size={14} /> <span>Quick Dump</span>
+                <Zap size={14} /> <span className={styles.hideMobile}>Quick Dump</span>
               </Button>
             </Link>
             <button className={styles.mobileMenuBtn} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Toggle menu">

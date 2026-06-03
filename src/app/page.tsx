@@ -64,9 +64,6 @@ export default function Home() {
         <ColorBlock color="lime">
           <div className={styles.sectionHeader}>
             <h2 className="display-lg">Developer Tools</h2>
-            <Link href="/dev" className={styles.viewAllLink}>
-              View All <ArrowRight size={16} />
-            </Link>
           </div>
           <p className="subhead" style={{ marginTop: 'var(--spacing-md)', maxWidth: '800px' }}>
             Stop opening 5 tabs for everyday transformations. 
@@ -125,9 +122,6 @@ export default function Home() {
         <ColorBlock color="navy">
           <div className={styles.sectionHeader}>
             <h2 className="display-lg">Image & Vector Tools</h2>
-            <Link href="/image" className={styles.viewAllLink} style={{ color: '#fff' }}>
-              View All <ArrowRight size={16} />
-            </Link>
           </div>
           <p className="subhead" style={{ marginTop: 'var(--spacing-md)', maxWidth: '800px' }}>
             Process images and SVGs blazingly fast in your browser.
@@ -191,9 +185,6 @@ export default function Home() {
         <ColorBlock color="cream">
           <div className={styles.sectionHeader}>
             <h2 className="display-lg">PDF Tools</h2>
-            <Link href="/pdf" className={styles.viewAllLink}>
-              View All <ArrowRight size={16} />
-            </Link>
           </div>
           <p className="subhead" style={{ marginTop: 'var(--spacing-md)', maxWidth: '800px' }}>
             Merge, split, and manipulate PDF documents 100% offline.

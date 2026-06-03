@@ -23,7 +23,7 @@ export default function ImageToPdfPage() {
               <ArrowLeft size={16} /> Back to Tools
             </Link>
             <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>Image to PDF Converter</h1>
-            <p className="body-lg" style={{ color: 'var(--color-ink-muted)' }}>
+            <p className="body-sm" style={{ color: 'var(--color-ink-muted)' }}>
               Combine multiple images into a single PDF document. Fast, secure, and completely offline.
             </p>
           </header>

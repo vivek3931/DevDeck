@@ -23,7 +23,7 @@ export default function SvgToReactPage() {
               <ArrowLeft size={16} /> Back to Tools
             </Link>
             <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>SVG to React Converter</h1>
-            <p className="body-lg" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
+            <p className="body-sm" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
               Paste a raw SVG to instantly generate a clean React (JSX/TSX) functional component.
             </p>
           </header>

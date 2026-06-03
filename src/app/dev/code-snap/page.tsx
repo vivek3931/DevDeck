@@ -18,7 +18,7 @@ export default function CodeSnapPage() {
             <ArrowLeft size={16} /> Back to Tools
           </Link>
           <h1 className="display-lg" style={{ color: 'var(--color-inverse-ink)' }}>Code Snippet Exporter</h1>
-          <p className="body-lg" style={{ color: 'rgba(255, 255, 255, 0.7)', marginTop: 'var(--spacing-sm)', maxWidth: '800px' }}>
+          <p className="body-sm" style={{ color: 'rgba(255, 255, 255, 0.7)', marginTop: 'var(--spacing-sm)', maxWidth: '800px' }}>
             A lightning-fast Carbon alternative. Paste your code, choose a beautiful background, and instantly export a high-res PNG for Twitter, LinkedIn, or presentations. Everything stays entirely local.
           </p>
         </div>

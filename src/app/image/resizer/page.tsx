@@ -23,7 +23,7 @@ export default function ImageResizerPage() {
               <ArrowLeft size={16} /> Back to Tools
             </Link>
             <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>Image Resizer</h1>
-            <p className="body-lg" style={{ color: 'var(--color-ink-muted)' }}>
+            <p className="body-sm" style={{ color: 'var(--color-ink-muted)' }}>
               Resize any image by dimensions or percentage. Completely private and offline.
             </p>
           </header>

@@ -23,7 +23,7 @@ export default function TextToolkitPage() {
               <ArrowLeft size={16} /> Back to Tools
             </Link>
             <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>Text Toolkit</h1>
-            <p className="body-lg" style={{ color: 'var(--color-ink-muted)' }}>
+            <p className="body-sm" style={{ color: 'var(--color-ink-muted)' }}>
               String manipulation, encoding, and minification. Done locally.
             </p>
           </header>

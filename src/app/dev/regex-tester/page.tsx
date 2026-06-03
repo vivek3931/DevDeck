@@ -19,7 +19,7 @@ export default function RegexTesterPage() {
               <ArrowLeft size={16} /> Back to Tools
             </Link>
             <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>Regex Visualizer</h1>
-            <p className="body-lg" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
+            <p className="body-sm" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
               Write, test, and debug Regular Expressions securely. Everything runs locally.
             </p>
           </header>

@@ -23,7 +23,7 @@ export default function ImageBase64Page() {
               <ArrowLeft size={16} /> Back to Tools
             </Link>
             <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>Image to Base64</h1>
-            <p className="body-lg" style={{ color: 'var(--color-ink-muted)' }}>
+            <p className="body-sm" style={{ color: 'var(--color-ink-muted)' }}>
               Encode images into Base64 strings for direct embedding in CSS/HTML. 100% offline.
             </p>
           </header>

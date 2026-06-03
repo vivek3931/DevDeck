@@ -19,7 +19,7 @@ export default function LogAnalyzerPage() {
               <ArrowLeft size={16} /> Back to Tools
             </Link>
             <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>Massive Log Analyzer</h1>
-            <p className="body-lg" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
+            <p className="body-sm" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
               Stream, parse, and filter massive log files locally. The browser memory takes the hit, the DOM stays fast.
             </p>
           </header>

@@ -23,7 +23,7 @@ export default function QrGeneratorPage() {
               <ArrowLeft size={16} /> Back to Tools
             </Link>
             <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>QR Code Generator</h1>
-            <p className="body-lg" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
+            <p className="body-sm" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
               Create vector (SVG) QR codes instantly.
             </p>
           </header>

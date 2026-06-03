@@ -23,7 +23,7 @@ export default function JsonValidatorPage() {
               <ArrowLeft size={16} /> Back to Tools
             </Link>
             <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>JSON Formatter & Validator</h1>
-            <p className="body-lg" style={{ color: 'var(--color-ink-muted)' }}>
+            <p className="body-sm" style={{ color: 'var(--color-ink-muted)' }}>
               Paste your malformed JSON below. Format it instantly, or pinpoint exact syntax errors.
             </p>
           </header>

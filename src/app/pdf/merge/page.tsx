@@ -23,7 +23,7 @@ export default function PdfMergePage() {
               <ArrowLeft size={16} /> Back to Tools
             </Link>
             <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>Merge PDF Files</h1>
-            <p className="body-lg" style={{ color: 'var(--color-ink-muted)' }}>
+            <p className="body-sm" style={{ color: 'var(--color-ink-muted)' }}>
               Select multiple PDFs, drag to reorder them, and click merge. 100% offline and secure.
             </p>
           </header>

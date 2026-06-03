@@ -18,7 +18,7 @@ export default function ApiTesterPage() {
             <ArrowLeft size={16} /> Back to Tools
           </Link>
           <h1 className="display-lg" style={{ color: 'var(--color-inverse-ink)' }}>API Request Tester</h1>
-          <p className="body-lg" style={{ color: 'rgba(255, 255, 255, 0.7)', marginTop: 'var(--spacing-sm)', maxWidth: '800px' }}>
+          <p className="body-sm" style={{ color: 'rgba(255, 255, 255, 0.7)', marginTop: 'var(--spacing-sm)', maxWidth: '800px' }}>
             A lightweight Postman alternative. Test REST APIs with custom headers and JSON payloads directly from your browser. 
             Powered by a local proxy to seamlessly bypass CORS restrictions.
           </p>

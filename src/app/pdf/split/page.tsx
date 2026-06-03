@@ -23,7 +23,7 @@ export default function PdfSplitPage() {
               <ArrowLeft size={16} /> Back to Tools
             </Link>
             <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>Split PDF Document</h1>
-            <p className="body-lg" style={{ color: 'var(--color-ink-muted)' }}>
+            <p className="body-sm" style={{ color: 'var(--color-ink-muted)' }}>
               Extract exact pages from your PDF file. No server uploads—completely secure and instant.
             </p>
           </header>

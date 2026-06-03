@@ -23,7 +23,7 @@ export default function JsonToTsPage() {
               <ArrowLeft size={16} /> Back to Tools
             </Link>
             <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>JSON to TypeScript</h1>
-            <p className="body-lg" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
+            <p className="body-sm" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
               Paste JSON on the left to instantly generate TypeScript interfaces on the right.
             </p>
           </header>

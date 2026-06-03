@@ -23,7 +23,7 @@ export default function PdfProtectPage() {
               <ArrowLeft size={16} /> Back to Tools
             </Link>
             <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>Password Protect PDF</h1>
-            <p className="body-lg" style={{ color: 'var(--color-ink-muted)' }}>
+            <p className="body-sm" style={{ color: 'var(--color-ink-muted)' }}>
               Encrypt and secure your PDF document with a password. 100% offline.
             </p>
           </header>

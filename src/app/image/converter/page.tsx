@@ -23,7 +23,7 @@ export default function ImageConverterPage() {
               <ArrowLeft size={16} /> Back to Tools
             </Link>
             <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>Image Format Converter</h1>
-            <p className="body-lg" style={{ color: 'var(--color-ink-muted)' }}>
+            <p className="body-sm" style={{ color: 'var(--color-ink-muted)' }}>
               Convert instantly between WebP, PNG, and JPEG. Fast, lossless (for PNG/WebP), and completely client-side.
             </p>
           </header>
