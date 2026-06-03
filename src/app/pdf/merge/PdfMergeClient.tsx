@@ -136,10 +136,15 @@ export default function PdfMergeClient() {
           onChange={handleFileChange}
         />
         <UploadCloud size={48} opacity={0.5} />
-        <div>
-          <h3 className="body-lg" style={{ fontWeight: 600 }}>Click or drag PDFs here</h3>
-          <p className="body-sm" style={{ color: 'var(--color-ink-muted)' }}>Files remain entirely on your device.</p>
-        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px', pointerEvents: 'none' }}>
+            <div>
+              <h3 className="body-lg" style={{ fontWeight: 600 }}>Drag & drop PDFs here</h3>
+              <p className="body-sm" style={{ color: 'var(--color-ink-muted)' }}>Files remain entirely on your device.</p>
+            </div>
+            <Button variant="secondary" style={{ pointerEvents: 'auto' }} onClick={(e: React.MouseEvent) => { e.stopPropagation(); fileInputRef.current?.click(); }}>
+              Choose File
+            </Button>
+          </div>
       </div>
 
       {files.length > 0 && (

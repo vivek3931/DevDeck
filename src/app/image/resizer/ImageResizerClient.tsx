@@ -141,9 +141,14 @@ export default function ImageResizerClient() {
             onChange={handleFileChange}
           />
           <UploadCloud size={48} opacity={0.5} />
-          <div>
-            <h3 className="body-lg" style={{ fontWeight: 600 }}>Click or drag an image here</h3>
-            <p className="body-sm" style={{ color: 'var(--color-ink-muted)' }}>Supports PNG, JPEG, WebP, GIF, and more.</p>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px', pointerEvents: 'none' }}>
+            <div>
+              <h3 className="body-lg" style={{ fontWeight: 600 }}>Drag & drop an image here</h3>
+              <p className="body-sm" style={{ color: 'var(--color-ink-muted)' }}>Supports PNG, JPEG, WebP, GIF, and more.</p>
+            </div>
+            <Button variant="secondary" style={{ pointerEvents: 'auto' }} onClick={(e: React.MouseEvent) => { e.stopPropagation(); fileInputRef.current?.click(); }}>
+              Choose File
+            </Button>
           </div>
         </div>
       ) : (

@@ -88,15 +88,18 @@
   }
 }
 
-/* Touch target for mobile - Ensure min 44px height for accessibility */
 @media (max-width: 560px) {
   .base {
-    font-size: 14px;
+    font-size: 13px;
   }
   .primary, .inverse, .promo {
-    padding: 12px 24px;
+    padding: 10px 18px;
   }
   .secondary {
-    padding: 10px 22px;
+    padding: 8px 16px;
+  }
+  .base svg {
+    width: 14px !important;
+    height: 14px !important;
   }
 }
