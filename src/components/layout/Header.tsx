@@ -7,9 +7,25 @@ import { GlobalTray } from './GlobalTray';
 import { Activity, Search, Zap, Menu, X, Code, Image as ImageIcon, FileText } from 'lucide-react';
 import styles from './Header.module.css';
 
+import { TOOLS } from '@/constants/tools';
+
 export function Header() {
   const [isTrayOpen, setIsTrayOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState<'dev' | 'image' | 'pdf' | null>(null);
+
+  let hoverTimeout: NodeJS.Timeout;
+
+  const handleMouseEnter = (menu: 'dev' | 'image' | 'pdf') => {
+    clearTimeout(hoverTimeout);
+    setActiveMenu(menu);
+  };
+
+  const handleMouseLeave = () => {
+    hoverTimeout = setTimeout(() => {
+      setActiveMenu(null);
+    }, 150);
+  };
 
   return (
     <>
@@ -19,16 +35,22 @@ export function Header() {
             <Link href="/" className={styles.logo}>
               <img src="/logo.svg" alt="DevDeck Logo" className={styles.logoImg} />
             </Link>
-            <nav className={styles.navLinks}>
-              <Link href="/dev" className={styles.navLink}>
-                <Code size={16} /> <span>Dev Tools</span>
-              </Link>
-              <Link href="/image" className={styles.navLink}>
-                <ImageIcon size={16} /> <span>Image Tools</span>
-              </Link>
-              <Link href="/pdf" className={styles.navLink}>
-                <FileText size={16} /> <span>PDF Tools</span>
-              </Link>
+            <nav className={styles.navLinks} onMouseLeave={handleMouseLeave}>
+              <div onMouseEnter={() => handleMouseEnter('dev')}>
+                <Link href="/dev" className={`${styles.navLink} ${activeMenu === 'dev' ? styles.navLinkActive : ''}`}>
+                  <Code size={16} /> <span>Dev Tools</span>
+                </Link>
+              </div>
+              <div onMouseEnter={() => handleMouseEnter('image')}>
+                <Link href="/image" className={`${styles.navLink} ${activeMenu === 'image' ? styles.navLinkActive : ''}`}>
+                  <ImageIcon size={16} /> <span>Image Tools</span>
+                </Link>
+              </div>
+              <div onMouseEnter={() => handleMouseEnter('pdf')}>
+                <Link href="/pdf" className={`${styles.navLink} ${activeMenu === 'pdf' ? styles.navLinkActive : ''}`}>
+                  <FileText size={16} /> <span>PDF Tools</span>
+                </Link>
+              </div>
             </nav>
           </div>
           <div className={styles.right}>
@@ -48,8 +70,30 @@ export function Header() {
             <button className={styles.mobileMenuBtn} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Toggle menu">
               {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
+        {/* Mega Menu Dropdown */}
+        {activeMenu && (
+          <div 
+            className={styles.megaMenuWrapper} 
+            onMouseEnter={() => handleMouseEnter(activeMenu)} 
+            onMouseLeave={handleMouseLeave}
+          >
+            <div className={styles.megaMenuContainer}>
+              <div className={styles.megaMenuGrid}>
+                {TOOLS[activeMenu].map((tool, idx) => (
+                  <Link href={tool.path} key={idx} className={styles.megaMenuItem} onClick={() => setActiveMenu(null)}>
+                    <div className={styles.megaMenuIconWrapper}>
+                      <tool.icon size={18} />
+                    </div>
+                    <div>
+                      <div className={styles.megaMenuTitle}>{tool.title}</div>
+                      <div className={styles.megaMenuDesc}>{tool.desc}</div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
+        )}
       </header>
 
       {isMobileMenuOpen && (
