@@ -23,7 +23,12 @@ const TOOLS = [
   { name: 'Massive Log Analyzer', path: '/dev/log-analyzer' },
   { name: 'Code Snippet Exporter', path: '/dev/code-snap' },
   { name: 'Merge PDFs', path: '/pdf/merge' },
+  { name: 'Split PDF', path: '/pdf/split' },
+  { name: 'Image to PDF', path: '/pdf/image-to-pdf' },
+  { name: 'Protect PDF', path: '/pdf/protect' },
   { name: 'Image Format Converter', path: '/image/converter' },
+  { name: 'Image Resizer', path: '/image/resizer' },
+  { name: 'Image to Base64', path: '/image/base64' },
 ];
 
 export function CommandPalette() {

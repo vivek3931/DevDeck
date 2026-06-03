@@ -152,6 +152,20 @@ export default function Home() {
               dark
             />
             <ToolCard 
+              href="/image/resizer" 
+              icon={<ImageIcon />} 
+              title="Image Resizer" 
+              desc="Resize any image by dimensions or percentage offline."
+              dark
+            />
+            <ToolCard 
+              href="/image/base64" 
+              icon={<ImageIcon />} 
+              title="Image to Base64" 
+              desc="Encode images into Base64 strings for direct CSS/HTML embedding."
+              dark
+            />
+            <ToolCard 
               href="/image/image-compressor" 
               icon={<ImageIcon />} 
               title="Image Compressor" 

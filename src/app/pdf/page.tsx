@@ -34,6 +34,24 @@ export default function PdfToolsPage() {
               title="Merge PDFs" 
               desc="Combine multiple PDF files into one instantly. Drag and drop to reorder."
             />
+            <ToolCard 
+              href="/pdf/split" 
+              icon={<Layers size={32} />} 
+              title="Split PDF" 
+              desc="Extract specific pages or page ranges from a PDF document."
+            />
+            <ToolCard 
+              href="/pdf/image-to-pdf" 
+              icon={<Layers size={32} />} 
+              title="Image to PDF" 
+              desc="Convert JPG, PNG, and WebP images into a single PDF document."
+            />
+            <ToolCard 
+              href="/pdf/protect" 
+              icon={<Layers size={32} />} 
+              title="Protect PDF" 
+              desc="Encrypt and secure your PDF document with a password."
+            />
           </div>
         </div>
       </ColorBlock>

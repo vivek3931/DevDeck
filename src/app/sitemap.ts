@@ -21,7 +21,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/dev/api-tester' },
     { path: '/dev/code-snap' },
     { path: '/pdf/merge' },
-    { path: '/image/converter' }
+    { path: '/pdf/split' },
+    { path: '/pdf/image-to-pdf' },
+    { path: '/pdf/protect' },
+    { path: '/image/converter' },
+    { path: '/image/resizer' },
+    { path: '/image/base64' }
   ];
 
   const toolRoutes = tools.map((tool) => ({
