@@ -70,6 +70,8 @@ export function Header() {
             <button className={styles.mobileMenuBtn} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Toggle menu">
               {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
+          </div>
+        </div>
         {/* Mega Menu Dropdown */}
         {activeMenu && (
           <div 
