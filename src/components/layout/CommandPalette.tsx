@@ -22,6 +22,8 @@ const TOOLS = [
   { name: 'Regex Visualizer', path: '/dev/regex-tester' },
   { name: 'Massive Log Analyzer', path: '/dev/log-analyzer' },
   { name: 'Code Snippet Exporter', path: '/dev/code-snap' },
+  { name: 'Merge PDFs', path: '/pdf/merge' },
+  { name: 'Image Format Converter', path: '/image/converter' },
 ];
 
 export function CommandPalette() {

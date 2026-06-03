@@ -19,7 +19,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/dev/regex-tester' },
     { path: '/dev/log-analyzer' },
     { path: '/dev/api-tester' },
-    { path: '/dev/code-snap' }
+    { path: '/dev/code-snap' },
+    { path: '/pdf/merge' },
+    { path: '/image/converter' }
   ];
 
   const toolRoutes = tools.map((tool) => ({

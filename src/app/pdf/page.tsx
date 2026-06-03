@@ -1,36 +1,68 @@
 import React from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Layers, Wrench } from 'lucide-react';
+import { ArrowLeft, Layers, Combine } from 'lucide-react';
 import { ColorBlock } from '@/components/ui/ColorBlock';
+import { Button } from '@/components/ui/Button';
 
 export const metadata = {
   title: 'Offline PDF Tools | Merge & Split | DevDeck',
   description: '100% offline, local PDF tools. Merge, split, and manipulate PDFs directly in your browser without uploading to a server.',
 };
 
-export default function PdfToolsComingSoonPage() {
+export default function PdfToolsPage() {
   return (
     <article>
       <ColorBlock color="navy">
-        <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center', padding: '100px 20px' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 20px' }}>
           <header style={{ marginBottom: 'var(--spacing-xl)' }}>
             <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'inherit', textDecoration: 'none', marginBottom: 'var(--spacing-md)', fontWeight: 500, opacity: 0.8 }}>
               <ArrowLeft size={16} /> Back to Tools
             </Link>
-            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '24px', opacity: 0.8 }}>
-              <Layers size={64} />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
+              <Layers size={48} />
+              <h1 className="display-xl">Offline PDF Toolkit</h1>
             </div>
-            <h1 className="display-xl" style={{ marginBottom: 'var(--spacing-sm)' }}>PDF Tools are Coming Soon!</h1>
-            <p className="body-lg" style={{ color: 'var(--color-ink-muted)', maxWidth: '600px', margin: '0 auto' }}>
-              We are currently building a blazing-fast, 100% offline suite of PDF tools. 
-              Soon you will be able to merge, split, and edit PDFs directly in your browser without uploading your sensitive documents to any third-party server.
+            <p className="body-lg" style={{ color: 'var(--color-ink-muted)', maxWidth: '600px' }}>
+              Manipulate your sensitive PDFs securely. All processing happens locally on your device.
             </p>
           </header>
-          <div style={{ display: 'flex', justifyContent: 'center', opacity: 0.5 }}>
-             <Wrench size={48} className="spinner" />
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '24px' }}>
+            <ToolCard 
+              href="/pdf/merge" 
+              icon={<Combine size={32} />} 
+              title="Merge PDFs" 
+              desc="Combine multiple PDF files into one instantly. Drag and drop to reorder."
+            />
           </div>
         </div>
       </ColorBlock>
     </article>
+  );
+}
+
+function ToolCard({ href, icon, title, desc }: { href: string, icon: React.ReactNode, title: string, desc: string }) {
+  return (
+    <Link href={href} style={{
+      display: 'flex',
+      flexDirection: 'column',
+      padding: '24px',
+      backgroundColor: 'rgba(255, 255, 255, 0.05)',
+      borderRadius: '16px',
+      border: '1px solid rgba(255, 255, 255, 0.1)',
+      textDecoration: 'none',
+      color: 'inherit',
+      transition: 'all 0.2s ease',
+      height: '100%'
+    }}>
+      <div style={{ marginBottom: '16px', color: 'var(--color-primary)' }}>
+        {icon}
+      </div>
+      <h3 className="body-lg" style={{ fontWeight: 600, marginBottom: '8px' }}>{title}</h3>
+      <p className="body-sm" style={{ color: 'var(--color-ink-muted)' }}>{desc}</p>
+      <div style={{ marginTop: 'auto', paddingTop: '16px' }}>
+        <Button variant="secondary" size="sm">Open Tool →</Button>
+      </div>
+    </Link>
   );
 }

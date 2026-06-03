@@ -145,6 +145,13 @@ export default function Home() {
 
           <div className={styles.grid}>
             <ToolCard 
+              href="/image/converter" 
+              icon={<ImageIcon />} 
+              title="Image Format Converter" 
+              desc="Instantly convert images between WebP, PNG, and JPEG formats in your browser."
+              dark
+            />
+            <ToolCard 
               href="/image/image-compressor" 
               icon={<ImageIcon />} 
               title="Image Compressor" 
