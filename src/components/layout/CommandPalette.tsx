@@ -6,22 +6,22 @@ import { Search } from 'lucide-react';
 import styles from './CommandPalette.module.css';
 
 const TOOLS = [
-  { name: 'Text Toolkit', path: '/tools/text-toolkit' },
-  { name: 'QR Code Generator', path: '/tools/qr-generator' },
-  { name: 'JWT Decoder', path: '/tools/jwt-decoder' },
-  { name: 'Quick Dump', path: '/tools/quick-dump' },
-  { name: 'Image Compressor', path: '/tools/image-compressor' },
-  { name: 'JSON Formatter & Validator', path: '/tools/json-validator' },
-  { name: 'Hash Generator', path: '/tools/hash-generator' },
-  { name: 'JSON to TS Converter', path: '/tools/json-to-ts' },
-  { name: 'cURL to Fetch Converter', path: '/tools/curl-converter' },
-  { name: 'SVG to React Converter', path: '/tools/svg-to-react' },
-  { name: 'API Request Tester', path: '/tools/api-tester' },
-  { name: 'Local SQLite Explorer', path: '/tools/sqlite-explorer' },
-  { name: 'JSONPath Playground', path: '/tools/json-path' },
-  { name: 'Regex Visualizer', path: '/tools/regex-tester' },
-  { name: 'Massive Log Analyzer', path: '/tools/log-analyzer' },
-  { name: 'Code Snippet Exporter', path: '/tools/code-snap' },
+  { name: 'Text Toolkit', path: '/text/text-toolkit' },
+  { name: 'QR Code Generator', path: '/image/qr-generator' },
+  { name: 'JWT Decoder', path: '/dev/jwt-decoder' },
+  { name: 'Quick Dump', path: '/dev/quick-dump' },
+  { name: 'Image Compressor', path: '/image/image-compressor' },
+  { name: 'JSON Formatter & Validator', path: '/dev/json-validator' },
+  { name: 'Hash Generator', path: '/dev/hash-generator' },
+  { name: 'JSON to TS Converter', path: '/dev/json-to-ts' },
+  { name: 'cURL to Fetch Converter', path: '/dev/curl-converter' },
+  { name: 'SVG to React Converter', path: '/image/svg-to-react' },
+  { name: 'API Request Tester', path: '/dev/api-tester' },
+  { name: 'Local SQLite Explorer', path: '/dev/sqlite-explorer' },
+  { name: 'JSONPath Playground', path: '/dev/json-path' },
+  { name: 'Regex Visualizer', path: '/dev/regex-tester' },
+  { name: 'Massive Log Analyzer', path: '/dev/log-analyzer' },
+  { name: 'Code Snippet Exporter', path: '/dev/code-snap' },
 ];
 
 export function CommandPalette() {

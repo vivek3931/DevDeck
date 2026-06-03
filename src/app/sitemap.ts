@@ -4,26 +4,26 @@ const BASE_URL = 'https://devdeck.online';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const tools = [
-    'image-compressor',
-    'jwt-decoder',
-    'qr-generator',
-    'quick-dump',
-    'text-toolkit',
-    'json-validator',
-    'hash-generator',
-    'json-to-ts',
-    'curl-converter',
-    'svg-to-react',
-    'sqlite-explorer',
-    'json-path',
-    'regex-tester',
-    'log-analyzer',
-    'api-tester',
-    'code-snap'
+    { path: '/image/image-compressor' },
+    { path: '/dev/jwt-decoder' },
+    { path: '/image/qr-generator' },
+    { path: '/dev/quick-dump' },
+    { path: '/text/text-toolkit' },
+    { path: '/dev/json-validator' },
+    { path: '/dev/hash-generator' },
+    { path: '/dev/json-to-ts' },
+    { path: '/dev/curl-converter' },
+    { path: '/image/svg-to-react' },
+    { path: '/dev/sqlite-explorer' },
+    { path: '/dev/json-path' },
+    { path: '/dev/regex-tester' },
+    { path: '/dev/log-analyzer' },
+    { path: '/dev/api-tester' },
+    { path: '/dev/code-snap' }
   ];
 
   const toolRoutes = tools.map((tool) => ({
-    url: `${BASE_URL}/tools/${tool}`,
+    url: `${BASE_URL}${tool.path}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.8,
