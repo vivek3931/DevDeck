@@ -134,7 +134,7 @@ export default function ImageBase64Client() {
               </div>
 
               <div style={{ marginTop: '16px' }}>
-                 <Button variant="ghost" onClick={reset} style={{ width: '100%' }}>
+                 <Button variant="secondary" onClick={reset} style={{ width: '100%' }}>
                   <RefreshCw size={18} style={{ marginRight: '8px' }} /> Encode Another Image
                 </Button>
               </div>
