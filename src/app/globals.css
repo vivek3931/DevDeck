@@ -145,7 +145,7 @@ input, textarea, select {
 }
 
 .subhead {
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 340;
   line-height: 1.35;
   letter-spacing: -0.26px;
@@ -215,8 +215,11 @@ input, textarea, select {
   .display-md {
     font-size: 36px;
   }
-  .headline, .subhead {
+  .headline {
     font-size: 24px;
+  }
+  .subhead {
+    font-size: 18px;
   }
 }
 
@@ -247,8 +250,11 @@ input, textarea, select {
     font-size: 28px;
     font-weight: 400;
   }
-  .headline, .subhead {
+  .headline {
     font-size: 20px;
+  }
+  .subhead {
+    font-size: 16px;
   }
   .card-title {
     font-size: 18px;
