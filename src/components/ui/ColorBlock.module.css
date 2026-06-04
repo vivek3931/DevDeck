@@ -3,8 +3,7 @@
 .container {
   width: 100%;
   margin-top: var(--spacing-section);
-  margin-bottom: var(--spacing-section);
-  /* The spacing section provides the rhythm between blocks (white canvas between them) */
+  margin-bottom: 0;
 }
 
 .block {
@@ -56,7 +55,7 @@
 @media (max-width: 768px) {
   .container {
     margin-top: 0;
-    margin-bottom: var(--spacing-xxl); /* Give it breathing room from the footer */
+    margin-bottom: 0;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
