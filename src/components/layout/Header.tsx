@@ -57,11 +57,7 @@ export function Header() {
             <Button variant="secondary" className={styles.headerBtn} onClick={() => setIsTrayOpen(true)} aria-label="Open Activity">
               <Activity size={14} /> <span className={styles.hideMobile}>Activity</span>
             </Button>
-            <Button variant="secondary" className={`${styles.headerBtn} ${styles.searchBtn}`} onClick={() => {
-              window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }));
-            }}>
-              <Search size={14} className={styles.searchFaded} /> <span className={`${styles.hideMobile} ${styles.searchFaded}`}>Ctrl+K</span>
-            </Button>
+
             <Link href="/dev/quick-dump">
               <Button variant="primary" className={styles.headerBtn}>
                 <Zap size={14} /> <span className={styles.hideMobile}>Quick Dump</span>

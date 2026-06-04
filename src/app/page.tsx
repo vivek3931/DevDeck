@@ -26,6 +26,7 @@ import {
   ArrowRight,
   ImagePlus,
   AlignLeft,
+  Search,
 } from 'lucide-react';
 import styles from './page.module.css';
 
@@ -44,16 +45,15 @@ export default function Home() {
                 Developer tools, image processors, and formatters directly in your browser. 
                 Built for speed. Optimized for you.
               </p>
-              <div style={{ display: 'flex', gap: '16px', marginTop: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <Link href="/dev">
-                  <Button variant="primary">Explore Dev Tools</Button>
-                </Link>
-                <Link href="/image">
-                  <Button variant="secondary">Image Tools</Button>
-                </Link>
-                <Link href="/pdf">
-                  <Button variant="secondary">PDF Tools</Button>
-                </Link>
+              <div style={{ marginTop: '32px', display: 'flex', justifyContent: 'center' }}>
+                <button 
+                  onClick={() => window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }))}
+                  className={styles.heroSearchBtn}
+                >
+                  <Search size={20} style={{ opacity: 0.5 }} />
+                  <span style={{ flex: 1, textAlign: 'left', opacity: 0.8 }}>Search for tools...</span>
+                  <div className={styles.heroSearchShortcut}>Ctrl+K</div>
+                </button>
               </div>
             </div>
           </div>
