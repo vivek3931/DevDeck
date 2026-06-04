@@ -137,6 +137,37 @@
   background: rgba(0,0,0,0.04);
 }
 
+.mobileSection {
+  margin-bottom: 4px;
+}
+
+.mobileSectionHeader {
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-ink);
+  opacity: 0.5;
+  padding: 8px 16px;
+  margin-top: 8px;
+}
+
+.mobileSubLink {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px 10px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-ink);
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.mobileSubLink:hover {
+  background: rgba(0,0,0,0.04);
+}
+
 .marquee {
   height: 36px;
   background-color: var(--color-inverse-canvas);

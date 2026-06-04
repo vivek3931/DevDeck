@@ -95,11 +95,35 @@ export function Header() {
       </header>
 
       {isMobileMenuOpen && (
-        <div className={styles.mobileMenu}>
-          <Link href="/dev" className={styles.mobileLink} onClick={() => setIsMobileMenuOpen(false)}>Developer Tools</Link>
-          <Link href="/image" className={styles.mobileLink} onClick={() => setIsMobileMenuOpen(false)}>Image Tools</Link>
-          <Link href="/pdf" className={styles.mobileLink} onClick={() => setIsMobileMenuOpen(false)}>PDF Tools</Link>
-          <Link href="/dev/quick-dump" className={styles.mobileLink} onClick={() => setIsMobileMenuOpen(false)}>Quick Dump</Link>
+        <div className={styles.mobileMenu} style={{ overflowY: 'auto', maxHeight: 'calc(100vh - 56px)' }}>
+          <div className={styles.mobileSection}>
+            <div className={styles.mobileSectionHeader}>Developer Tools</div>
+            {TOOLS.dev.map(tool => (
+              <Link key={tool.path} href={tool.path} className={styles.mobileSubLink} onClick={() => setIsMobileMenuOpen(false)}>
+                <tool.icon size={16} style={{ marginRight: '12px', opacity: 0.7 }} /> {tool.title}
+              </Link>
+            ))}
+          </div>
+          <div className={styles.mobileSection}>
+            <div className={styles.mobileSectionHeader}>Image Tools</div>
+            {TOOLS.image.map(tool => (
+              <Link key={tool.path} href={tool.path} className={styles.mobileSubLink} onClick={() => setIsMobileMenuOpen(false)}>
+                <tool.icon size={16} style={{ marginRight: '12px', opacity: 0.7 }} /> {tool.title}
+              </Link>
+            ))}
+          </div>
+          <div className={styles.mobileSection}>
+            <div className={styles.mobileSectionHeader}>PDF Tools</div>
+            {TOOLS.pdf.map(tool => (
+              <Link key={tool.path} href={tool.path} className={styles.mobileSubLink} onClick={() => setIsMobileMenuOpen(false)}>
+                <tool.icon size={16} style={{ marginRight: '12px', opacity: 0.7 }} /> {tool.title}
+              </Link>
+            ))}
+          </div>
+          <div style={{ height: '1px', background: 'var(--color-hairline)', margin: '8px 16px' }} />
+          <Link href="/dev/quick-dump" className={styles.mobileLink} onClick={() => setIsMobileMenuOpen(false)} style={{ display: 'flex', alignItems: 'center' }}>
+            <Zap size={16} style={{ marginRight: '12px', opacity: 0.7 }} /> Quick Dump
+          </Link>
         </div>
       )}
 
