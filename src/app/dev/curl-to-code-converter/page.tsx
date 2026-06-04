@@ -1,0 +1,44 @@
+import { SoftwareAppSchema, FaqSchema } from '@/components/seo/Schema';
+import { RelatedTools } from '@/components/ui/RelatedTools';
+import { TrustBadge } from '@/components/ui/TrustBadge';
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
+import { Metadata } from 'next';
+import CurlConverterClient from './CurlConverterClient';
+import { ColorBlock } from '@/components/ui/ColorBlock';
+
+export const metadata: Metadata = {
+  title: 'Free Online cURL to Fetch Converter | DevDeck',
+  description: 'Instantly convert raw cURL commands into clean JavaScript fetch() code. Free online developer tool with zero tracking.',
+  openGraph: {
+    title: 'Free Online cURL to Fetch Converter | DevDeck',
+    description: 'Instantly convert raw cURL commands into clean JavaScript fetch() code.',
+  }
+};
+
+export default function CurlConverterPage() {
+  return (
+    <article>
+      <ColorBlock color="lime">
+        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+          <header style={{ marginBottom: 'var(--spacing-xl)' }}>
+            <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'inherit', textDecoration: 'none', marginBottom: 'var(--spacing-md)', fontWeight: 500, opacity: 0.8 }}>
+              <ArrowLeft size={16} /> Back to Tools
+            </Link>
+            <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>cURL to Fetch Converter</h1>
+        <TrustBadge />
+            <p className="body-sm" style={{ color: 'var(--color-ink-muted)' }}>
+              Paste a cURL command from your terminal or Chrome DevTools to generate JavaScript `fetch()` syntax.
+            </p>
+          </header>
+          <main>
+            <CurlConverterClient />
+          
+        <RelatedTools currentPath="/dev/curl-to-code-converter" category="dev" />
+        <SoftwareAppSchema name="DevDeck curl-to-code-converter" description="A free, secure developer tool." url="https://devdeck.com/dev/curl-to-code-converter" />
+      </main>
+        </div>
+      </ColorBlock>
+    </article>
+  );
+}

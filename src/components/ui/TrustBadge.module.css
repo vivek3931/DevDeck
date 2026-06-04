@@ -1,0 +1,26 @@
+.trustBadgeContainer {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-md);
+  margin-top: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.trustIcon {
+  color: var(--color-success, #10b981);
+}
+
+.trustText {
+  font-size: 13px;
+  color: var(--color-ink-muted);
+  line-height: 1.4;
+}
+
+.trustText strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}

@@ -19,10 +19,10 @@ export const metadata: Metadata = {
 };
 
 const tools = [
-  { href: '/pdf/merge', icon: <Combine />, title: 'Merge PDFs', desc: 'Combine multiple PDF files into one instantly. Drag and drop to reorder.' },
-  { href: '/pdf/split', icon: <Scissors />, title: 'Split PDF', desc: 'Extract specific pages or page ranges from a PDF document.' },
-  { href: '/pdf/image-to-pdf', icon: <ImagePlus />, title: 'Image to PDF', desc: 'Convert JPG, PNG, and WebP images into a single PDF document.' },
-  { href: '/pdf/protect', icon: <Lock />, title: 'Protect PDF', desc: 'Encrypt and secure your PDF document with a password.' },
+  { href: '/pdf/merge-pdf-files-free', icon: <Combine />, title: 'Merge PDFs', desc: 'Combine multiple PDF files into one instantly. Drag and drop to reorder.' },
+  { href: '/pdf/split-extract-pdf-pages', icon: <Scissors />, title: 'Split PDF', desc: 'Extract specific pages or page ranges from a PDF document.' },
+  { href: '/pdf/convert-image-to-pdf', icon: <ImagePlus />, title: 'Image to PDF', desc: 'Convert JPG, PNG, and WebP images into a single PDF document.' },
+  { href: '/pdf/password-protect-pdf-file', icon: <Lock />, title: 'Protect PDF', desc: 'Encrypt and secure your PDF document with a password.' },
 ];
 
 export default function PdfToolsPage() {

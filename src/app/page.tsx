@@ -67,43 +67,43 @@ export default function Home() {
 
           <div className={styles.grid}>
             <ToolCard 
-              href="/dev/json-validator" 
+              href="/dev/json-formatter-validator" 
               icon={<Braces />} 
               title="JSON Formatter & Validator" 
               desc="Instantly format, minify, and validate JSON payloads with precise syntax error locating."
             />
             <ToolCard 
-              href="/dev/api-tester" 
+              href="/dev/rest-api-client-tester" 
               icon={<Code />} 
               title="API Request Tester" 
               desc="Lightweight Postman alternative. Test REST APIs with custom headers and JSON payloads locally."
             />
             <ToolCard 
-              href="/dev/jwt-decoder" 
+              href="/dev/secure-jwt-decoder" 
               icon={<Unlock />} 
               title="JWT Decoder" 
               desc="Decode JSON Web Tokens securely. Your tokens are never sent to a server."
             />
             <ToolCard 
-              href="/dev/regex-tester" 
+              href="/dev/regular-expression-tester" 
               icon={<Braces />} 
               title="Regex Visualizer" 
               desc="Test Regular Expressions in real-time. Highlights matches and explains capture groups."
             />
             <ToolCard 
-              href="/dev/hash-generator" 
+              href="/dev/md5-sha256-hash-generator" 
               icon={<Hash />} 
               title="Hash & Checksum Generator" 
               desc="Generate MD5, SHA-1, SHA-256, and SHA-512 hashes instantly for strings and files."
             />
             <ToolCard 
-              href="/dev/json-to-ts" 
+              href="/dev/json-to-typescript-interface-converter" 
               icon={<FileType />} 
               title="JSON to TypeScript" 
               desc="Instantly convert JSON payloads into perfectly formatted TypeScript interfaces."
             />
             <ToolCard 
-              href="/dev/lorem-ipsum" 
+              href="/dev/lorem-ipsum-placeholder-generator" 
               icon={<AlignLeft />} 
               title="Lorem Ipsum Generator" 
               desc="Generate reliable placeholder text (paragraphs, sentences, words) instantly."
@@ -130,42 +130,42 @@ export default function Home() {
 
           <div className={styles.grid}>
             <ToolCard 
-              href="/image/converter" 
+              href="/image/png-jpg-webp-image-converter" 
               icon={<ImageIcon />} 
               title="Image Format Converter" 
               desc="Instantly convert images between WebP, PNG, and JPEG formats in your browser."
               dark
             />
             <ToolCard 
-              href="/image/resizer" 
+              href="/image/free-image-resizer-tool" 
               icon={<Maximize />} 
               title="Image Resizer" 
               desc="Resize any image by dimensions or percentage locally."
               dark
             />
             <ToolCard 
-              href="/image/image-compressor" 
+              href="/image/free-online-image-compressor" 
               icon={<ImageIcon />} 
               title="Image Compressor" 
               desc="Client-side canvas tool to compress JPEGs, scale aspects, and reduce file sizes."
               dark
             />
             <ToolCard 
-              href="/image/base64" 
+              href="/image/base64-image-encoder" 
               icon={<Binary />} 
               title="Image to Base64" 
               desc="Encode images into Base64 strings for direct CSS/HTML embedding."
               dark
             />
             <ToolCard 
-              href="/image/svg-to-react" 
+              href="/image/svg-to-react-jsx-converter" 
               icon={<FileCode />} 
               title="SVG to React JSX" 
               desc="Convert raw SVG HTML into clean React functional components perfectly formatted."
               dark
             />
             <ToolCard 
-              href="/image/qr-generator" 
+              href="/image/vector-qr-code-generator" 
               icon={<QrCode />} 
               title="QR Code Generator" 
               desc="Convert URLs or text into downloadable, highly-customizable vector QR codes."
@@ -193,25 +193,25 @@ export default function Home() {
 
           <div className={styles.grid}>
             <ToolCard 
-              href="/pdf/merge" 
+              href="/pdf/merge-pdf-files-free" 
               icon={<Combine />} 
               title="Merge PDFs" 
               desc="Combine multiple PDF files into one instantly. Drag and drop to reorder."
             />
             <ToolCard 
-              href="/pdf/split" 
+              href="/pdf/split-extract-pdf-pages" 
               icon={<Scissors />} 
               title="Split PDF" 
               desc="Extract specific pages or page ranges from a PDF document."
             />
             <ToolCard 
-              href="/pdf/image-to-pdf" 
+              href="/pdf/convert-image-to-pdf" 
               icon={<ImagePlus />} 
               title="Image to PDF" 
               desc="Convert JPG, PNG, and WebP images into a single PDF document."
             />
             <ToolCard 
-              href="/pdf/protect" 
+              href="/pdf/password-protect-pdf-file" 
               icon={<Lock />} 
               title="Protect PDF" 
               desc="Encrypt and secure your PDF document with a password."

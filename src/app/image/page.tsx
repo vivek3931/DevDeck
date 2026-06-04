@@ -19,12 +19,12 @@ export const metadata: Metadata = {
 };
 
 const tools = [
-  { href: '/image/converter', icon: <ImageIcon />, title: 'Image Format Converter', desc: 'Instantly convert images between WebP, PNG, and JPEG formats.' },
-  { href: '/image/resizer', icon: <Maximize />, title: 'Image Resizer', desc: 'Resize any image by dimensions or percentage locally.' },
-  { href: '/image/image-compressor', icon: <ImageIcon />, title: 'Image Compressor', desc: 'Client-side tool to compress JPEGs, scale aspects, and reduce file sizes.' },
-  { href: '/image/base64', icon: <Binary />, title: 'Image to Base64', desc: 'Encode images into Base64 strings for direct CSS/HTML embedding.' },
-  { href: '/image/svg-to-react', icon: <FileCode />, title: 'SVG to React JSX', desc: 'Convert raw SVG HTML into clean React functional components.' },
-  { href: '/image/qr-generator', icon: <QrCode />, title: 'QR Code Generator', desc: 'Convert URLs or text into downloadable, customizable vector QR codes.' },
+  { href: '/image/png-jpg-webp-image-converter', icon: <ImageIcon />, title: 'Image Format Converter', desc: 'Instantly convert images between WebP, PNG, and JPEG formats.' },
+  { href: '/image/free-image-resizer-tool', icon: <Maximize />, title: 'Image Resizer', desc: 'Resize any image by dimensions or percentage locally.' },
+  { href: '/image/free-online-image-compressor', icon: <ImageIcon />, title: 'Image Compressor', desc: 'Client-side tool to compress JPEGs, scale aspects, and reduce file sizes.' },
+  { href: '/image/base64-image-encoder', icon: <Binary />, title: 'Image to Base64', desc: 'Encode images into Base64 strings for direct CSS/HTML embedding.' },
+  { href: '/image/svg-to-react-jsx-converter', icon: <FileCode />, title: 'SVG to React JSX', desc: 'Convert raw SVG HTML into clean React functional components.' },
+  { href: '/image/vector-qr-code-generator', icon: <QrCode />, title: 'QR Code Generator', desc: 'Convert URLs or text into downloadable, customizable vector QR codes.' },
 ];
 
 export default function ImageToolsPage() {

@@ -63,7 +63,7 @@ export function Header() {
               <Activity size={14} /> <span className={styles.hideMobile}>Activity</span>
             </Button>
 
-            <Link href="/dev/quick-dump">
+            <Link href="/dev/secure-code-snippet-bin">
               <Button variant="primary" className={styles.headerBtn}>
                 <Zap size={14} /> <span className={styles.hideMobile}>Quick Dump</span>
               </Button>
@@ -132,7 +132,7 @@ export function Header() {
             ))}
           </div>
           <div style={{ height: '1px', background: 'var(--color-hairline)', margin: '8px 16px' }} />
-          <Link href="/dev/quick-dump" className={styles.mobileLink} onClick={() => setIsMobileMenuOpen(false)} style={{ display: 'flex', alignItems: 'center' }}>
+          <Link href="/dev/secure-code-snippet-bin" className={styles.mobileLink} onClick={() => setIsMobileMenuOpen(false)} style={{ display: 'flex', alignItems: 'center' }}>
             <Zap size={16} style={{ marginRight: '12px', opacity: 0.7 }} /> Quick Dump
           </Link>
         </div>
