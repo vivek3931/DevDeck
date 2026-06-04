@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { Button } from '../ui/Button';
 import { GlobalTray } from './GlobalTray';
-import { Activity, Search, Zap, Menu, X, Code, Image as ImageIcon, FileText } from 'lucide-react';
+import { Activity, Search, Zap, Menu, X, Code, Image as ImageIcon, FileText, ChevronDown } from 'lucide-react';
 import styles from './Header.module.css';
 
 import { TOOLS } from '@/constants/tools';
@@ -38,17 +38,17 @@ export function Header() {
             <nav className={styles.navLinks} onMouseLeave={handleMouseLeave}>
               <div onMouseEnter={() => handleMouseEnter('dev')}>
                 <Link href="/dev" className={`${styles.navLink} ${activeMenu === 'dev' ? styles.navLinkActive : ''}`}>
-                  <Code size={16} /> <span>Dev Tools</span>
+                  <Code size={16} /> <span>Dev Tools</span> <ChevronDown size={14} style={{ opacity: 0.5 }} />
                 </Link>
               </div>
               <div onMouseEnter={() => handleMouseEnter('image')}>
                 <Link href="/image" className={`${styles.navLink} ${activeMenu === 'image' ? styles.navLinkActive : ''}`}>
-                  <ImageIcon size={16} /> <span>Image Tools</span>
+                  <ImageIcon size={16} /> <span>Image Tools</span> <ChevronDown size={14} style={{ opacity: 0.5 }} />
                 </Link>
               </div>
               <div onMouseEnter={() => handleMouseEnter('pdf')}>
                 <Link href="/pdf" className={`${styles.navLink} ${activeMenu === 'pdf' ? styles.navLinkActive : ''}`}>
-                  <FileText size={16} /> <span>PDF Tools</span>
+                  <FileText size={16} /> <span>PDF Tools</span> <ChevronDown size={14} style={{ opacity: 0.5 }} />
                 </Link>
               </div>
             </nav>
