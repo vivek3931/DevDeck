@@ -161,8 +161,8 @@
   }
 }
 
-/* --- Mobile --- */
-@media (max-width: 640px) {
+/* --- Mobile / Tablet --- */
+@media (max-width: 860px) {
   .container {
     padding: 0 var(--spacing-sm);
   }

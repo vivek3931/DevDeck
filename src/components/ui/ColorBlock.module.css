@@ -10,7 +10,7 @@
   max-width: 1280px;
   margin: 0 auto;
   border-radius: var(--rounded-lg);
-  padding: var(--spacing-xxl);
+  padding: var(--spacing-xxl) var(--spacing-xxl) var(--spacing-lg) var(--spacing-xxl);
   /* default text color ink unless overridden */
   color: var(--color-ink);
 }
@@ -55,14 +55,10 @@
 @media (max-width: 768px) {
   .container {
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-  }
-  
-  .container:last-of-type {
-    margin-bottom: var(--spacing-xxl);
   }
   .block {
     margin: 0;
@@ -73,6 +69,6 @@
 
 @media (max-width: 560px) {
   .block {
-    padding: var(--spacing-lg) var(--spacing-md);
+    padding: var(--spacing-lg) var(--spacing-md) var(--spacing-md) var(--spacing-md);
   }
 }
