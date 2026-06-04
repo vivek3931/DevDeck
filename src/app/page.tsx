@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 import { ColorBlock } from '@/components/ui/ColorBlock';
 import { HeroOrb } from '@/components/ui/HeroOrb';
+import { HeroSearch } from '@/components/ui/HeroSearch';
 import { 
   Type, 
   QrCode, 
@@ -46,14 +47,7 @@ export default function Home() {
                 Built for speed. Optimized for you.
               </p>
               <div style={{ marginTop: '32px', display: 'flex', justifyContent: 'center' }}>
-                <button 
-                  onClick={() => window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }))}
-                  className={styles.heroSearchBtn}
-                >
-                  <Search size={20} style={{ opacity: 0.5 }} />
-                  <span style={{ flex: 1, textAlign: 'left', opacity: 0.8 }}>Search for tools...</span>
-                  <div className={styles.heroSearchShortcut}>Ctrl+K</div>
-                </button>
+                <HeroSearch />
               </div>
             </div>
           </div>
