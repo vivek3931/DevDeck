@@ -25,6 +25,7 @@ import {
   Binary,
   ArrowRight,
   ImagePlus,
+  AlignLeft,
 } from 'lucide-react';
 import styles from './page.module.css';
 
@@ -107,11 +108,17 @@ export default function Home() {
               title="JSON to TypeScript" 
               desc="Instantly convert JSON payloads into perfectly formatted TypeScript interfaces."
             />
+            <ToolCard 
+              href="/dev/lorem-ipsum" 
+              icon={<AlignLeft />} 
+              title="Lorem Ipsum Generator" 
+              desc="Generate reliable placeholder text (paragraphs, sentences, words) instantly."
+            />
           </div>
 
           <div className={styles.viewAllBottom}>
             <Link href="/dev">
-              <Button variant="primary">View All 12 Dev Tools →</Button>
+              <Button variant="primary">View All 13 Dev Tools →</Button>
             </Link>
           </div>
         </ColorBlock>

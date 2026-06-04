@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/dev/log-analyzer' },
     { path: '/dev/api-tester' },
     { path: '/dev/code-snap' },
+    { path: '/dev/lorem-ipsum' },
     { path: '/pdf/merge' },
     { path: '/pdf/split' },
     { path: '/pdf/image-to-pdf' },

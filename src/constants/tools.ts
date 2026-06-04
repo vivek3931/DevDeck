@@ -1,7 +1,7 @@
 import { 
   Key, FileJson, Hash, Braces, Terminal, Regex, 
   Database, Network, Camera, FileText, Image as ImageIcon,
-  Minimize2, QrCode, Maximize, Palette, Lock, Scissors, Copy
+  Minimize2, QrCode, Maximize, Palette, Lock, Scissors, Copy, AlignLeft
 } from 'lucide-react';
 
 export const TOOLS = {
@@ -18,6 +18,7 @@ export const TOOLS = {
     { title: 'Log Analyzer', path: '/dev/log-analyzer', icon: Terminal, desc: 'Parse and filter logs' },
     { title: 'API Tester', path: '/dev/api-tester', icon: Network, desc: 'Send HTTP requests' },
     { title: 'Code Snap', path: '/dev/code-snap', icon: Camera, desc: 'Create beautiful code images' },
+    { title: 'Lorem Ipsum', path: '/dev/lorem-ipsum', icon: AlignLeft, desc: 'Generate placeholder text' },
   ],
   image: [
     { title: 'Image Compressor', path: '/image/image-compressor', icon: Minimize2, desc: 'Reduce image file size' },
