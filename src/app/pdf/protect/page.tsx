@@ -5,11 +5,11 @@ import PdfProtectClient from './PdfProtectClient';
 import { ColorBlock } from '@/components/ui/ColorBlock';
 
 export const metadata: Metadata = {
-  title: 'Password Protect PDF Offline | Encrypt PDF | DevDeck',
-  description: 'Add a password to your PDF document instantly. 100% offline, pure client-side processing means your sensitive documents never leave your device.',
+  title: 'Password Protect PDF in your Browser | Encrypt PDF | DevDeck',
+  description: 'Add a password to your PDF document instantly. 100% secure, pure client-side processing means your sensitive documents never leave your device.',
   openGraph: {
-    title: 'Password Protect PDF Offline | Encrypt PDF | DevDeck',
-    description: 'Add a password to your PDF document instantly. 100% offline, pure client-side processing.',
+    title: 'Password Protect PDF in your Browser | Encrypt PDF | DevDeck',
+    description: 'Add a password to your PDF document instantly. 100% secure, pure client-side processing.',
   }
 };
 
@@ -24,7 +24,7 @@ export default function PdfProtectPage() {
             </Link>
             <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>Password Protect PDF</h1>
             <p className="body-sm" style={{ color: 'var(--color-ink-muted)' }}>
-              Encrypt and secure your PDF document with a password. 100% offline.
+              Encrypt and secure your PDF document with a password. 100% secure.
             </p>
           </header>
           <main>

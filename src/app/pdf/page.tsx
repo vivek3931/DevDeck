@@ -10,11 +10,11 @@ import { Button } from '@/components/ui/Button';
 import styles from '../page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Free Offline PDF Tools | Merge, Split, Protect | DevDeck',
-  description: '100% offline PDF tools. Merge, split, convert images to PDF, and encrypt documents directly in your browser without uploading to a server.',
+  title: 'Free in your Browser PDF Tools | Merge, Split, Protect | DevDeck',
+  description: 'completely secure PDF tools. Merge, split, convert images to PDF, and encrypt documents directly in your browser without uploading to a server.',
   openGraph: {
-    title: 'Free Offline PDF Tools | Merge, Split, Protect | DevDeck',
-    description: '100% offline PDF tools running directly in your browser.',
+    title: 'Free in your Browser PDF Tools | Merge, Split, Protect | DevDeck',
+    description: 'completely secure PDF tools running directly in your browser.',
   }
 };
 
@@ -33,7 +33,7 @@ export default function PdfToolsPage() {
           <ArrowLeft size={14} /> Back to Home
         </Link>
 
-        <h1 className="display-lg">Offline PDF Toolkit</h1>
+        <h1 className="display-lg">Secure PDF Toolkit</h1>
         <p className="subhead" style={{ marginTop: 'var(--spacing-md)', maxWidth: '800px' }}>
           Manipulate your sensitive PDFs securely. All processing happens locally on your device.
         </p>

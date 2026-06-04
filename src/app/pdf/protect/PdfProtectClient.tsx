@@ -87,7 +87,7 @@ export default function PdfProtectClient() {
       
     } catch (err) {
       console.error(err);
-      alert("Encryption failed. Our offline cryptographic module is currently being upgraded.");
+      alert("Encryption failed. Our locally cryptographic module is currently being upgraded.");
     } finally {
       setIsProcessing(false);
     }

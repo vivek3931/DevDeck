@@ -5,11 +5,11 @@ import PdfSplitClient from './PdfSplitClient';
 import { ColorBlock } from '@/components/ui/ColorBlock';
 
 export const metadata: Metadata = {
-  title: 'Split PDF Offline | Extract PDF Pages | DevDeck',
-  description: 'Extract specific pages or page ranges from a PDF document instantly. 100% offline, pure client-side processing.',
+  title: 'Split PDF in your Browser | Extract PDF Pages | DevDeck',
+  description: 'Extract specific pages or page ranges from a PDF document instantly. 100% secure, pure client-side processing.',
   openGraph: {
-    title: 'Split PDF Offline | Extract PDF Pages | DevDeck',
-    description: 'Extract specific pages or page ranges from a PDF document instantly. 100% offline, pure client-side processing.',
+    title: 'Split PDF in your Browser | Extract PDF Pages | DevDeck',
+    description: 'Extract specific pages or page ranges from a PDF document instantly. 100% secure, pure client-side processing.',
   }
 };
 

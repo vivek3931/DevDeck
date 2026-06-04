@@ -37,7 +37,7 @@ export default function PromisePage() {
             <li style={{ marginBottom: 'var(--spacing-xs)' }}>Your passwords are generated locally using Cryptography APIs.</li>
             <li style={{ marginBottom: 'var(--spacing-xs)' }}>Your images are compressed using Web Workers, never uploaded.</li>
             <li style={{ marginBottom: 'var(--spacing-xs)' }}>Your sensitive JSON Web Tokens (JWTs) are decoded purely in-RAM.</li>
-            <li style={{ marginBottom: 'var(--spacing-xs)' }}><strong>Offline Capable:</strong> Core utilities are cached via Service Worker, meaning you can cut your internet connection entirely and keep working.</li>
+            <li style={{ marginBottom: 'var(--spacing-xs)' }}><strong>Client-Side First:</strong> Core utilities are cached via Service Worker, meaning you can cut your internet connection entirely and keep working.</li>
             <li style={{ marginBottom: 'var(--spacing-xs)' }}><strong>End-to-End Encrypted Cloud:</strong> Any tool that requires sharing (like Quick Dump) uses Client-Side Encryption. We only touch encrypted ciphertext.</li>
           </ul>
 

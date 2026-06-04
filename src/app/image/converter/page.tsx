@@ -6,10 +6,10 @@ import { ColorBlock } from '@/components/ui/ColorBlock';
 
 export const metadata: Metadata = {
   title: 'Free Image Format Converter | PNG, JPG, WebP | DevDeck',
-  description: 'Convert images instantly between WebP, PNG, and JPEG. All processing happens offline in your browser.',
+  description: 'Convert images instantly between WebP, PNG, and JPEG. All processing happens locally in your browser.',
   openGraph: {
     title: 'Free Image Format Converter | PNG, JPG, WebP | DevDeck',
-    description: 'Convert images instantly between WebP, PNG, and JPEG. All processing happens offline in your browser.',
+    description: 'Convert images instantly between WebP, PNG, and JPEG. All processing happens locally in your browser.',
   }
 };
 

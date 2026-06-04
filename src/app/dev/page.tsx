@@ -44,7 +44,7 @@ export default function DevToolsPage() {
 
         <h1 className="display-lg">All Developer Tools</h1>
         <p className="subhead" style={{ marginTop: 'var(--spacing-md)', maxWidth: '800px' }}>
-          Every tool you need for everyday developer transformations. 100% offline, 100% private.
+          Every tool you need for everyday developer transformations. 100% secure, 100% private.
         </p>
 
         <div className={styles.grid}>

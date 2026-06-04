@@ -5,11 +5,11 @@ import ImageResizerClient from './ImageResizerClient';
 import { ColorBlock } from '@/components/ui/ColorBlock';
 
 export const metadata: Metadata = {
-  title: 'Free Image Resizer | Resize PNG & JPG Offline | DevDeck',
-  description: 'Resize images instantly by exact pixels or percentages. 100% offline, pure client-side processing in your browser.',
+  title: 'Free Image Resizer | Resize PNG & JPG in your Browser | DevDeck',
+  description: 'Resize images instantly by exact pixels or percentages. 100% secure, pure client-side processing in your browser.',
   openGraph: {
-    title: 'Free Image Resizer | Resize PNG & JPG Offline | DevDeck',
-    description: 'Resize images instantly by exact pixels or percentages. 100% offline, pure client-side processing.',
+    title: 'Free Image Resizer | Resize PNG & JPG in your Browser | DevDeck',
+    description: 'Resize images instantly by exact pixels or percentages. 100% secure, pure client-side processing.',
   }
 };
 
@@ -24,7 +24,7 @@ export default function ImageResizerPage() {
             </Link>
             <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>Image Resizer</h1>
             <p className="body-sm" style={{ color: 'var(--color-ink-muted)' }}>
-              Resize any image by dimensions or percentage. Completely private and offline.
+              Resize any image by dimensions or percentage. Completely private and client-side.
             </p>
           </header>
           <main>

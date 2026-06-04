@@ -5,8 +5,8 @@ import JwtDecoderClient from './JwtDecoderClient';
 import { ColorBlock } from '@/components/ui/ColorBlock';
 
 export const metadata: Metadata = {
-  title: 'Free Online JWT Decoder | Secure Offline JSON Web Token Viewer | DevDeck',
-  description: 'Decode, view, and inspect JSON Web Tokens (JWT) entirely offline. Your sensitive tokens are never sent to a server.',
+  title: 'Free Online JWT Decoder | Secure in your Browser JSON Web Token Viewer | DevDeck',
+  description: 'Decode, view, and inspect JSON Web Tokens (JWT) entirely locally. Your sensitive tokens are never sent to a server.',
 };
 
 export default function JwtDecoderPage() {

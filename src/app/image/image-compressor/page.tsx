@@ -5,11 +5,11 @@ import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Free Online Image Compressor | Compress JPEG & PNG Offline | DevDeck',
-  description: 'Compress images online for free without uploading them to a server. Secure, offline-first image compression in your browser.',
+  title: 'Free Online Image Compressor | Compress JPEG & PNG in your Browser | DevDeck',
+  description: 'Compress images online for free without uploading them to a server. Secure, client-side image compression in your browser.',
   openGraph: {
-    title: 'Free Online Image Compressor | Compress JPEG & PNG Offline | DevDeck',
-    description: 'Compress images online for free without uploading them to a server. Secure, offline-first image compression in your browser.',
+    title: 'Free Online Image Compressor | Compress JPEG & PNG in your Browser | DevDeck',
+    description: 'Compress images online for free without uploading them to a server. Secure, client-side image compression in your browser.',
   }
 };
 

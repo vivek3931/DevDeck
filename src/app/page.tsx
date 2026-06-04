@@ -140,7 +140,7 @@ export default function Home() {
               href="/image/resizer" 
               icon={<Maximize />} 
               title="Image Resizer" 
-              desc="Resize any image by dimensions or percentage offline."
+              desc="Resize any image by dimensions or percentage locally."
               dark
             />
             <ToolCard 
@@ -188,7 +188,7 @@ export default function Home() {
             <h2 className="display-lg">PDF Tools</h2>
           </div>
           <p className="subhead" style={{ marginTop: 'var(--spacing-md)', maxWidth: '800px' }}>
-            Merge, split, and manipulate PDF documents 100% offline.
+            Merge, split, and manipulate PDF documents 100% secure.
           </p>
 
           <div className={styles.grid}>

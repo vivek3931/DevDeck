@@ -5,11 +5,11 @@ import ImageToPdfClient from './ImageToPdfClient';
 import { ColorBlock } from '@/components/ui/ColorBlock';
 
 export const metadata: Metadata = {
-  title: 'Image to PDF Converter | Free Offline JPG/PNG to PDF | DevDeck',
-  description: 'Convert JPG, PNG, and WebP images into a single PDF document. 100% offline, pure client-side processing.',
+  title: 'Image to PDF Converter | Free in your Browser JPG/PNG to PDF | DevDeck',
+  description: 'Convert JPG, PNG, and WebP images into a single PDF document. 100% secure, pure client-side processing.',
   openGraph: {
-    title: 'Image to PDF Converter | Free Offline JPG/PNG to PDF | DevDeck',
-    description: 'Convert JPG, PNG, and WebP images into a single PDF document. 100% offline, pure client-side processing.',
+    title: 'Image to PDF Converter | Free in your Browser JPG/PNG to PDF | DevDeck',
+    description: 'Convert JPG, PNG, and WebP images into a single PDF document. 100% secure, pure client-side processing.',
   }
 };
 
@@ -24,7 +24,7 @@ export default function ImageToPdfPage() {
             </Link>
             <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>Image to PDF Converter</h1>
             <p className="body-sm" style={{ color: 'var(--color-ink-muted)' }}>
-              Combine multiple images into a single PDF document. Fast, secure, and completely offline.
+              Combine multiple images into a single PDF document. Fast, secure, and securely in your browser.
             </p>
           </header>
           <main>

@@ -6,7 +6,7 @@ import { ColorBlock } from '@/components/ui/ColorBlock';
 
 export const metadata: Metadata = {
   title: 'Free Online JSON to TypeScript Converter | DevDeck',
-  description: 'Instantly convert JSON payloads to perfectly formatted TypeScript interfaces. Free, offline, and secure zero-tracking developer utility.',
+  description: 'Instantly convert JSON payloads to perfectly formatted TypeScript interfaces. Free, locally, and secure zero-tracking developer utility.',
   openGraph: {
     title: 'Free Online JSON to TypeScript Converter | DevDeck',
     description: 'Instantly convert JSON payloads to perfectly formatted TypeScript interfaces.',

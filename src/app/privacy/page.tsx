@@ -43,7 +43,7 @@ export default function PrivacyPolicyPage() {
             Tools such as the <strong>JSONPath Playground</strong>, <strong>Local SQLite Explorer</strong>, <strong>Image Compressor</strong>, <strong>QR Code Generator</strong>, and <strong>SVG to React Converter</strong> perform all processing entirely on your local CPU. Your databases, image files, JSON payloads, and SVG code are never uploaded to any external server.
           </p>
 
-          <h2>5. Offline-First Capability (PWA)</h2>
+          <h2>5. client-side Capability (PWA)</h2>
           <p style={{ marginTop: 'var(--spacing-sm)', marginBottom: 'var(--spacing-lg)' }}>
             DevDeck is built as a Progressive Web App (PWA). Once loaded, the core application logic is cached on your device. This ensures that your sensitive data (like in the JWT Decoder) physically cannot be transmitted when you disconnect from the internet.
           </p>

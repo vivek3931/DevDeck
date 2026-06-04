@@ -5,11 +5,11 @@ import PdfMergeClient from './PdfMergeClient';
 import { ColorBlock } from '@/components/ui/ColorBlock';
 
 export const metadata: Metadata = {
-  title: 'Merge PDF Files Offline | Free Private PDF Merger | DevDeck',
-  description: 'Combine multiple PDF files into one instantly. 100% offline, pure client-side processing means your sensitive documents never leave your device.',
+  title: 'Merge PDF Files in your Browser | Free Private PDF Merger | DevDeck',
+  description: 'Combine multiple PDF files into one instantly. 100% secure, pure client-side processing means your sensitive documents never leave your device.',
   openGraph: {
-    title: 'Merge PDF Files Offline | Free Private PDF Merger | DevDeck',
-    description: 'Combine multiple PDF files into one instantly. 100% offline, pure client-side processing means your sensitive documents never leave your device.',
+    title: 'Merge PDF Files in your Browser | Free Private PDF Merger | DevDeck',
+    description: 'Combine multiple PDF files into one instantly. 100% secure, pure client-side processing means your sensitive documents never leave your device.',
   }
 };
 
@@ -24,7 +24,7 @@ export default function PdfMergePage() {
             </Link>
             <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>Merge PDF Files</h1>
             <p className="body-sm" style={{ color: 'var(--color-ink-muted)' }}>
-              Select multiple PDFs, drag to reorder them, and click merge. 100% offline and secure.
+              Select multiple PDFs, drag to reorder them, and click merge. completely secure and secure.
             </p>
           </header>
           <main>

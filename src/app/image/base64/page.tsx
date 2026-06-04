@@ -5,10 +5,10 @@ import ImageBase64Client from './ImageBase64Client';
 import { ColorBlock } from '@/components/ui/ColorBlock';
 
 export const metadata: Metadata = {
-  title: 'Image to Base64 Converter | Encode Images Offline | DevDeck',
+  title: 'Image to Base64 Converter | Encode Images in your Browser | DevDeck',
   description: 'Convert any image to a Base64 data URI string instantly. Perfect for embedding images directly into HTML or CSS.',
   openGraph: {
-    title: 'Image to Base64 Converter | Encode Images Offline | DevDeck',
+    title: 'Image to Base64 Converter | Encode Images in your Browser | DevDeck',
     description: 'Convert any image to a Base64 data URI string instantly. Perfect for embedding images directly into HTML or CSS.',
   }
 };
@@ -24,7 +24,7 @@ export default function ImageBase64Page() {
             </Link>
             <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>Image to Base64</h1>
             <p className="body-sm" style={{ color: 'var(--color-ink-muted)' }}>
-              Encode images into Base64 strings for direct embedding in CSS/HTML. 100% offline.
+              Encode images into Base64 strings for direct embedding in CSS/HTML. 100% secure.
             </p>
           </header>
           <main>

@@ -6,10 +6,10 @@ import { ColorBlock } from '@/components/ui/ColorBlock';
 
 export const metadata: Metadata = {
   title: 'Free Online Hash & Checksum Generator | SHA-256, MD5 | DevDeck',
-  description: 'Generate cryptographic hashes instantly. Supports MD5, SHA-1, SHA-256, and SHA-512 hashes for strings and text offline.',
+  description: 'Generate cryptographic hashes instantly. Supports MD5, SHA-1, SHA-256, and SHA-512 hashes for strings and text locally.',
   openGraph: {
     title: 'Free Online Hash & Checksum Generator | DevDeck',
-    description: 'Generate cryptographic hashes instantly. Supports MD5, SHA-1, SHA-256, and SHA-512 hashes for strings and text offline.',
+    description: 'Generate cryptographic hashes instantly. Supports MD5, SHA-1, SHA-256, and SHA-512 hashes for strings and text locally.',
   }
 };
 
@@ -24,7 +24,7 @@ export default function HashGeneratorPage() {
             </Link>
             <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>Hash & Checksum Generator</h1>
             <p className="body-sm" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
-              Instantly generate secure cryptographic hashes from your text. Fully offline and secure.
+              Instantly generate secure cryptographic hashes from your text. Fully locally and secure.
             </p>
           </header>
           <main>
