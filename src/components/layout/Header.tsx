@@ -13,6 +13,11 @@ export function Header() {
   const [isTrayOpen, setIsTrayOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<'dev' | 'image' | 'pdf' | null>(null);
+  const [mobileExpanded, setMobileExpanded] = useState<'dev' | 'image' | 'pdf' | null>(null);
+
+  const toggleMobileExpanded = (menu: 'dev' | 'image' | 'pdf') => {
+    setMobileExpanded(mobileExpanded === menu ? null : menu);
+  };
 
   let hoverTimeout: NodeJS.Timeout;
 
@@ -38,17 +43,17 @@ export function Header() {
             <nav className={styles.navLinks} onMouseLeave={handleMouseLeave}>
               <div onMouseEnter={() => handleMouseEnter('dev')}>
                 <Link href="/dev" className={`${styles.navLink} ${activeMenu === 'dev' ? styles.navLinkActive : ''}`}>
-                  <Code size={16} /> <span>Dev Tools</span> <ChevronDown size={14} style={{ opacity: 0.5 }} />
+                  <Code size={16} /> <span>Dev Tools</span> <ChevronDown size={14} className={`${styles.chevron} ${activeMenu === 'dev' ? styles.chevronOpen : ''}`} />
                 </Link>
               </div>
               <div onMouseEnter={() => handleMouseEnter('image')}>
                 <Link href="/image" className={`${styles.navLink} ${activeMenu === 'image' ? styles.navLinkActive : ''}`}>
-                  <ImageIcon size={16} /> <span>Image Tools</span> <ChevronDown size={14} style={{ opacity: 0.5 }} />
+                  <ImageIcon size={16} /> <span>Image Tools</span> <ChevronDown size={14} className={`${styles.chevron} ${activeMenu === 'image' ? styles.chevronOpen : ''}`} />
                 </Link>
               </div>
               <div onMouseEnter={() => handleMouseEnter('pdf')}>
                 <Link href="/pdf" className={`${styles.navLink} ${activeMenu === 'pdf' ? styles.navLinkActive : ''}`}>
-                  <FileText size={16} /> <span>PDF Tools</span> <ChevronDown size={14} style={{ opacity: 0.5 }} />
+                  <FileText size={16} /> <span>PDF Tools</span> <ChevronDown size={14} className={`${styles.chevron} ${activeMenu === 'pdf' ? styles.chevronOpen : ''}`} />
                 </Link>
               </div>
             </nav>
@@ -97,24 +102,30 @@ export function Header() {
       {isMobileMenuOpen && (
         <div className={styles.mobileMenu} style={{ overflowY: 'auto', maxHeight: 'calc(100vh - 56px)' }}>
           <div className={styles.mobileSection}>
-            <div className={styles.mobileSectionHeader}>Developer Tools</div>
-            {TOOLS.dev.map(tool => (
+            <button className={styles.mobileSectionHeaderBtn} onClick={() => toggleMobileExpanded('dev')}>
+              Developer Tools <ChevronDown size={14} className={`${styles.chevron} ${mobileExpanded === 'dev' ? styles.chevronOpen : ''}`} />
+            </button>
+            {mobileExpanded === 'dev' && TOOLS.dev.map(tool => (
               <Link key={tool.path} href={tool.path} className={styles.mobileSubLink} onClick={() => setIsMobileMenuOpen(false)}>
                 <tool.icon size={16} style={{ marginRight: '12px', opacity: 0.7 }} /> {tool.title}
               </Link>
             ))}
           </div>
           <div className={styles.mobileSection}>
-            <div className={styles.mobileSectionHeader}>Image Tools</div>
-            {TOOLS.image.map(tool => (
+            <button className={styles.mobileSectionHeaderBtn} onClick={() => toggleMobileExpanded('image')}>
+              Image Tools <ChevronDown size={14} className={`${styles.chevron} ${mobileExpanded === 'image' ? styles.chevronOpen : ''}`} />
+            </button>
+            {mobileExpanded === 'image' && TOOLS.image.map(tool => (
               <Link key={tool.path} href={tool.path} className={styles.mobileSubLink} onClick={() => setIsMobileMenuOpen(false)}>
                 <tool.icon size={16} style={{ marginRight: '12px', opacity: 0.7 }} /> {tool.title}
               </Link>
             ))}
           </div>
           <div className={styles.mobileSection}>
-            <div className={styles.mobileSectionHeader}>PDF Tools</div>
-            {TOOLS.pdf.map(tool => (
+            <button className={styles.mobileSectionHeaderBtn} onClick={() => toggleMobileExpanded('pdf')}>
+              PDF Tools <ChevronDown size={14} className={`${styles.chevron} ${mobileExpanded === 'pdf' ? styles.chevronOpen : ''}`} />
+            </button>
+            {mobileExpanded === 'pdf' && TOOLS.pdf.map(tool => (
               <Link key={tool.path} href={tool.path} className={styles.mobileSubLink} onClick={() => setIsMobileMenuOpen(false)}>
                 <tool.icon size={16} style={{ marginRight: '12px', opacity: 0.7 }} /> {tool.title}
               </Link>
