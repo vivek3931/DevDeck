@@ -95,6 +95,7 @@ function QuickDumpLogic() {
       setCode(urlCode.toUpperCase());
       setSecretKey(hashKey);
       setMode('receive');
+      handleReceive(urlCode.toUpperCase(), hashKey);
     } else {
       // If no URL code, try to restore sender session from reload
       const saved = sessionStorage.getItem('qd-sender-state');
@@ -307,9 +308,28 @@ function QuickDumpLogic() {
       setReceivedText(payloadObj.text);
       setReceivedFileName(payloadObj.fileName);
 
-      // If there's file data, we don't use Supabase URL, we create a local Object URL
+      // If there's file data, we create a local Object URL from Blob to support Safari downloads
       if (payloadObj.fileData) {
-        setReceivedFileUrl(payloadObj.fileData);
+        try {
+          const parts = payloadObj.fileData.split(',');
+          if (parts.length === 2) {
+            const mime = parts[0].match(/:(.*?);/)?.[1] || 'application/octet-stream';
+            const bstr = atob(parts[1]);
+            let n = bstr.length;
+            const u8arr = new Uint8Array(n);
+            while(n--){
+                u8arr[n] = bstr.charCodeAt(n);
+            }
+            const blob = new Blob([u8arr], {type: mime});
+            const objectUrl = URL.createObjectURL(blob);
+            setReceivedFileUrl(objectUrl);
+          } else {
+            setReceivedFileUrl(payloadObj.fileData);
+          }
+        } catch (e) {
+          console.error("Failed to parse file data for blob conversion", e);
+          setReceivedFileUrl(payloadObj.fileData);
+        }
       }
 
       addAuditLog('Received Quick Dump', `Code: ${codeToFetch}`);
@@ -581,9 +601,17 @@ function QuickDumpLogic() {
                 <div className={styles.fileAttachment}>
                   <FileIcon size={24} />
                   <span className="body-sm" style={{ flexGrow: 1 }}>{receivedFileName}</span>
-                  <a href={receivedFileUrl} download={receivedFileName} onClick={() => toast.success('Download started')}>
-                    <Button variant="icon-inverse" size="icon"><Download size={16} /></Button>
-                  </a>
+                  <Button variant="icon-inverse" size="icon" onClick={() => {
+                    const a = document.createElement('a');
+                    a.href = receivedFileUrl;
+                    a.download = receivedFileName || 'download';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    toast.success('Download started');
+                  }}>
+                    <Download size={16} />
+                  </Button>
                 </div>
               )}
             </div>
