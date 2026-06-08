@@ -95,7 +95,6 @@ function QuickDumpLogic() {
       setCode(urlCode.toUpperCase());
       setSecretKey(hashKey);
       setMode('receive');
-      handleReceive(urlCode.toUpperCase(), hashKey);
     } else {
       // If no URL code, try to restore sender session from reload
       const saved = sessionStorage.getItem('qd-sender-state');
@@ -367,7 +366,7 @@ function QuickDumpLogic() {
     setCode(input);
   };
 
-  const shareUrl = typeof window !== 'undefined' ? `${window.location.origin}/tools/quick-dump?code=${code}#key=${secretKey}` : '';
+  const shareUrl = typeof window !== 'undefined' ? `${window.location.origin}/dev/secure-code-snippet-bin?code=${code}#key=${secretKey}` : '';
 
   const minutes = Math.floor(timeLeft / 60).toString().padStart(2, '0');
   const seconds = (timeLeft % 60).toString().padStart(2, '0');
@@ -455,7 +454,7 @@ function QuickDumpLogic() {
 
         {(mode === 'receive' || code) && (
           <>
-            {code && secretKey && !receivedText && !receivedFileUrl ? (
+            {code && secretKey && !receivedText && !receivedFileUrl && createdAt ? (
             <div className={styles.successScreen}>
               <div className={styles.codeDisplay}>
                 <span className="eyebrow" style={{ color: 'var(--color-block-lime)' }}><ShieldCheck size={14} style={{ display: 'inline', verticalAlign: 'text-bottom' }} /> Encrypted Success</span>
@@ -533,6 +532,15 @@ function QuickDumpLogic() {
               >
                 {isLoading ? <Loader2 size={16} className="spinner" /> : 'Decrypt & Fetch'}
               </Button>
+
+              <div style={{ marginTop: 'var(--spacing-md)', padding: 'var(--spacing-sm)', background: 'rgba(255, 107, 107, 0.1)', borderLeft: '4px solid var(--color-block-red)', borderRadius: 'var(--rounded-sm)' }}>
+                <strong style={{ color: 'var(--color-block-red)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <Flame size={16} /> STRICT WARNING
+                </strong>
+                <p className="body-sm" style={{ marginTop: '4px', color: 'var(--color-ink-muted)' }}>
+                  If this payload was sent with <strong>Burn After Read</strong>, fetching it will permanently destroy the data. Do not refresh the page after decrypting, or it will be lost forever.
+                </p>
+              </div>
 
               {error && <p className="body-sm" style={{ color: '#ff6b6b', marginTop: 'var(--spacing-sm)' }}>{error}</p>}
             </div>
