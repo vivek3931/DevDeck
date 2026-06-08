@@ -10,11 +10,12 @@ import { Button } from '@/components/ui/Button';
 import styles from '../page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Free in your Browser PDF Tools | Merge, Split, Protect | DevDeck',
-  description: 'completely secure PDF tools. Merge, split, convert images to PDF, and encrypt documents directly in your browser without uploading to a server.',
+  title: 'Free Online PDF Tools | Merge, Split, Protect & Convert | DevDeck',
+  description: 'Free, secure PDF tools running 100% in your browser. Merge PDF files, split pages, convert images to PDF, and encrypt documents without uploading to a server.',
+  alternates: { canonical: '/pdf' },
   openGraph: {
-    title: 'Free in your Browser PDF Tools | Merge, Split, Protect | DevDeck',
-    description: 'completely secure PDF tools running directly in your browser.',
+    title: 'Free Online PDF Tools | Merge, Split, Protect | DevDeck',
+    description: 'Free, secure PDF tools running 100% in your browser. No upload needed.',
   }
 };
 

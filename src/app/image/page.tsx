@@ -12,9 +12,10 @@ import styles from '../page.module.css';
 export const metadata: Metadata = {
   title: 'Free Online Image Tools | Converter, Resizer, Compressor | DevDeck',
   description: 'Convert, resize, compress, and encode images securely in your browser. WebP, PNG, JPEG format conversion, Base64 encoding, SVG to React, QR codes and more.',
+  alternates: { canonical: '/image' },
   openGraph: {
     title: 'Free Online Image Tools | Converter, Resizer, Compressor | DevDeck',
-    description: 'Convert, resize, compress, and encode images securely in your browser in your browser.',
+    description: 'Convert, resize, compress, and encode images securely in your browser.',
   }
 };
 

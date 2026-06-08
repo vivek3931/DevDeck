@@ -8,8 +8,11 @@ import { Activity, Search, Zap, Menu, X, Code, Image as ImageIcon, FileText, Che
 import styles from './Header.module.css';
 
 import { TOOLS } from '@/constants/tools';
+import { useTrackToolVisit } from '@/components/ui/RecentTools';
+import { ThemeToggle } from '@/components/ui/ThemeToggle';
 
 export function Header() {
+  useTrackToolVisit();
   const [isTrayOpen, setIsTrayOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<'dev' | 'image' | 'pdf' | null>(null);
@@ -59,6 +62,16 @@ export function Header() {
             </nav>
           </div>
           <div className={styles.right}>
+            <button
+              className={styles.searchTrigger}
+              onClick={() => document.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }))}
+              aria-label="Search tools (Ctrl+K)"
+            >
+              <Search size={14} />
+              <span className={styles.hideMobile}>Search tools...</span>
+              <kbd className={styles.kbd}>⌘K</kbd>
+            </button>
+
             <Button variant="secondary" className={styles.headerBtn} onClick={() => setIsTrayOpen(true)} aria-label="Open Activity">
               <Activity size={14} /> <span className={styles.hideMobile}>Activity</span>
             </Button>
@@ -68,6 +81,7 @@ export function Header() {
                 <Zap size={14} /> <span className={styles.hideMobile}>Quick Dump</span>
               </Button>
             </Link>
+            <ThemeToggle />
             <button className={styles.mobileMenuBtn} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Toggle menu">
               {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>

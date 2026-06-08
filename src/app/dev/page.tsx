@@ -11,8 +11,9 @@ import { Button } from '@/components/ui/Button';
 import styles from '../page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Free Online Developer Tools | JSON, API, Regex, JWT | DevDeck',
-  description: 'A complete suite of free, privacy-focused developer tools. JSON Formatter, API Tester, JWT Decoder, Regex Tester, Hash Generator, and more — all running 100% in your browser.',
+  title: 'Free Online Developer Tools | JSON, API, Regex, JWT & More | DevDeck',
+  description: 'A complete suite of 13 free, privacy-focused developer tools. JSON Formatter, API Tester, JWT Decoder, Regex Tester, Hash Generator, cURL Converter, and more — all running 100% in your browser.',
+  alternates: { canonical: '/dev' },
   openGraph: {
     title: 'Free Online Developer Tools | JSON, API, Regex, JWT | DevDeck',
     description: 'A complete suite of free, privacy-focused developer tools running 100% in your browser.',

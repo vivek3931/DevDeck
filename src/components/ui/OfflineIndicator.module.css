@@ -1,0 +1,40 @@
+.indicator {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: var(--rounded-pill);
+  font-size: 13px;
+  font-weight: 550;
+  z-index: 9998;
+  animation: slideUp 0.3s ease;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
+
+.offline {
+  background: #1a1a2e;
+  color: #ffd700;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.online {
+  background: #0d3320;
+  color: #4ade80;
+  border: 1px solid rgba(74, 222, 128, 0.2);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}

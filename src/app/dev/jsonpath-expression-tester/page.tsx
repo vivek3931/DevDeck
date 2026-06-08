@@ -1,38 +1,53 @@
-import { SoftwareAppSchema, FaqSchema } from '@/components/seo/Schema';
+import { SoftwareAppSchema, FaqSchema, BreadcrumbSchema, HowToSchema } from '@/components/seo/Schema';
 import { RelatedTools } from '@/components/ui/RelatedTools';
 import { TrustBadge } from '@/components/ui/TrustBadge';
-import { Metadata } from 'next';
-import { ColorBlock } from '@/components/ui/ColorBlock';
-import JsonPathClient from './JsonPathClient';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
+import { ToolSeoContent } from '@/components/seo/ToolSeoContent';
+import { toolSeoData } from '@/constants/seoData';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import { Metadata } from 'next';
+import JsonPathClient from './JsonPathClient';
+import { ColorBlock } from '@/components/ui/ColorBlock';
+
+const seo = toolSeoData['jsonpath-expression-tester'];
 
 export const metadata: Metadata = {
-  title: 'JSONPath Evaluator & Playground | DevDeck',
-  description: 'Test, evaluate, and learn JSONPath queries locally in your browser. Perfect for backend developers analyzing massive JSON payloads.',
+  title: 'Free Online JSONPath Tester | Query & Filter JSON Data | DevDeck',
+  description: 'Test and evaluate JSONPath expressions against JSON data in real-time. Free online JSONPath playground with filter support. 100% client-side processing.',
+  alternates: { canonical: '/dev/jsonpath-expression-tester' },
+  openGraph: {
+    title: 'Free Online JSONPath Tester | DevDeck',
+    description: 'Test JSONPath expressions against JSON data in real-time. Free and private.',
+  }
 };
 
 export default function JsonPathPage() {
   return (
     <article>
-      <ColorBlock color="coral">
-        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+      <ColorBlock color="lime">
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <Breadcrumb items={[
+            { label: 'Home', href: '/' },
+            { label: 'Dev Tools', href: '/dev' },
+            { label: 'JSONPath Tester' }
+          ]} />
           <header style={{ marginBottom: 'var(--spacing-xl)' }}>
-            <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'inherit', textDecoration: 'none', marginBottom: 'var(--spacing-md)', fontWeight: 500, opacity: 0.8 }}>
-              <ArrowLeft size={16} /> Back to Tools
-            </Link>
             <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>JSONPath Playground</h1>
-        <TrustBadge />
-            <p className="body-sm" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
-              Evaluate JSONPath expressions instantly. Your data never leaves your browser.
+            <TrustBadge />
+            <p className="body-sm" style={{ color: 'var(--color-ink-muted)' }}>
+              Evaluate JSONPath queries against API payloads. Pure client-side processing.
             </p>
           </header>
           <main>
             <JsonPathClient />
-          
-        <RelatedTools currentPath="/dev/jsonpath-expression-tester" category="dev" />
-        <SoftwareAppSchema name="DevDeck jsonpath-expression-tester" description="A free, secure developer tool." url="https://devdeck.com/dev/jsonpath-expression-tester" />
-      </main>
+            <ToolSeoContent whatIs={seo.whatIs} howTo={seo.howTo} faq={seo.faq} whyDevDeck={seo.whyDevDeck} />
+            <RelatedTools currentPath="/dev/jsonpath-expression-tester" category="dev" />
+            <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Dev Tools', path: '/dev' }, { name: 'JSONPath Tester', path: '/dev/jsonpath-expression-tester' }]} />
+            <SoftwareAppSchema name="Free Online JSONPath Tester" description="Test JSONPath expressions against JSON data in real-time." url="/dev/jsonpath-expression-tester" />
+            <HowToSchema name="How to Test JSONPath Expressions Online" description="Test JSONPath expressions using DevDeck" steps={seo.howTo.steps} />
+            <FaqSchema items={seo.faq} />
+          </main>
         </div>
       </ColorBlock>
     </article>

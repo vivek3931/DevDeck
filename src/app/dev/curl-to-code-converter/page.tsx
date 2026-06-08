@@ -1,18 +1,24 @@
-import { SoftwareAppSchema, FaqSchema } from '@/components/seo/Schema';
+import { SoftwareAppSchema, FaqSchema, BreadcrumbSchema, HowToSchema } from '@/components/seo/Schema';
 import { RelatedTools } from '@/components/ui/RelatedTools';
 import { TrustBadge } from '@/components/ui/TrustBadge';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
+import { ToolSeoContent } from '@/components/seo/ToolSeoContent';
+import { toolSeoData } from '@/constants/seoData';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { Metadata } from 'next';
 import CurlConverterClient from './CurlConverterClient';
 import { ColorBlock } from '@/components/ui/ColorBlock';
 
+const seo = toolSeoData['curl-to-code-converter'];
+
 export const metadata: Metadata = {
-  title: 'Free Online cURL to Fetch Converter | DevDeck',
-  description: 'Instantly convert raw cURL commands into clean JavaScript fetch() code. Free online developer tool with zero tracking.',
+  title: 'Free cURL to Code Converter | cURL to JavaScript Fetch, Python | DevDeck',
+  description: 'Convert cURL commands to JavaScript fetch(), Python requests, and more. Free online cURL converter. Paste from Chrome DevTools and get clean code instantly.',
+  alternates: { canonical: '/dev/curl-to-code-converter' },
   openGraph: {
-    title: 'Free Online cURL to Fetch Converter | DevDeck',
-    description: 'Instantly convert raw cURL commands into clean JavaScript fetch() code.',
+    title: 'Free cURL to Code Converter | DevDeck',
+    description: 'Convert cURL commands to JavaScript fetch, Python requests and more. Free and private.',
   }
 };
 
@@ -20,23 +26,28 @@ export default function CurlConverterPage() {
   return (
     <article>
       <ColorBlock color="lime">
-        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <Breadcrumb items={[
+            { label: 'Home', href: '/' },
+            { label: 'Dev Tools', href: '/dev' },
+            { label: 'cURL to Code Converter' }
+          ]} />
           <header style={{ marginBottom: 'var(--spacing-xl)' }}>
-            <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'inherit', textDecoration: 'none', marginBottom: 'var(--spacing-md)', fontWeight: 500, opacity: 0.8 }}>
-              <ArrowLeft size={16} /> Back to Tools
-            </Link>
-            <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>cURL to Fetch Converter</h1>
-        <TrustBadge />
+            <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>cURL to Code Converter</h1>
+            <TrustBadge />
             <p className="body-sm" style={{ color: 'var(--color-ink-muted)' }}>
-              Paste a cURL command from your terminal or Chrome DevTools to generate JavaScript `fetch()` syntax.
+              Paste a cURL command to instantly generate JavaScript fetch() or other language code.
             </p>
           </header>
           <main>
             <CurlConverterClient />
-          
-        <RelatedTools currentPath="/dev/curl-to-code-converter" category="dev" />
-        <SoftwareAppSchema name="DevDeck curl-to-code-converter" description="A free, secure developer tool." url="https://devdeck.com/dev/curl-to-code-converter" />
-      </main>
+            <ToolSeoContent whatIs={seo.whatIs} howTo={seo.howTo} faq={seo.faq} whyDevDeck={seo.whyDevDeck} />
+            <RelatedTools currentPath="/dev/curl-to-code-converter" category="dev" />
+            <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Dev Tools', path: '/dev' }, { name: 'cURL to Code Converter', path: '/dev/curl-to-code-converter' }]} />
+            <SoftwareAppSchema name="Free cURL to Code Converter" description="Convert cURL commands to JavaScript fetch, Python requests and more." url="/dev/curl-to-code-converter" />
+            <HowToSchema name="How to Convert cURL to JavaScript Fetch" description="Convert cURL commands using DevDeck" steps={seo.howTo.steps} />
+            <FaqSchema items={seo.faq} />
+          </main>
         </div>
       </ColorBlock>
     </article>

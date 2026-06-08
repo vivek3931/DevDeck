@@ -1,16 +1,8 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import styles from './Footer.module.css';
 
 export function Footer() {
-  const pathname = usePathname();
-  const showFooter = pathname === '/' || pathname === '/privacy' || pathname === '/terms' || pathname === '/promise';
-
-  if (!showFooter) return null;
-
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>

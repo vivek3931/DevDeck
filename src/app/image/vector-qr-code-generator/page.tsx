@@ -1,42 +1,53 @@
-import { SoftwareAppSchema, FaqSchema } from '@/components/seo/Schema';
+import { SoftwareAppSchema, FaqSchema, BreadcrumbSchema, HowToSchema } from '@/components/seo/Schema';
 import { RelatedTools } from '@/components/ui/RelatedTools';
 import { TrustBadge } from '@/components/ui/TrustBadge';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
+import { ToolSeoContent } from '@/components/seo/ToolSeoContent';
+import { toolSeoData } from '@/constants/seoData';
 import { Metadata } from 'next';
 import QrGeneratorClient from './QrGeneratorClient';
 import { ColorBlock } from '@/components/ui/ColorBlock';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
+const seo = toolSeoData['vector-qr-code-generator'];
+
 export const metadata: Metadata = {
-  title: 'Free Online QR Code Generator | Download SVG & PNG | DevDeck',
-  description: 'Create and download QR codes for URLs, text, and Wi-Fi instantly. Free online QR code generator running locally in your browser.',
+  title: 'Free QR Code Generator | Create Custom Vector QR Codes Online | DevDeck',
+  description: 'Generate customizable QR codes online for free. Download as SVG (vector) or PNG. Create QR codes for URLs, text, Wi-Fi, and more. 100% client-side.',
+  alternates: { canonical: '/image/vector-qr-code-generator' },
   openGraph: {
-    title: 'Free Online QR Code Generator | Download SVG & PNG | DevDeck',
-    description: 'Create and download QR codes for URLs, text, and Wi-Fi instantly. Free online QR code generator running locally in your browser.',
+    title: 'Free QR Code Generator | DevDeck',
+    description: 'Generate custom QR codes online. Download as SVG or PNG. Free and private.',
   }
 };
 
 export default function QrGeneratorPage() {
   return (
     <article>
-      <ColorBlock color="mint">
-        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+      <ColorBlock color="navy">
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <Breadcrumb items={[
+            { label: 'Home', href: '/' },
+            { label: 'Image Tools', href: '/image' },
+            { label: 'QR Code Generator' }
+          ]} />
           <header style={{ marginBottom: 'var(--spacing-xl)' }}>
-            <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'inherit', textDecoration: 'none', marginBottom: 'var(--spacing-md)', fontWeight: 500, opacity: 0.8 }}>
-              <ArrowLeft size={16} /> Back to Tools
-            </Link>
             <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>QR Code Generator</h1>
-        <TrustBadge />
+            <TrustBadge />
             <p className="body-sm" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
-              Create vector (SVG) QR codes instantly.
+              Convert URLs or text into downloadable, highly-customizable vector QR codes.
             </p>
           </header>
           <main>
             <QrGeneratorClient />
-          
-        <RelatedTools currentPath="/image/vector-qr-code-generator" category="image" />
-        <SoftwareAppSchema name="DevDeck vector-qr-code-generator" description="A free, secure developer tool." url="https://devdeck.com/image/vector-qr-code-generator" />
-      </main>
+            <ToolSeoContent whatIs={seo.whatIs} howTo={seo.howTo} faq={seo.faq} whyDevDeck={seo.whyDevDeck} />
+            <RelatedTools currentPath="/image/vector-qr-code-generator" category="image" />
+            <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Image Tools', path: '/image' }, { name: 'QR Code Generator', path: '/image/vector-qr-code-generator' }]} />
+            <SoftwareAppSchema name="Free QR Code Generator" description="Generate custom vector QR codes for URLs, text, and more." url="/image/vector-qr-code-generator" category="MultimediaApplication" />
+            <HowToSchema name="How to Generate QR Codes Online" description="Generate QR codes using DevDeck" steps={seo.howTo.steps} />
+            <FaqSchema items={seo.faq} />
+          </main>
         </div>
       </ColorBlock>
     </article>

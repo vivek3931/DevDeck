@@ -1,45 +1,53 @@
-import { SoftwareAppSchema, FaqSchema } from '@/components/seo/Schema';
+import { SoftwareAppSchema, FaqSchema, BreadcrumbSchema, HowToSchema } from '@/components/seo/Schema';
 import { RelatedTools } from '@/components/ui/RelatedTools';
 import { TrustBadge } from '@/components/ui/TrustBadge';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
+import { ToolSeoContent } from '@/components/seo/ToolSeoContent';
+import { toolSeoData } from '@/constants/seoData';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
-import { Suspense } from 'react';
 import { Metadata } from 'next';
 import QuickDumpClient from './QuickDumpClient';
 import { ColorBlock } from '@/components/ui/ColorBlock';
 
+const seo = toolSeoData['secure-code-snippet-bin'];
+
 export const metadata: Metadata = {
-  title: 'Secure Online Text Sharing & Pastebin | Quick Dump | DevDeck',
-  description: 'Free online text sharing. Paste text, JSON, or links securely. Get a 4-letter code and fetch it on any device instantly.',
+  title: 'Quick Dump | Secure Encrypted Code & Text Sharing | DevDeck',
+  description: 'Securely share code snippets and text with end-to-end encryption. Zero-knowledge pastebin alternative. Your content is encrypted before it leaves your browser.',
+  alternates: { canonical: '/dev/secure-code-snippet-bin' },
   openGraph: {
-    title: 'Secure Online Text Sharing & Pastebin | Quick Dump | DevDeck',
-    description: 'Free online text sharing. Paste text, JSON, or links securely. Get a 4-letter code and fetch it on any device instantly.',
+    title: 'Quick Dump | Secure Encrypted Pastebin | DevDeck',
+    description: 'Share code and text with end-to-end encryption. Zero-knowledge pastebin alternative.',
   }
 };
 
 export default function QuickDumpPage() {
   return (
     <article>
-      <ColorBlock color="navy">
-        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+      <ColorBlock color="lime">
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <Breadcrumb items={[
+            { label: 'Home', href: '/' },
+            { label: 'Dev Tools', href: '/dev' },
+            { label: 'Quick Dump' }
+          ]} />
           <header style={{ marginBottom: 'var(--spacing-xl)' }}>
-            <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'inherit', textDecoration: 'none', marginBottom: 'var(--spacing-md)', fontWeight: 500, opacity: 0.8 }}>
-              <ArrowLeft size={16} /> Back to Tools
-            </Link>
             <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>Quick Dump</h1>
-        <TrustBadge />
+            <TrustBadge />
             <p className="body-sm" style={{ color: 'var(--color-ink-muted)' }}>
-              Ephemeral text sharing. Paste anything here, grab the 4-letter code, and pull it on any other device instantly.
+              Securely dump raw code or API payloads. Share with end-to-end encryption.
             </p>
           </header>
           <main>
-            <Suspense fallback={<div style={{ padding: 'var(--spacing-xxl)', textAlign: 'center' }}>Loading Secure Sandbox...</div>}>
-              <QuickDumpClient />
-            </Suspense>
-          
-        <RelatedTools currentPath="/dev/secure-code-snippet-bin" category="dev" />
-        <SoftwareAppSchema name="DevDeck secure-code-snippet-bin" description="A free, secure developer tool." url="https://devdeck.com/dev/secure-code-snippet-bin" />
-      </main>
+            <QuickDumpClient />
+            <ToolSeoContent whatIs={seo.whatIs} howTo={seo.howTo} faq={seo.faq} whyDevDeck={seo.whyDevDeck} />
+            <RelatedTools currentPath="/dev/secure-code-snippet-bin" category="dev" />
+            <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Dev Tools', path: '/dev' }, { name: 'Quick Dump', path: '/dev/secure-code-snippet-bin' }]} />
+            <SoftwareAppSchema name="Quick Dump — Secure Code Sharing" description="Share code and text with end-to-end encryption. Zero-knowledge pastebin." url="/dev/secure-code-snippet-bin" />
+            <HowToSchema name="How to Use Quick Dump" description="Share code securely using DevDeck's Quick Dump" steps={seo.howTo.steps} />
+            <FaqSchema items={seo.faq} />
+          </main>
         </div>
       </ColorBlock>
     </article>

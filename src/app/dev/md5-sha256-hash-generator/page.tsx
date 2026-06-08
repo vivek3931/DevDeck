@@ -1,42 +1,62 @@
-import { SoftwareAppSchema, FaqSchema } from '@/components/seo/Schema';
+import { SoftwareAppSchema, FaqSchema, BreadcrumbSchema, HowToSchema } from '@/components/seo/Schema';
 import { RelatedTools } from '@/components/ui/RelatedTools';
 import { TrustBadge } from '@/components/ui/TrustBadge';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
+import { ToolSeoContent } from '@/components/seo/ToolSeoContent';
+import { toolSeoData } from '@/constants/seoData';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { Metadata } from 'next';
 import HashGeneratorClient from './HashGeneratorClient';
 import { ColorBlock } from '@/components/ui/ColorBlock';
 
+const seo = toolSeoData['md5-sha256-hash-generator'];
+
 export const metadata: Metadata = {
-  title: 'Free Online Hash & Checksum Generator | SHA-256, MD5 | DevDeck',
-  description: 'Generate cryptographic hashes instantly. Supports MD5, SHA-1, SHA-256, and SHA-512 hashes for strings and text locally.',
+  title: 'Free Online MD5 & SHA-256 Hash Generator | Checksum Calculator | DevDeck',
+  description: 'Generate MD5, SHA-1, SHA-256, and SHA-512 hashes instantly for strings and files. Free online hash generator running 100% in your browser. No data uploaded.',
+  alternates: {
+    canonical: '/dev/md5-sha256-hash-generator',
+  },
   openGraph: {
-    title: 'Free Online Hash & Checksum Generator | DevDeck',
-    description: 'Generate cryptographic hashes instantly. Supports MD5, SHA-1, SHA-256, and SHA-512 hashes for strings and text locally.',
+    title: 'Free Online Hash Generator | MD5, SHA-256 | DevDeck',
+    description: 'Generate MD5, SHA-1, SHA-256, and SHA-512 hashes instantly. 100% client-side.',
   }
 };
 
 export default function HashGeneratorPage() {
   return (
     <article>
-      <ColorBlock color="coral">
+      <ColorBlock color="lime">
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <Breadcrumb items={[
+            { label: 'Home', href: '/' },
+            { label: 'Dev Tools', href: '/dev' },
+            { label: 'Hash Generator' }
+          ]} />
           <header style={{ marginBottom: 'var(--spacing-xl)' }}>
-            <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'inherit', textDecoration: 'none', marginBottom: 'var(--spacing-md)', fontWeight: 500, opacity: 0.8 }}>
-              <ArrowLeft size={16} /> Back to Tools
-            </Link>
             <h1 className="display-md" style={{ marginBottom: 'var(--spacing-sm)' }}>Hash & Checksum Generator</h1>
-        <TrustBadge />
-            <p className="body-sm" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
-              Instantly generate secure cryptographic hashes from your text. Fully locally and secure.
+            <TrustBadge />
+            <p className="body-sm" style={{ color: 'var(--color-ink-muted)' }}>
+              Generate MD5, SHA-1, SHA-256, and SHA-512 hashes instantly for strings and files.
             </p>
           </header>
           <main>
             <HashGeneratorClient />
-          
-        <RelatedTools currentPath="/dev/md5-sha256-hash-generator" category="dev" />
-        <SoftwareAppSchema name="DevDeck md5-sha256-hash-generator" description="A free, secure developer tool." url="https://devdeck.com/dev/md5-sha256-hash-generator" />
-      </main>
+
+            <ToolSeoContent whatIs={seo.whatIs} howTo={seo.howTo} faq={seo.faq} whyDevDeck={seo.whyDevDeck} />
+
+            <RelatedTools currentPath="/dev/md5-sha256-hash-generator" category="dev" />
+
+            <BreadcrumbSchema items={[
+              { name: 'Home', path: '/' },
+              { name: 'Dev Tools', path: '/dev' },
+              { name: 'Hash Generator', path: '/dev/md5-sha256-hash-generator' }
+            ]} />
+            <SoftwareAppSchema name="Free Online MD5 & SHA-256 Hash Generator" description="Generate MD5, SHA-1, SHA-256, and SHA-512 hashes for strings and files. 100% client-side." url="/dev/md5-sha256-hash-generator" />
+            <HowToSchema name="How to Generate MD5/SHA-256 Hashes Online" description="Generate hashes using DevDeck's free online tool" steps={seo.howTo.steps} />
+            <FaqSchema items={seo.faq} />
+          </main>
         </div>
       </ColorBlock>
     </article>

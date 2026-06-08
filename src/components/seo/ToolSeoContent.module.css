@@ -1,0 +1,152 @@
+.seoSection {
+  margin-top: var(--spacing-xxl);
+  padding-top: var(--spacing-xxl);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.block {
+  margin-bottom: var(--spacing-xxl);
+}
+
+.heading {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: var(--spacing-md);
+  letter-spacing: -0.3px;
+}
+
+.text {
+  font-size: 16px;
+  line-height: 1.65;
+  opacity: 0.82;
+  max-width: 720px;
+}
+
+/* How-To Steps */
+.steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  border-radius: var(--rounded-md);
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.stepNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: var(--rounded-full);
+  background: rgba(0, 0, 0, 0.08);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font-mono);
+}
+
+.stepName {
+  font-size: 15px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.stepText {
+  font-size: 14px;
+  line-height: 1.55;
+  opacity: 0.72;
+  margin: 0;
+}
+
+/* FAQ */
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.faqItem {
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: var(--rounded-md);
+  overflow: hidden;
+  transition: background 0.15s ease;
+}
+
+.faqItem[open] {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.faqQuestion {
+  padding: var(--spacing-md);
+  cursor: pointer;
+  font-weight: 550;
+  font-size: 15px;
+  line-height: 1.4;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.faqQuestion::-webkit-details-marker {
+  display: none;
+}
+
+.faqQuestion::after {
+  content: '+';
+  font-size: 20px;
+  font-weight: 300;
+  opacity: 0.4;
+  transition: transform 0.2s ease;
+  margin-left: var(--spacing-md);
+  flex-shrink: 0;
+}
+
+.faqItem[open] .faqQuestion::after {
+  transform: rotate(45deg);
+}
+
+.faqAnswer {
+  padding: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md);
+  font-size: 14px;
+  line-height: 1.65;
+  opacity: 0.75;
+  margin: 0;
+  max-width: 680px;
+}
+
+/* Dark color blocks (navy) */
+:global(.colorBlock-navy) .seoSection {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+:global(.colorBlock-navy) .step {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+:global(.colorBlock-navy) .stepNumber {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+:global(.colorBlock-navy) .faqItem {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+:global(.colorBlock-navy) .faqItem[open] {
+  background: rgba(255, 255, 255, 0.04);
+}

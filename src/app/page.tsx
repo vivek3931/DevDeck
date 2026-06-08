@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/Button';
 import { ColorBlock } from '@/components/ui/ColorBlock';
 import { HeroOrb } from '@/components/ui/HeroOrb';
 import { HeroSearch } from '@/components/ui/HeroSearch';
+import { WebSiteSchema } from '@/components/seo/Schema';
+import { RecentTools } from '@/components/ui/RecentTools';
 import { 
   Type, 
   QrCode, 
@@ -34,6 +36,7 @@ import styles from './page.module.css';
 export default function Home() {
   return (
     <main className={styles.main}>
+      <WebSiteSchema />
       {/* Hero Section */}
       <section className={styles.heroSection}>
         <HeroOrb />
@@ -53,6 +56,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Recently Used Tools */}
+      <div className="container">
+        <RecentTools />
+      </div>
 
       {/* Developer Tools */}
       <div id="dev-tools">
